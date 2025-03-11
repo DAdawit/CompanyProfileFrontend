@@ -71,9 +71,9 @@ export default class Carosole extends Component<CarosoleProps> {
                       <h1 className="text-3xl  xl:text-4xl  xxl:text-6xl font-bold mt-5">
                         {carosole?.title}
                       </h1>
-                      <h1 className="text-primary font-serif text-lg font-bold tracking-widest mt-2">
+                      {/* <h1 className="text-primary font-serif text-lg font-bold tracking-widest mt-2">
                         {carosole.title}
-                      </h1>
+                      </h1> */}
                       <p className=" mt-5 xxl:text-lg">{carosole?.subtitle}</p>
                       <div className="mt-5 align-bottom h-full flex items-end">
                         <Link

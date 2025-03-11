@@ -2,7 +2,7 @@ import { fetchLogos } from "@/services/main.services";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-// import NavigationDrawer from "./NavigationDrawer";
+import NavigationDrawer from "./NavigationDrawer";
 // import { usePathname } from "next/navigation";
 export default async function NavBar() {
   const logos = await fetchLogos();
@@ -11,7 +11,7 @@ export default async function NavBar() {
     <nav className="flex items-center px-5 md:px-8 lg:px-16 py-2 w-full z-20">
       <div className="px-3 sm:px-5 xll:px-28 flex justify-between items-centers py-3 w-full">
         <div className="flex items-center gap-x-3">
-          {/* <NavigationDrawer /> */}
+          <NavigationDrawer />
 
           <Image
             src={`http://localhost:8000${logos.data.primary.url}`}
