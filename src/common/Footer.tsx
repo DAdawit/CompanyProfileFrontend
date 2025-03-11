@@ -8,7 +8,7 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 // import PhoneIcon from "@mui/icons-material/Phone";
 import FadeOut from "./Animations/FadeOut";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import CallToAction from "@/Components/CallToAction";
+import CallToAction from "@/components/CallToAction";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
