@@ -13,16 +13,18 @@ import ContactPageIcon from "@mui/icons-material/ContactPage";
 import PaymentIcon from "@mui/icons-material/Payment";
 import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
 import DescriptionIcon from "@mui/icons-material/Description";
-export default function NavigationDrawer() {
+import { LogoOutI } from "../../types/LogoOut";
+type LogoType = {
+  logos: LogoOutI;
+};
+export default function NavigationDrawer({ logos }: LogoType) {
   const [state, setState] = React.useState({
     left: false,
   });
 
-  const toggleDrawer =
-    (anchor: Anchor, open: boolean) =>
-    (event: React.KeyboardEvent | React.MouseEvent) => {
-      setState({ ...state, [anchor]: open });
-    };
+  const toggleDrawer = (anchor: Anchor, open: boolean) => () => {
+    setState({ ...state, [anchor]: open });
+  };
 
   return (
     <div>
@@ -55,11 +57,11 @@ export default function NavigationDrawer() {
               <div className="overflow-x-hidden px-3">
                 <div className="flex justify-between px-5 text-white mt-8 h-min">
                   <Image
-                    src="/wanderweb4.png"
+                    src={`http://localhost:8000${logos.data.primary.url}`}
                     alt="spector"
                     width={150}
                     height={100}
-                    className="h-24 w-24 self-center object-contain pointer-events-none select-none"
+                    className="h-16 w-12 self-center object-contain pointer-events-none select-none"
                   />
                   <IconButton
                     sx={{

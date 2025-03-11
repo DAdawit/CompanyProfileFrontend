@@ -11,7 +11,9 @@ export default async function NavBar() {
     <nav className="flex items-center px-5 md:px-8 lg:px-16 py-2 w-full z-20">
       <div className="px-3 sm:px-5 xll:px-28 flex justify-between items-centers py-3 w-full">
         <div className="flex items-center gap-x-3">
-          <NavigationDrawer />
+          {/* <pre>{JSON.stringify(logos.data, null, 2)}</pre> */}
+
+          <NavigationDrawer logos={logos} />
 
           <Image
             src={`http://localhost:8000${logos.data.primary.url}`}
