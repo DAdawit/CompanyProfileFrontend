@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import { ReactQueryProvider } from "./ReactQueryProvider";
 import Footer from "@/common/Footer";
+import NavBar from "@/components/Home/Navbar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,6 +34,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ReactQueryProvider>
+          <NavBar />
           <Toaster />
           {children}
           <Footer />
