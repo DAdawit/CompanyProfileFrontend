@@ -1,4 +1,4 @@
-import { AtIcon } from "@/assets/Icons/AtIcon";
+// import { AtIcon } from "@/assets/Icons/AtIcon";
 import React from "react";
 
 const CallToAction = () => {
@@ -15,9 +15,7 @@ const CallToAction = () => {
         </p>
         <div className="flex flex-col items-center justify-center w-full gap-4 mb-4 md:flex-row">
           <div className="relative flex items-center">
-            <span className="absolute ml-3">
-              <AtIcon />
-            </span>
+            <span className="absolute ml-3">{/* <AtIcon /> */}</span>
             <input
               type="search"
               placeholder="E-mail address"
