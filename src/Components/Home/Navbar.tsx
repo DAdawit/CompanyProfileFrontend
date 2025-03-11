@@ -1,47 +1,60 @@
-"use client";
+import { fetchLogos } from "@/services/main.services";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import TemporaryDrawer from "./Drawer";
-import { usePathname } from "next/navigation";
-import SearchResults from "./search/searchResults";
-import { fetchProfile } from "@/services/main.services";
-import { useQuery } from "@tanstack/react-query";
-
-const Navbar = () => {
-  const pathname = usePathname();
-  const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["fetchProfile"],
-    queryFn: () => fetchProfile(),
-  });
-
-  if (pathname.startsWith("/admin")) {
-    return null;
-  }
+// import NavigationDrawer from "./NavigationDrawer";
+// import { usePathname } from "next/navigation";
+export default async function NavBar() {
+  const logos = await fetchLogos();
 
   return (
-    <>
-      <div id="Nav" className="flex justify-between bg-bgPrimary py-5 px-10">
-        <Link href="/">
+    <nav className="flex items-center px-5 md:px-8 lg:px-16 py-2 w-full z-20">
+      <div className="px-3 sm:px-5 xll:px-28 flex justify-between items-centers py-3 w-full">
+        <div className="flex items-center gap-x-3">
+          {/* <NavigationDrawer /> */}
+
           <Image
-            src="/delici.png"
-            alt="spector"
-            width={100}
-            height={200}
-            className="text-center"
+            src={`http://localhost:8000${logos.data.primary.url}`}
+            width={1000}
+            height={1000}
+            alt="logo"
+            className="h-8 w-full object-contain"
           />
-        </Link>
-        <div className="flex justify-evenly gap-3">
-          <div>
-            <SearchResults />
-          </div>
-          <div>
-            <TemporaryDrawer profile={data} />
-          </div>
+        </div>
+        <div className="hidden md:flex gap-x-5 text-lg items-center"></div>
+        <div className="hidden md:flex gap-x-5 items-center text-lg capitalize text-primary">
+          <Link
+            href="/"
+            className="capitalize text-lg whitespace-nowrap font-medium"
+          >
+            Home
+          </Link>
+          <Link
+            href="#about"
+            className="capitalize text-lg whitespace-nowrap  font-medium"
+          >
+            About
+          </Link>
+          <Link
+            href="#services"
+            className="capitalize text-lg whitespace-nowrap  font-medium"
+          >
+            services
+          </Link>
+          <Link
+            href="#portfolios"
+            className="capitalize text-lg whitespace-nowrap  font-medium"
+          >
+            Portfolios
+          </Link>
+          <Link
+            href="#contact-us"
+            className="capitalize text-lg whitespace-nowrap  font-medium"
+          >
+            Contact us
+          </Link>
         </div>
       </div>
-    </>
+    </nav>
   );
-};
-
-export default Navbar;
+}

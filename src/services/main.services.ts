@@ -9,7 +9,9 @@
 
 // import { HeroOut, HeroSection } from "@/types/Hero";
 import { HeroOutT } from "@/types/HeroOut";
-import { prodBaseUrl, devBaseurl } from "./axios";
+// import {prodBaseUrl} from "./axios";
+import { devBaseurl } from "./axios";
+import { LogoOutI } from "@/types/LogoOut";
 // import api form "./axios"
 // import { CategoryOut, SubCategory } from "@/types/Category";
 // import {
@@ -28,6 +30,13 @@ import { prodBaseUrl, devBaseurl } from "./axios";
 // import { MenuBySubCategoryOut } from "@/types/SubCategory";
 // import { ProfileI } from "@/types";
 
+export async function fetchLogos(): Promise<LogoOutI> {
+  const res = await fetch(`${devBaseurl}/logo?populate=*`, {
+    next: { revalidate: 10 },
+  });
+  const data = await res.json();
+  return data;
+}
 export async function fetchHero(): Promise<HeroOutT> {
   const res = await fetch(
     `${devBaseurl}/heroes?populate[heroSlider][populate]=image`,
