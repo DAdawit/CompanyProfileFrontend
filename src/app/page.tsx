@@ -1,4 +1,4 @@
-import Carosole from "@/Components/Home/Carosole";
+import Carosole from "@/components/Home/Carosole";
 import // fetchSpecialFoods,
 // fetchMenuByMealtimes,
 // getAllHeroSection,
