@@ -30,7 +30,7 @@ export default async function NavBar() {
             Home
           </Link>
           <Link
-            href="#about"
+            href="/about"
             className="capitalize text-lg whitespace-nowrap  font-medium"
           >
             About
