@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <>
       <FadeOut>
-        <div className="bg-primary py-3 ">
+        <div className="bg-black py-3 ">
           <div className="py-10">
             <CallToAction />
           </div>
