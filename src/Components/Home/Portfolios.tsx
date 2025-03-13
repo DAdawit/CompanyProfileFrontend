@@ -1,4 +1,3 @@
-import { LocationIcon } from "@/assets/Icons/locationIcon";
 import FadeInDown from "@/common/Animations/FadeInDown";
 import FadeOut from "@/common/Animations/FadeOut";
 import HeaderTitle from "@/common/HeaderTitle";
