@@ -1,4 +1,6 @@
+import AboutUs from "@/components/Home/About";
 import Carosole from "@/components/Home/Carosole";
+import Services from "@/components/Home/Services";
 import // fetchSpecialFoods,
 // fetchMenuByMealtimes,
 // getAllHeroSection,
@@ -19,6 +21,12 @@ export default async function Home() {
         <div>
           {/* <pre>{JSON.stringify(heroSections.data[0].heroSlider, null, 2)}</pre> */}
           <Carosole carosoles={heroSections.data[0].heroSlider} /> *
+        </div>
+        <div>
+          <AboutUs />
+        </div>
+        <div>
+          <Services />
         </div>
         <div>{/* <Services /> */}</div>
         <section id="Menu" className="bg-bgSecondary py-10">

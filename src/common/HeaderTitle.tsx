@@ -1,8 +1,8 @@
-import Image from "next/image";
+// import Image from "next/image";
 import React from "react";
 type PropType = {
   titleOne: string;
-  titleTwo: string;
+  titleTwo?: string;
 };
 const HeaderTitle: React.FC<PropType> = ({ titleOne, titleTwo }) => {
   return (
@@ -11,13 +11,13 @@ const HeaderTitle: React.FC<PropType> = ({ titleOne, titleTwo }) => {
         <h1 className=" text-gray-800 font-sans text-5xl font-medium ">
           {titleOne} <span className="text-primary">{titleTwo}</span>
         </h1>
-        <Image
+        {/* <Image
           src="/enigmatech3.png"
           alt="spector"
           width={100}
           height={200}
           className=""
-        />
+        /> */}
       </div>
     </div>
   );
