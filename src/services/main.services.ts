@@ -12,7 +12,8 @@ import { HeroOutT } from "@/types/HeroOut";
 // import {prodBaseUrl} from "./axios";
 import { devBaseurl } from "./axios";
 import { LogoOutI } from "@/types/LogoOut";
-import { AboutUsI } from "@/types/AboutUs";
+import { AboutUsI } from "@/types/AboutUsOut";
+import { ServicesOutI } from "@/types/ServicesOut";
 // import api form "./axios"
 // import { CategoryOut, SubCategory } from "@/types/Category";
 // import {
@@ -53,6 +54,17 @@ export async function fetchAboutUs(): Promise<AboutUsI> {
   const res = await fetch(`${devBaseurl}/about-us?populate=*`, {
     next: { revalidate: 10 },
   });
+  const data = await res.json();
+  return data;
+}
+
+export async function fetchOurServices(): Promise<ServicesOutI> {
+  const res = await fetch(
+    `${devBaseurl}/service?populate[ServicesComponent][populate]=icon`,
+    {
+      next: { revalidate: 10 },
+    }
+  );
   const data = await res.json();
   return data;
 }
