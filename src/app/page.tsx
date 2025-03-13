@@ -1,5 +1,6 @@
 import AboutUs from "@/components/Home/About";
 import Carosole from "@/components/Home/Carosole";
+import Portfolios from "@/components/Home/Portfolios";
 import Services from "@/components/Home/Services";
 import // fetchSpecialFoods,
 // fetchMenuByMealtimes,
@@ -27,6 +28,9 @@ export default async function Home() {
         </div>
         <div>
           <Services />
+        </div>
+        <div>
+          <Portfolios />
         </div>
         <div>{/* <Services /> */}</div>
         <section id="Menu" className="bg-bgSecondary py-10">

@@ -9,7 +9,7 @@ export default async function Services() {
   const services = await fetchOurServices();
   return (
     <div id="services">
-      <pre>{JSON.stringify(services, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(services, null, 2)}</pre> */}
 
       <FadeInDown>
         <HeaderTitle titleOne="Our" titleTwo="Services" />
