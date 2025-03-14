@@ -1,16 +1,61 @@
 import Image from "next/image";
 import React from "react";
-import FadeInDown from "@/common/Animations/FadeInDown";
-import HeaderTitle from "@/common/HeaderTitle";
-import FadeOut from "@/common/Animations/FadeOut";
+// import FadeInDown from "@/common/Animations/FadeInDown";
+// import HeaderTitle from "@/common/HeaderTitle";
+// import FadeOut from "@/common/Animations/FadeOut";
 import { fetchOurServices } from "@/services/main.services";
 
 export default async function Services() {
   const services = await fetchOurServices();
   return (
     <div id="services">
-      {/* <pre>{JSON.stringify(services, null, 2)}</pre> */}
+      <section className="ezy__service22 light py-14 md:py-24 bg-white relative z-[1]">
+        <div className="absolute bottom-0 left-0 right-0 h-1/2 w-full bg-blue-50 bg-opacity-30 -z-[1]" />
+        <div className="container px-4 mx-auto">
+          <div className="flex flex-col md:flex-row gap-6 justify-between">
+            <div className="max-w-xl">
+              <h2 className="text-3xl md:text-[45px] font-bold mb-6">
+                {services.data.title}
+              </h2>
+              <p className="text-lg opacity-80">{services.data.description}</p>
+            </div>
+            <div className="flex items-center md:justify-end">
+              <button className="py-3 px-7 rounded bg-blue-600 hover:bg-opacity-90 text-white duration-300">
+                See All
+              </button>
+            </div>
+          </div>
+          <div className="grid grid-cols-6 gap-6 max-w-7xl mx-auto mt-12">
+            {services?.data?.ServicesComponent?.map((service) => (
+              <div
+                className="col-span-6 md:col-span-3 lg:col-span-2"
+                key={service.id}
+              >
+                <div className="bg-white shadow-xl rounded-xl h-full">
+                  <div className="p-6 md:p-12">
+                    <div className="w-[75px] h-[75px] rounded-full text-[26px] shadow-xl flex justify-center items-center mb-6">
+                      <Image
+                        src={`http://localhost:8000${service.icon.url}`}
+                        alt="spector"
+                        width={100}
+                        height={200}
+                        className="h-14 object-contain"
+                      />{" "}
+                    </div>
+                    <h4 className="text-2xl mb-6 font-bold">{service.title}</h4>
+                    <p className="opacity-70 leading-[1.8]">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
+      {/* <pre>{JSON.stringify(services, null, 2)}</pre> */}
+      {/* 
       <FadeInDown>
         <HeaderTitle titleOne="Our" titleTwo="Services" />
       </FadeInDown>
@@ -43,7 +88,7 @@ export default async function Services() {
             </FadeOut>
           ))}
         </section>
-      </div>
+      </div> */}
     </div>
   );
 }

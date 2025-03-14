@@ -1,138 +1,87 @@
 import React from "react";
-// import {
-//   faFacebookF,
-//   faLinkedinIn,
-//   faTwitter,
-//   faBehance,
-// } from "@fortawesome/free-brands-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCannabis } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 
-const teamMembers = [
+const serviceList = [
   {
-    picture: "https://cdn.easyfrontend.com/pictures/users/user25.jpg",
-    fullName: "Akshay Kumar",
-    designation: "Founder / CEO",
-    bio: "Subscribe Easy Tutorials Youtube Channel watch more videos",
-    socialLinks: [
-      { icon: <LinkedInIcon />, href: "#" },
-      { icon: <LinkedInIcon />, href: "#" },
-      { icon: <LinkedInIcon />, href: "#" },
-    ],
+    icon: faCannabis,
+    title: "Get more from life with Insurance",
+    description:
+      "Banking crises have developed many times throughout history when one or more risks have emerged for a banking sector as a whole.",
   },
   {
-    picture: "https://cdn.easyfrontend.com/pictures/users/user5.jpg",
-    fullName: "Raima Ray",
-    designation: "Business Head",
-    bio: "Subscribe Easy Tutorials Youtube Channel watch more videos",
-    socialLinks: [
-      { icon: <LinkedInIcon />, href: "#" },
-      { icon: <LinkedInIcon />, href: "#" },
-      { icon: <LinkedInIcon />, href: "#" },
-    ],
+    icon: faCannabis,
+    title: "Get more from life with Insurance",
+    description:
+      "Banking crises have developed many times throughout history when one or more risks have emerged for a banking sector as a whole.",
   },
   {
-    picture: "https://cdn.easyfrontend.com/pictures/users/user20.jpg",
-    fullName: "Arjun Kapur",
-    designation: "UI Design",
-    bio: "Subscribe Easy Tutorials Youtube Channel watch more videos",
-    socialLinks: [
-      { icon: <LinkedInIcon />, href: "#" },
-      { icon: <LinkedInIcon />, href: "#" },
-      { icon: <LinkedInIcon />, href: "#" },
-    ],
-  },
-  {
-    picture: "https://cdn.easyfrontend.com/pictures/users/user6.jpg",
-    fullName: "Alia Bhatt",
-    designation: "Marketing Head",
-    bio: "Subscribe Easy Tutorials Youtube Channel watch more videos",
-    socialLinks: [
-      { icon: <LinkedInIcon />, href: "#" },
-      { icon: <LinkedInIcon />, href: "#" },
-      { icon: <LinkedInIcon />, href: "#" },
-    ],
-  },
-  {
-    picture: "https://cdn.easyfrontend.com/pictures/users/user21.jpg",
-    fullName: "Carl Paxton",
-    designation: "Marketing",
-    bio: "Subscribe Easy Tutorials Youtube Channel watch more videos",
-    socialLinks: [
-      { icon: <LinkedInIcon />, href: "#" },
-      { icon: <LinkedInIcon />, href: "#" },
-      { icon: <LinkedInIcon />, href: "#" },
-    ],
-  },
-  {
-    picture: "https://cdn.easyfrontend.com/pictures/users/user10.jpg",
-    fullName: "Lisa Bain",
-    designation: "Marketing",
-    bio: "Subscribe Easy Tutorials Youtube Channel watch more videos",
-    socialLinks: [
-      { icon: <LinkedInIcon />, href: "#" },
-      { icon: <LinkedInIcon />, href: "#" },
-      { icon: <LinkedInIcon />, href: "#" },
-    ],
+    icon: faCannabis,
+    title: "Get more from life with Insurance",
+    description:
+      "Banking crises have developed many times throughout history when one or more risks have emerged for a banking sector as a whole.",
   },
 ];
 
-interface TeamMember {
-  picture: string;
-  fullName: string;
-  designation: string;
-  bio: string;
-  socialLinks: { icon: JSX.Element; href: string }[];
+interface Service {
+  icon: any; // Replace 'any' with the appropriate type for the icon if known
+  title: string;
+  description: string;
 }
 
-const TeamMemberItem: React.FC<{ member: TeamMember }> = ({ member }) => (
-  <div className="group rounded-xl overflow-hidden duration-500 relative h-full hover:-translate-y-1">
-    <img src={member.picture} alt={member.fullName} className="h-auto w-full" />
-    <div className="text-white absolute top-0 left-0 right-0 bottom-0 rounded-xl bg-blue-600 bg-opacity-60 backdrop-blur scale-90 transition duration-500 opacity-0 flex flex-col justify-center items-center group-hover:scale-100 group-hover:opacity-100 text-center p-6 lg:px-12">
-      <h4 className="text-2xl font-medium mb-1">{member.fullName}</h4>
-      <p className="text-sm mb-4">{member.designation}</p>
-      <p className="opacity-75">{member.bio}</p>
-      <div className="mt-6">
-        {member.socialLinks.map((item, i) => (
-          <a
-            href={item?.href}
-            className={i + 1 !== member.socialLinks.length ? "mr-3" : undefined}
-            key={i}
-          >
-            {item.icon}
-            {/* <FontAwesomeIcon icon={item.icon} /> */}
-          </a>
-        ))}
+const ServiceItem: React.FC<{ service: Service }> = ({ service }) => (
+  <div className="bg-white dark:bg-slate-800 shadow-xl rounded-xl h-full">
+    <div className="p-6 md:p-12">
+      <div className="w-[75px] h-[75px] rounded-full text-[26px] shadow-xl flex justify-center items-center mb-6">
+        <ManageAccountsIcon />
       </div>
+      <h4 className="text-2xl mb-6 font-bold">{service.title}</h4>
+      <p className="opacity-70 leading-[1.8]">{service.description}</p>
     </div>
   </div>
 );
 
-TeamMemberItem.propTypes = {
-  member: PropTypes.object.isRequired,
+ServiceItem.propTypes = {
+  service: PropTypes.object.isRequired,
 };
 
-export const TeamMember7 = () => {
+export const Service22 = () => {
   return (
-    <section className="ezy__team7 light py-14 md:py-24 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white">
+    <section className="ezy__service22 light py-14 md:py-24 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white relative z-[1]">
+      <div className="absolute bottom-0 left-0 right-0 h-1/2 w-full bg-blue-600 bg-opacity-30 -z-[1]" />
       <div className="container px-4 mx-auto">
-        <div className="flex justify-center mb-6 md:mb-12">
-          <div className="max-w-lg text-center">
-            <h2 className="text-3xl leading-none font-bold md:text-[45px] mb-4">
-              Our Experts Team
+        <div className="flex flex-col md:flex-row gap-6 justify-between">
+          <div className="max-w-xl">
+            <h2 className="text-3xl md:text-[45px] font-bold mb-6">
+              Our Service
             </h2>
-            <p className="">
+            <p className="text-lg opacity-80">
               Assumenda non repellendus distinctio nihil dicta sapiente,
-              quibusdam maiores, illum at qui.
+              quibusdam maiores, illum at, aliquid blanditiis eligendi qui nihil
+              repellendus dicta sapiente.
             </p>
           </div>
+          <div className="flex items-center md:justify-end">
+            <button className="py-3 px-7 rounded bg-blue-600 hover:bg-opacity-90 text-white duration-300">
+              See All
+            </button>
+          </div>
         </div>
-
-        <div className="grid grid-cols-6 gap-6">
-          {teamMembers.map((member, i) => (
-            <div className="col-span-6 sm:col-span-3 lg:col-span-2" key={i}>
-              <TeamMemberItem member={member} />
+        <div className="grid grid-cols-6 gap-6 max-w-7xl mx-auto mt-12">
+          {serviceList.map((service, i) => (
+            <div className="col-span-6 md:col-span-3 lg:col-span-2" key={i}>
+              <div className="bg-white dark:bg-slate-800 shadow-xl rounded-xl h-full">
+                <div className="p-6 md:p-12">
+                  <div className="w-[75px] h-[75px] rounded-full text-[26px] shadow-xl flex justify-center items-center mb-6">
+                    <ManageAccountsIcon />
+                  </div>
+                  <h4 className="text-2xl mb-6 font-bold">{service.title}</h4>
+                  <p className="opacity-70 leading-[1.8]">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
