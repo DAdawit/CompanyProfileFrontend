@@ -1,4 +1,4 @@
-import SocialMeadiaLinks from "@/common/SocialMeadiaLinks";
+import SocialMeadiaLinksIconsOnly from "@/common/SocialMeadiaLinksIconsOnly";
 import { fetchOutTeam } from "@/services/main.services";
 import Image from "next/image";
 import React from "react";
@@ -9,42 +9,43 @@ export default async function OurTeam() {
     <div>
       {/* <pre>{JSON.stringify(our_team, null, 2)}</pre> */}
 
-      <div className="bg-bgThird mt-15 pb-5">
-        <div className="flex flex-col justify-center items-center gap-5 pt-10">
-          <h1 className=" text-primary font-sans text-sm font-medium capitalize">
-            Meet our TEAM
-          </h1>
+      <div className="container py-14 md:py-24 bg-white ">
+        <div className="container px-4 mx-auto">
+          <div className="flex justify-center mb-6 md:mb-12">
+            <div className="max-w-lg text-center">
+              <h2 className="text-3xl leading-none font-bold md:text-[45px] mb-4">
+                Our Experts Team
+              </h2>
+              <p className="">
+                Assumenda non repellendus distinctio nihil dicta sapiente,
+                quibusdam maiores, illum at qui.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div className="grid sm:flex sm:flex-row justify-evenly mt-5">
-          {our_team.data.map((team) => (
-            <div key={team.id} className="p-3 grid items-center  w-96">
-              <div className="grid sm:flex sm:flex-row justify-evenly mt-5 px-5">
-                <div className="group relative max-w-96">
-                  <Image
-                    src={`http://localhost:8000${team.image.url}`}
-                    height={300}
-                    width={200}
-                    alt="breakfast"
-                    className="w-full rounded-lg object-contain h-96"
-                  />
-                  <div className="absolute top-0 left-0  w-full h-0 flex flex-col justify-center items-center bg-primary opacity-0 group-hover:h-full group-hover:opacity-70 duration-500">
-                    {/* <pre>{JSON.stringify(team.SocialLinks, null, 2)}</pre> */}
-
-                    <SocialMeadiaLinks links={team.SocialLinks} />
-                  </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 px-5 mt-10  content-evenly gap-3 justify-evenly space-x-6">
+          {our_team.data.map((member) => (
+            <div
+              key={member.id}
+              className="group rounded-xl overflow-hidden duration-500 relative h-full hover:-translate-y-1 max-w-80"
+            >
+              <Image
+                src={`http://localhost:8000${member.image.url}`}
+                alt={member.full_name}
+                height={300}
+                width={200}
+                className="h-80 w-full"
+              />
+              <div className="text-white absolute top-0 left-0 right-0 bottom-0 rounded-xl  bg-opacity-60 backdrop-blur scale-90 transition duration-500 opacity-0 flex flex-col justify-center items-center group-hover:scale-100 group-hover:opacity-100 text-center p-6 lg:px-12">
+                <h4 className="text-2xl font-medium mb-1">
+                  {member.full_name}
+                </h4>
+                <p className="text-sm mb-4">{member.role}</p>
+                <p className="opacity-75">{member.bio}</p>
+                <div className="mt-6">
+                  <SocialMeadiaLinksIconsOnly links={member.SocialLinks} />
                 </div>
-              </div>
-              <div className="px-7 flex flex-col gap-2">
-                <h1 className="text-secondary  tracking-wider font-sans mt-5 text-2xl">
-                  {team.full_name}
-                </h1>
-                <h1 className="text-primary text-sm  font-sans tracking-wider">
-                  {team.role}
-                </h1>
-                <p className="text-sm text-gray-300 text-start font-serif tracking-wide">
-                  {team.bio}
-                </p>
               </div>
             </div>
           ))}

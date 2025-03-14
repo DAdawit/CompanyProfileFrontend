@@ -10,25 +10,25 @@ import Link from "next/link";
 interface PropType {
   links: SocialLink;
 }
-const SocialMeadiaLinks = ({ links }: PropType) => {
+const SocialMeadiaLinksIconsOnly = ({ links }: PropType) => {
   return (
     <div className="flex justify-between opacity-100 z-50 hover:blur-none h-min">
-      <div className="p-3 bg-black hover:bg-[#5d4314] text-white opacity-100">
+      <div className="p-3 text-white opacity-100">
         <Link href={links?.linkedin} className="" target="_blank">
           <LinkedInIcon />
         </Link>
       </div>
-      <div className="p-3 bg-black hover:bg-[#5d4314] text-white opacity-100">
+      <div className="p-3 text-white opacity-100">
         <Link href={links?.email} className="" target="_blank">
           <EmailIcon />
         </Link>
       </div>
-      <div className="p-3 bg-black hover:bg-[#5d4314] text-white opacity-100">
+      <div className="p-3 text-white opacity-100">
         <Link href={links?.telegram} className="" target="_blank">
           <TelegramIcon />
         </Link>
       </div>
-      <div className="p-3 bg-black hover:bg-[#5d4314] text-white opacity-100">
+      <div className="p-3  text-white opacity-100">
         <Link href={links.instagram} className="" target="_blank">
           <InstagramIcon />
         </Link>
@@ -37,4 +37,4 @@ const SocialMeadiaLinks = ({ links }: PropType) => {
   );
 };
 
-export default SocialMeadiaLinks;
+export default SocialMeadiaLinksIconsOnly;
