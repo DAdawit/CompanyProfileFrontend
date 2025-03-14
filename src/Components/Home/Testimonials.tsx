@@ -9,7 +9,6 @@ import FadeInDown from "@/common/Animations/FadeInDown";
 import HeaderTitle from "@/common/HeaderTitle";
 import FadeOut from "@/common/Animations/FadeOut";
 import { TestimonialsOutI } from "@/types/TestimonialOut";
-import { testimonials } from "@/assets/data/testimonials";
 interface TestimonialProps {
   testimonials: TestimonialsOutI;
 }
@@ -52,10 +51,10 @@ export default class Testimonials extends Component<TestimonialProps> {
         },
       ],
     };
-    const styles2 = {
-      backgroundImage: `url('/banner2.jpg')`,
-      backgroundSize: "cover",
-    };
+    // const styles2 = {
+    //   backgroundImage: `url('/banner2.jpg')`,
+    //   backgroundSize: "cover",
+    // };
     const { testimonials } = this.props;
     return (
       <div>
@@ -85,8 +84,8 @@ export default class Testimonials extends Component<TestimonialProps> {
                   <div key={index}>
                     <div className="p-3 grid bg-black h-96 mx-3 rounded-lg opacity-90">
                       <div className="text-yellow-400 flex items-start text-sm">
-                        {[1, 2, 3, 4, 5].map((_, key) => (
-                          <StarRateIcon fontSize="small" key={index} />
+                        {[1, 2, 3, 4, 5].map((key) => (
+                          <StarRateIcon fontSize="small" key={key} />
                         ))}
                       </div>
 

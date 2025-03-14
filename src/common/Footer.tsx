@@ -2,22 +2,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-// import FacebookIcon from "@mui/icons-material/Facebook";
-// import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
-// import PhoneIcon from "@mui/icons-material/Phone";
 import FadeOut from "./Animations/FadeOut";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import CallToAction from "@/components/CallToAction";
+// import CallToAction from "@/components/Home/CallToAction";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <>
       <FadeOut>
         <div className="bg-black py-3 ">
-          <div className="py-10">
-            <CallToAction />
-          </div>
+          <div className="py-10">{/* <CallToAction /> */}</div>
           <hr />
           <section className="container mx-auto px-5">
             <div>

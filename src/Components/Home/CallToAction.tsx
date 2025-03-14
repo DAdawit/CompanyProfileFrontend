@@ -1,17 +1,16 @@
-// import { AtIcon } from "@/assets/Icons/AtIcon";
-import React from "react";
+import { fetchCallToAction } from "@/services/main.services";
 
-const CallToAction = () => {
+export default async function CallToAction() {
+  const call_to_action = await fetchCallToAction();
+
   return (
-    <div className="container max-w-7xl mx-auto mt-8 text-white px-5">
+    <div className="container max-w-7xl mx-auto mt-8 text-white px-5 bg-black">
       <div className="flex flex-col items-center justify-center w-full h-full my-auto text-center">
         <h2 className="w-full mb-4 text-4xl font-extrabold leading-tight text-dark-grey-900">
-          Transform your business with our web solutions
+          {call_to_action.data.title}
         </h2>
         <p className="mb-10 text-lg font-normal lg:w-6/12 text-grey-700">
-          Our experienced team is ready to create a custom website to boost your
-          online presence and sales. Start your digital transformation journey
-          now!
+          {call_to_action.data.message}
         </p>
         <div className="flex flex-col items-center justify-center w-full gap-4 mb-4 md:flex-row">
           <div className="relative flex items-center">
@@ -29,6 +28,4 @@ const CallToAction = () => {
       </div>
     </div>
   );
-};
-
-export default CallToAction;
+}
