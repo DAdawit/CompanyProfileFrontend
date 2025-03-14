@@ -3,18 +3,21 @@ import Carosole from "@/components/Home/Carosole";
 import OurTeam from "@/components/Home/OurTeam";
 import Portfolios from "@/components/Home/Portfolios";
 import Services from "@/components/Home/Services";
+import Testimonials from "@/components/Home/Testimonials";
 import // fetchSpecialFoods,
 // fetchMenuByMealtimes,
 // getAllHeroSection,
 // fetchHero,
 "@/services/main.services";
 // import MenuByMealTime2 from "@/components/Home/MenuByMealTime";
-import { fetchHero } from "@/services/main.services";
+import { fetchHero, fetchTestimonials } from "@/services/main.services";
 // import { fetchLogos } from "@/services/admin.services";
+// import { testimonials } from '@/assets/data/testimonials';
 export default async function Home() {
   // const data = await fetchSpecialFoods();
   // const menuByMealtime = await fetchMenuByMealtimes();
   const heroSections = await fetchHero();
+  const testimonials = await fetchTestimonials();
   // const logos = await fetchLogos();
 
   return (
@@ -35,6 +38,11 @@ export default async function Home() {
         </div>
         <div>
           <OurTeam />
+        </div>
+        <div>
+          {/* <pre>{JSON.stringify(testimonials, null, 2)}</pre> */}
+
+          <Testimonials testimonials={testimonials} />
         </div>
         <div>{/* <Services /> */}</div>
         <section id="Menu" className="bg-bgSecondary py-10">
@@ -62,11 +70,11 @@ export default async function Home() {
         </section>
 
         {/* our strength */}
-        <section className="bg-bgThird">{/* <OurStrength /> */}</section>
+        <section className="bg-black">{/* <OurStrength /> */}</section>
         {/* chefs */}
-        <section className="bg-bgThird">{/* <Chefs /> */}</section>
+        <section className="bg-black">{/* <Chefs /> */}</section>
 
-        <section className="bg-bgThird">{/* <Experiance /> */}</section>
+        <section className="bg-black">{/* <Experiance /> */}</section>
         {/* move to top */}
         {/* <MoveToTop /> */}
       </main>

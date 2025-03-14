@@ -10,7 +10,6 @@ import { HeroSlider } from "../../types/HeroOut";
 
 interface CarosoleProps {
   carosoles: HeroSlider[];
-  // logo?: LogoOut;
 }
 export default class Carosole extends Component<CarosoleProps> {
   render() {

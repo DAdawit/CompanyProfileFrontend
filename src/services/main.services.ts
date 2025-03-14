@@ -16,6 +16,7 @@ import { AboutUsI } from "@/types/AboutUsOut";
 import { ServicesOutI } from "@/types/ServicesOut";
 import { PortfoliosOutI } from "@/types/PortfoliosOut";
 import { OurTeamOutI } from "@/types/OurTeamOut";
+import { TestimonialsOutI } from "@/types/TestimonialOut";
 // import api form "./axios"
 // import { CategoryOut, SubCategory } from "@/types/Category";
 // import {
@@ -82,6 +83,14 @@ export async function fetchOurPortfolios(): Promise<PortfoliosOutI> {
 }
 export async function fetchOutTeam(): Promise<OurTeamOutI> {
   const res = await fetch(`${devBaseurl}/our-teams?populate=*`, {
+    next: { revalidate: 10 },
+  });
+  const data = await res.json();
+  return data;
+}
+
+export async function fetchTestimonials(): Promise<TestimonialsOutI> {
+  const res = await fetch(`${devBaseurl}/testimonials?populate=*`, {
     next: { revalidate: 10 },
   });
   const data = await res.json();
