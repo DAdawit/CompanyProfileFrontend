@@ -5,6 +5,7 @@ import OurTeam from "@/components/Home/OurTeam";
 import Portfolios from "@/components/Home/Portfolios";
 import Services from "@/components/Home/Services";
 import Testimonials from "@/components/Home/Testimonials";
+import { Testimonial21 } from "@/components/Test/TestimonialTest";
 
 import { fetchHero, fetchTestimonials } from "@/services/main.services";
 
@@ -19,6 +20,7 @@ export default async function Home() {
           {/* <pre>{JSON.stringify(heroSections.data[0].heroSlider, null, 2)}</pre> */}
           <Carosole carosoles={heroSections.data[0].heroSlider} /> *
         </div>
+
         <div>
           <AboutUs />
         </div>
@@ -30,6 +32,9 @@ export default async function Home() {
         </div>
         <div>
           <OurTeam />
+        </div>
+        <div>
+          <Testimonial21 />
         </div>
         <div>
           {/* <pre>{JSON.stringify(testimonials, null, 2)}</pre> */}
