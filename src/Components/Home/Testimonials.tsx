@@ -83,14 +83,14 @@ export default class Testimonials extends Component<TestimonialProps> {
               <Slider {...settings}>
                 {testimonials.data.map((testimonial, index) => (
                   <div key={index}>
-                    <div className="p-3 grid bg-primary h-96 mx-3 rounded-lg opacity-90">
+                    <div className="p-3 grid bg-black h-96 mx-3 rounded-lg opacity-90">
                       <div className="text-yellow-400 flex items-start text-sm">
                         {[1, 2, 3, 4, 5].map((_, key) => (
                           <StarRateIcon fontSize="small" key={index} />
                         ))}
                       </div>
 
-                      <p className="text-gray-800 text-sm  text-start mt-1 tracking-wide items-center font-sans">
+                      <p className="text-white text-sm  text-start mt-1 tracking-wide items-center font-sans">
                         {testimonial.feedback}
                       </p>
                       <div className="flex gap-3 justify-start items-end mt-2 align-bottom ">

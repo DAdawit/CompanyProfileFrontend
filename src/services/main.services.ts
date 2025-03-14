@@ -90,7 +90,7 @@ export async function fetchOutTeam(): Promise<OurTeamOutI> {
 }
 
 export async function fetchTestimonials(): Promise<TestimonialsOutI> {
-  const res = await fetch(`${devBaseurl}/our-teams?populate=*`, {
+  const res = await fetch(`${devBaseurl}/testimonials?populate=*`, {
     next: { revalidate: 10 },
   });
   const data = await res.json();
