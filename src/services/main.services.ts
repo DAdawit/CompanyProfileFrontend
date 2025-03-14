@@ -18,23 +18,6 @@ import { PortfoliosOutI } from "@/types/PortfoliosOut";
 import { OurTeamOutI } from "@/types/OurTeamOut";
 import { TestimonialsOutI } from "@/types/TestimonialOut";
 import { CallToActionOutI } from "@/types/CallToActionOut";
-// import api form "./axios"
-// import { CategoryOut, SubCategory } from "@/types/Category";
-// import {
-//   MealTimeOut,
-//   Mealtime,
-//   MenuByCategoryOut,
-//   MenuItemsByMealTimeOut,
-// } from "@/types/MealTime";
-// import {
-//   MenuOut,
-//   MenusByCategoryOut,
-//   MenusByMealTimeOUt,
-//   SpecialFoodOut,
-// } from "@/types/Menu";
-// import { LogoOut } from "@/types/Logo";
-// import { MenuBySubCategoryOut } from "@/types/SubCategory";
-// import { ProfileI } from "@/types";
 
 export async function fetchLogos(): Promise<LogoOutI> {
   const res = await fetch(`${devBaseurl}/logo?populate=*`, {
@@ -102,5 +85,6 @@ export async function fetchCallToAction(): Promise<CallToActionOutI> {
     next: { revalidate: 10 },
   });
   const data = await res.json();
+  console.log(data);
   return data;
 }
