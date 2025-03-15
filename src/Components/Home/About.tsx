@@ -1,7 +1,7 @@
-import FadeInDown from "@/common/Animations/FadeInDown";
+// import FadeInDown from "@/common/Animations/FadeInDown";
 import FadeInUp from "@/common/Animations/FadeInUp";
-import FadeOut from "@/common/Animations/FadeOut";
-import HeaderTitle from "@/common/HeaderTitle";
+// import FadeOut from "@/common/Animations/FadeOut";
+// import HeaderTitle from "@/common/HeaderTitle";
 import { fetchAboutUs } from "@/services/main.services";
 import Image from "next/image";
 import React from "react";

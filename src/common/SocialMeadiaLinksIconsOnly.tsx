@@ -12,24 +12,24 @@ interface PropType {
 }
 const SocialMeadiaLinksIconsOnly = ({ links }: PropType) => {
   return (
-    <div className="flex justify-between opacity-100 z-50 hover:blur-none h-min">
-      <div className="p-3 text-white opacity-100">
-        <Link href={links?.linkedin} className="" target="_blank">
+    <div className="flex justify-between opacity-100 z-50 hover:blur-none h-min text-gray-500">
+      <div className="p-3 opacity-100 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+        <Link href={links?.linkedin} target="_blank">
           <LinkedInIcon />
         </Link>
       </div>
-      <div className="p-3 text-white opacity-100">
-        <Link href={links?.email} className="" target="_blank">
+      <div className="p-3 opacity-100 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+        <Link href={links?.email} target="_blank">
           <EmailIcon />
         </Link>
       </div>
-      <div className="p-3 text-white opacity-100">
-        <Link href={links?.telegram} className="" target="_blank">
+      <div className="p-3 opacity-100 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+        <Link href={links?.telegram} target="_blank">
           <TelegramIcon />
         </Link>
       </div>
-      <div className="p-3  text-white opacity-100">
-        <Link href={links.instagram} className="" target="_blank">
+      <div className="p-3 opacity-100 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+        <Link href={links.instagram} target="_blank">
           <InstagramIcon />
         </Link>
       </div>

@@ -6,10 +6,44 @@ import React from "react";
 export default async function OurTeam() {
   const our_team = await fetchOutTeam();
   return (
-    <div>
-      {/* <pre>{JSON.stringify(our_team, null, 2)}</pre> */}
+    <div className="container px-4 mx-auto">
+      <div className="flex justify-center mb-6 md:mb-12">
+        <div className="sm:max-w-md text-center">
+          <h2 className="text-3xl leading-none font-bold md:text-[45px] mb-4">
+            Our Experts Team
+          </h2>
+          <p>
+            Assumenda non repellendus distinctio nihil dicta sapiente, quibusdam
+            maiores, illum at qui.
+          </p>
+        </div>
+      </div>
+      <div className="grid grid-cols-4 gap-6 text-center h-max">
+        {our_team.data.map((member) => (
+          <div
+            className="col-span-4 md:col-span-2 lg:col-span-1 h-full flex flex-col items-center justify-between"
+            key={member.id}
+          >
+            <Image
+              src={`http://localhost:8000${member.image.url}`}
+              alt={member.full_name}
+              className="w-46 h-46 rounded-full mx-auto"
+              height={300}
+              width={300}
+            />
+            <div className="px-4 py-4 xl:px-6 flex-grow">
+              <h4 className="text-2xl font-medium mb-2">{member.full_name}</h4>
+              <h6 className="font-medium">{member.role}</h6>
+              <p className="opacity-50 mb-0">{member.bio}</p>
+            </div>
+            <div className="">
+              <SocialMeadiaLinksIconsOnly links={member.SocialLinks} />
+            </div>
+          </div>
+        ))}
+      </div>
 
-      <div className="container py-14 md:py-24 bg-white ">
+      {/* <div className="container py-14 md:py-10 bg-white ">
         <div className="container px-4 mx-auto">
           <div className="flex justify-center mb-6 md:mb-12">
             <div className="max-w-lg text-center">
@@ -22,9 +56,9 @@ export default async function OurTeam() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 px-5 mt-10  content-evenly gap-3 justify-evenly space-x-6">
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 px-5 mt-10  content-evenly gap-3 justify-evenly space-x-6">
           {our_team.data.map((member) => (
             <div
               key={member.id}
@@ -49,8 +83,8 @@ export default async function OurTeam() {
               </div>
             </div>
           ))}
-        </div>
-      </div>
+        </div> */}
     </div>
+    // </div>
   );
 }

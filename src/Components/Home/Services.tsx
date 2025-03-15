@@ -9,7 +9,7 @@ export default async function Services() {
   const services = await fetchOurServices();
   return (
     <div id="services">
-      <section className="ezy__service22 light py-14 md:py-24 bg-white relative z-[1]">
+      <section className="ezy__service22 light py-14 md:py-16 bg-white relative z-[1]">
         <div className="absolute bottom-0 left-0 right-0 h-1/2 w-full bg-blue-50 bg-opacity-30 -z-[1]" />
         <div className="container px-4 mx-auto">
           <div className="flex flex-col md:flex-row gap-6 justify-between">

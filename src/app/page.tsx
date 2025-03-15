@@ -5,7 +5,7 @@ import OurTeam from "@/components/Home/OurTeam";
 import Portfolios from "@/components/Home/Portfolios";
 import Services from "@/components/Home/Services";
 import Testimonials from "@/components/Home/Testimonials";
-import { Portfolio16 } from "@/components/Test/TestimonialTest";
+// import { Portfolio16, TeamMember2 } from "@/components/Test/TestimonialTest";
 // import { TeamMember7 } from "@/components/Test/TestimonialTest";
 
 import { fetchHero, fetchTestimonials } from "@/services/main.services";
@@ -28,7 +28,7 @@ export default async function Home() {
         <div>
           <Services />
         </div>
-        <div>{/* <Portfolio16 /> */}</div>
+        <div>{/* <TeamMember2 /> */}</div>
         <div>
           <Portfolios />
         </div>
