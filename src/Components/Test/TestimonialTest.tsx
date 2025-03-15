@@ -1,117 +1,122 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const portfolios = [
+const stories = [
   {
-    img: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio16_1.png",
-    title: "Jobbazar Job Finder Web Exploration",
-    text: "It’s easier to reach your savings goals when you have the right savings account. Take a look and find the right one for you!Assumenda non repellendus distinctio nihil dicta sapiente, quibusdam maiores, illum at, aliquid blanditiis eligendi qui.",
-    color: "blue",
+    title: "The journey to relaxation.",
+    description:
+      "Finding a hammock you can truly relax in didn’t happen overnight. It started with a chance discovery while on vacation, and took a lot of hard work (and a lot of hanging around) to bring the softest, most comfortable, and thoughtfully crafted hammocks to your backyard.",
+    image: "https://cdn.easyfrontend.com/pictures/featured/featured_13.png",
   },
   {
-    img: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio16_2.png",
-    title: "Slep Social Media apps Exploration",
-    text: "It’s easier to reach your savings goals when you have the right savings account. Take a look and find the right one for you!Assumenda non repellendus distinctio nihil dicta sapiente, quibusdam maiores, illum at, aliquid blanditiis eligendi qui.",
-    color: "green",
-  },
-  {
-    img: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio16_3.png",
-    title: "Costa Restaurant Landing Page",
-    text: "It’s easier to reach your savings goals when you have the right savings account. Take a look and find the right one for you!Assumenda non repellendus distinctio nihil dicta sapiente, quibusdam maiores, illum at, aliquid blanditiis eligendi qui.",
-    color: "yellow",
+    title: "The way to heaven.",
+    description:
+      "More off this less hello salamander lied porpoise much over tightly circa horse taped so innocuously outside crud mightily rigorous negative one inside gorilla and drew humbly shot tortoise inside opaquely. Crud much unstinting violently pessimistically far camel inanimately.",
+    image: "https://cdn.easyfrontend.com/pictures/about/about9.jpg",
   },
 ];
 
-const PortfolioItem = ({ item, index }) => {
-  const { img, title, text, color } = item;
+const StoryItem = ({ item, index }) => {
+  const { title, description, image } = item;
   return (
-    <div className="flex flex-col gap-6 max-w-7xl mt-12 mx-auto">
+    <div>
       <div
-        className={`grid grid-cols-12 bg-${color}-100 bg-opacity-30 rounded-xl p-6 md:p-12`}
+        className={`col-span-12 md:col-span-5 ${
+          index % 2 === 0
+            ? "order-1 md:order-2 md:col-start-7"
+            : "order-2 md:order-1 md:col-start-2"
+        }`}
       >
         <div
-          className={`col-span-12 lg:col-span-5 ${
-            index % 2 === 0 && "order-2"
+          className={`flex flex-col justify-center ${
+            index % 2 === 0 ? "lg:pl-14" : "lg:pr-14"
           }`}
         >
-          <div
-            className={`bg-${color}-100 bg-opacity-75 flex justify-center items-center p-6 rounded-xl`}
-          >
-            <img src={img} alt="" className="max-w-full w-full h-auto" />
-          </div>
+          <h4 className="text-2xl font-bold mb-4">{title}</h4>
+          <p className="text-base leading-relaxed text-justify opacity-70 mb-0 md:pr-6">
+            {description}
+          </p>
         </div>
-        <div className="col-span-12 lg:col-span-7">
-          <div className="mt-6 lg:mt-0 lg:px-12 text-center lg:text-start h-full flex flex-col justify-center">
-            <h5 className="text-3xl md:text-[44px] leading-tight font-bold mb-4">
-              {title}
-            </h5>
-            <p className="leading-loose opacity-80 mb-6 lg:pr-12">{text}</p>
-            <div>
-              <button className="font-bold bg-blue-600 text-white px-8 py-3 hover:bg-opacity-90 duration-300 rounded inline-flex">
-                View Project
-              </button>
-            </div>
-          </div>
+      </div>
+      <div
+        className={`${
+          index % 2 === 0
+            ? "order-1 md:col-start-2"
+            : "order-1 md:order-2 md:col-start-7"
+        } col-span-12 md:col-span-5  mb-6 md:mb-0 mt-6 md:mt-0`}
+      >
+        <div>
+          <img
+            src={image}
+            alt={title}
+            className="max-w-full h-auto rounded-2xl"
+          />
         </div>
       </div>
     </div>
   );
 };
 
-PortfolioItem.propTypes = {
+StoryItem.propTypes = {
   item: PropTypes.object.isRequired,
-  index: PropTypes.number,
+  index: PropTypes.number.isRequired,
 };
 
-export const Portfolio16 = () => {
+export const AboutUs6 = () => {
   return (
-    <section className="ezy__portfolio16 light py-14 md:py-24 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white">
-      <div className="container px-4 mx-auto">
-        <div className="flex justify-between items-center max-w-7xl mx-auto">
-          <div className="w-2/3">
-            <h2 className="text-3xl md:text-[52px] font-bold">
-              Our Recent Work
+    <section className="ezy__about6 light py-14 md:py-24 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white">
+      <div className="container px-4">
+        <div className="grid grid-cols-12 justify-center text-center mb-12">
+          <div className="col-span-12 md:col-span-8 md:col-start-3">
+            <h2 className="text-4xl leading-snug md:text-5xl md:leading-snug font-bold mb-6">
+              Our Story
             </h2>
-          </div>
-          <div className="w-1/3 text-end">
-            <button className="font-bold bg-blue-600 text-white px-8 py-3 hover:bg-opacity-90 duration-300 rounded">
-              See All
-            </button>
+            <p className="text-xl opacity-80 mb-4">
+              We not only make the world’s most comfortable hammocks, but
+              through training and sustainable job creation, we empower our
+              weavers and their families to break the cycle of poverty and build
+              a brighter future.
+            </p>
           </div>
         </div>
-        {portfolios.map((item, i) => (
-          <div key={i} className="flex flex-col gap-6 max-w-7xl mt-12 mx-auto">
-            <div
-              className={`grid grid-cols-12 bg-${item.color}-100 bg-opacity-30 rounded-xl p-6 md:p-12`}
-            >
+
+        {stories.map((item, i) => (
+          <div
+            className="grid grid-cols-12 justify-center items-center mt-12"
+            key={i}
+          >
+            <div>
               <div
-                className={`col-span-12 lg:col-span-5 ${
-                  i % 2 === 0 && "order-2"
+                className={`col-span-12 md:col-span-5 ${
+                  i % 2 === 0
+                    ? "order-1 md:order-2 md:col-start-7"
+                    : "order-2 md:order-1 md:col-start-2"
                 }`}
               >
                 <div
-                  className={`bg-${item.color}-100 bg-opacity-75 flex justify-center items-center p-6 rounded-xl`}
+                  className={`flex flex-col justify-center ${
+                    i % 2 === 0 ? "lg:pl-14" : "lg:pr-14"
+                  }`}
                 >
-                  <img
-                    src={item.img}
-                    alt=""
-                    className="max-w-full w-full h-auto"
-                  />
+                  <h4 className="text-2xl font-bold mb-4">{item.title}</h4>
+                  <p className="text-base leading-relaxed text-justify opacity-70 mb-0 md:pr-6">
+                    {item.description}
+                  </p>
                 </div>
               </div>
-              <div className="col-span-12 lg:col-span-7">
-                <div className="mt-6 lg:mt-0 lg:px-12 text-center lg:text-start h-full flex flex-col justify-center">
-                  <h5 className="text-3xl md:text-[44px] leading-tight font-bold mb-4">
-                    {item.title}
-                  </h5>
-                  <p className="leading-loose opacity-80 mb-6 lg:pr-12">
-                    {item.text}
-                  </p>
-                  <div>
-                    <button className="font-bold bg-blue-600 text-white px-8 py-3 hover:bg-opacity-90 duration-300 rounded inline-flex">
-                      View Project
-                    </button>
-                  </div>
+              <div
+                className={`${
+                  i % 2 === 0
+                    ? "order-1 md:col-start-2"
+                    : "order-1 md:order-2 md:col-start-7"
+                } col-span-12 md:col-span-5  mb-6 md:mb-0 mt-6 md:mt-0`}
+              >
+                <div>
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="max-w-full h-auto rounded-2xl"
+                  />
                 </div>
               </div>
             </div>

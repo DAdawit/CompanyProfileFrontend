@@ -9,26 +9,32 @@ import React from "react";
 export default async function AboutUs() {
   const abouts_us = await fetchAboutUs();
   return (
-    <div className="" id="about">
+    <div className="py-14 md:py-24" id="about">
       {/* <pre>{JSON.stringify(abouts_us, null, 2)}</pre> */}
-      <FadeInDown>
-        <HeaderTitle titleOne={abouts_us.data.title} />
-      </FadeInDown>
-      <FadeOut>
-        <p className="text-gray-800  max-w-4xl mx-auto  text-lg xll:max-w-6xl px-5">
-          {abouts_us.data.description}
-        </p>
-      </FadeOut>
-      <div className="container mx-auto max-w-7xl px-5 py-24">
+      <div className="grid grid-cols-12 justify-center text-center mb-12">
+        <div className="col-span-12 md:col-span-8 md:col-start-3">
+          <h2 className="text-4xl leading-snug md:text-5xl md:leading-snug font-bold mb-6">
+            Our Story
+          </h2>
+          <p className="text-xl opacity-80 mb-4">
+            We not only make the world’s most comfortable hammocks, but through
+            training and sustainable job creation, we empower our weavers and
+            their families to break the cycle of poverty and build a brighter
+            future.
+          </p>
+        </div>
+      </div>
+
+      <div className="container mx-auto max-w-7xl px-5 py-3">
         <FadeInUp>
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-x-5 items-center">
-            <div>
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-x-10 items-start">
+            <div className="">
               <Image
                 src={`http://localhost:8000${abouts_us.data.mission_banner_image.url}`}
                 height={1000}
                 width={1000}
                 alt="hero image"
-                className="h-72 object-contain"
+                className="h-72 object-cover max-w-full rounded-2xl"
               />
             </div>
             <div>
@@ -43,7 +49,7 @@ export default async function AboutUs() {
         </FadeInUp>
 
         <FadeInUp>
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-x-5 mt-36 items-center">
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-x-10 mt-36 items-start">
             <div className="order-2 md:order-1">
               <h1 className="text-4xl font-bold mb-5 text-gray-800">
                 Our <span className="text-primary">Vison </span>
@@ -58,7 +64,7 @@ export default async function AboutUs() {
                 height={1000}
                 width={1000}
                 alt="hero image"
-                className="h-72 object-contain"
+                className="h-72 object-cover max-w-full rounded-2xl"
               />
             </div>
           </section>
