@@ -9,10 +9,12 @@ const OurService = () => {
                     <span className="relative z-10 inline-block bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 bg-clip-text text-transparent">
                         explore our awesome
                     </span>
+                    <br /> 
+                    <span className="bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 bg-clip-text text-transparent">Services</span>
                     <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></span>
                 </span>
-                <br /> 
-                <span className="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">Services</span>
+                
+                
             </h1>
 
         <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
