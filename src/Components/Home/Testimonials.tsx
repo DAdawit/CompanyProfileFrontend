@@ -5,8 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Component } from "react";
 import StarRateIcon from "@mui/icons-material/StarRate";
-import FadeInDown from "@/common/Animations/FadeInDown";
-import HeaderTitle from "@/common/HeaderTitle";
+// import FadeInDown from "@/common/Animations/FadeInDown";
+// import HeaderTitle from "@/common/HeaderTitle";
 import FadeOut from "@/common/Animations/FadeOut";
 import { TestimonialsOutI } from "@/types/TestimonialOut";
 interface TestimonialProps {
@@ -18,8 +18,8 @@ export default class Testimonials extends Component<TestimonialProps> {
       dots: true,
       infinite: true,
       speed: 700,
-      slidesToShow: 4,
-      slidesToScroll: 3,
+      slidesToShow: 2,
+      slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 5000,
       pauseOnHover: true,
@@ -28,8 +28,8 @@ export default class Testimonials extends Component<TestimonialProps> {
         {
           breakpoint: 1024,
           settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
+            slidesToShow: 2,
+            slidesToScroll: 1,
             infinite: true,
             dots: true,
           },
@@ -38,8 +38,8 @@ export default class Testimonials extends Component<TestimonialProps> {
           breakpoint: 600,
           settings: {
             slidesToShow: 2,
-            slidesToScroll: 2,
-            initialSlide: 2,
+            slidesToScroll: 1,
+            initialSlide: 1,
           },
         },
         {
@@ -60,63 +60,61 @@ export default class Testimonials extends Component<TestimonialProps> {
       <div>
         <div className="bg-fixed bg-cover bg-center pb-7 container mx-auto max-w-7xl ">
           <div className="flex flex-col justify-center items-center gap-5 pt-16 ">
-            <FadeInDown>
-              <HeaderTitle titleOne="Client" titleTwo="TESTIMONIALS" />
-            </FadeInDown>
-
-            {/* <h1 className="text-center text-4xl sm:text-6xl text-white font-black capitalize tracking-wider">
-              TESTIMONIALS
-            </h1> */}
+            <div className="flex justify-center text-center mb-6 lg:mb-12">
+              <div className="max-w-lg">
+                <h2 className="text-3xl leading-none md:text-[45px] font-bold mb-6">
+                  What Our Clients Say
+                </h2>
+                <p className="text-lg opacity-80">
+                  Assumenda non repellendus distinctio nihil dicta sapiente,
+                  quibusdam maiores, illum at, aliquid blanditiis eligendi qui.
+                </p>
+              </div>
+            </div>
           </div>
-          {/* <div className="flex justify-center">
-            <Image
-              src="/logoOnly.png"
-              height={1000}
-              width={1000}
-              alt="logo image"
-              className="h-14 w-14 object-contain self-center text-orange-800 my-2"
-            />
-          </div> */}
-          <div className="container mx-auto px-6 mt-10">
-            <FadeOut>
+          <FadeOut>
+            <div className="container mx-auto px-6 mt-3  py-8">
               <Slider {...settings}>
-                {testimonials.data.map((testimonial, index) => (
-                  <div key={index}>
-                    <div className="p-3 grid bg-black h-96 mx-3 rounded-lg opacity-90">
-                      <div className="text-yellow-400 flex items-start text-sm">
-                        {[1, 2, 3, 4, 5].map((key) => (
-                          <StarRateIcon fontSize="small" key={key} />
-                        ))}
-                      </div>
-
-                      <p className="text-white text-sm  text-start mt-1 tracking-wide items-center font-sans">
-                        {testimonial.feedback}
-                      </p>
-                      <div className="flex gap-3 justify-start items-end mt-2 align-bottom ">
-                        <div className="w-max">
-                          <Image
-                            src={`http://localhost:8000${testimonial?.image.url}`}
-                            alt="spector"
-                            width={100}
-                            height={200}
-                            className="h-14 w-14 rounded-full pointer-events-none select-none "
-                          />
+                {testimonials.data.map((testimonial) => (
+                  <>
+                    <div
+                      key={testimonial.id}
+                      className="bg-white shadow-xl rounded-xl hover:-translate-y-1  duration-300 p-6 h-max mx-3"
+                    >
+                      <div className="mt-4">
+                        <div className="flex justify-between items-center mb-6">
+                          <div className="flex items-center">
+                            <div className="mr-2">
+                              <Image
+                                src={`http://localhost:8000${testimonial?.image.url}`}
+                                alt={testimonial.full_name}
+                                className="h-14 w-14 pointer-events-none rounded-full border p-1 border-gray-500"
+                                width={100}
+                                height={200}
+                              />
+                            </div>
+                            <div>
+                              <h5 className="text-xl break-all font-medium">
+                                {testimonial.full_name}
+                              </h5>
+                            </div>
+                          </div>
+                          <div className="text-yellow-400 flex items-start text-sm">
+                            {[1, 2, 3, 4, 5].map((key) => (
+                              <StarRateIcon fontSize="small" key={key} />
+                            ))}
+                          </div>
                         </div>
-                        <div>
-                          <h1 className="text-gray-100 tracking-wider font-sans mt-5 text-md">
-                            {testimonial.full_name}
-                          </h1>
-                          <h1 className="text-gray-100 text-sm">
-                            {testimonial.role}
-                          </h1>
-                        </div>
+                        <p className="leading-[1.8] opacity-80 mb-6 trancate max-h-36 overflow-clip">
+                          {testimonial.feedback}
+                        </p>
                       </div>
                     </div>
-                  </div>
+                  </>
                 ))}
               </Slider>
-            </FadeOut>
-          </div>
+            </div>
+          </FadeOut>
         </div>
       </div>
     );

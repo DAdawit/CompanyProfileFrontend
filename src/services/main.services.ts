@@ -18,6 +18,7 @@ import { PortfoliosOutI } from "@/types/PortfoliosOut";
 import { OurTeamOutI } from "@/types/OurTeamOut";
 import { TestimonialsOutI } from "@/types/TestimonialOut";
 import { CallToActionOutI } from "@/types/CallToActionOut";
+import { OrgDetailOutI } from "@/types/OrgDetailOut";
 
 export async function fetchLogos(): Promise<LogoOutI> {
   const res = await fetch(`${devBaseurl}/logo?populate=*`, {
@@ -85,6 +86,14 @@ export async function fetchCallToAction(): Promise<CallToActionOutI> {
     next: { revalidate: 10 },
   });
   const data = await res.json();
-  console.log(data);
+  // console.log(data);
+  return data;
+}
+
+export async function fetchOrgDetail(): Promise<OrgDetailOutI> {
+  const res = await fetch(`${devBaseurl}/company-detail?populate=*`, {
+    next: { revalidate: 10 },
+  });
+  const data = await res.json();
   return data;
 }

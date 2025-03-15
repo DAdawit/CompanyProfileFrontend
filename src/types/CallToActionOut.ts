@@ -1,7 +1,7 @@
 export interface Data {
   id: number;
   documentId: string;
-  title: string;
+  Title: string;
   message: string;
   createdAt: string;
   updatedAt: string;
