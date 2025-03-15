@@ -64,7 +64,6 @@ export default async function AboutUs() {
           </section>
         </FadeInUp>
       </div>
-      );
     </div>
   );
 }
