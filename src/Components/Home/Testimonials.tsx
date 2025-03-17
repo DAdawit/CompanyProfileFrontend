@@ -58,7 +58,7 @@ export default class Testimonials extends Component<TestimonialProps> {
     const { testimonials } = this.props;
     return (
       <div>
-        <div className="bg-fixed bg-cover bg-center pb-7 container mx-auto max-w-7xl ">
+        <div className="bg-fixed bg-cover bg-center pb-7 container mx-auto max-w-7xl mt-16">
           <div className="flex flex-col justify-center items-center gap-5 pt-16 ">
             <div className="flex justify-center text-center mb-6 lg:mb-12">
               <div className="max-w-lg">
@@ -73,13 +73,13 @@ export default class Testimonials extends Component<TestimonialProps> {
             </div>
           </div>
           <FadeOut>
-            <div className="container mx-auto px-6 mt-3  py-8">
+            <div className="container mx-auto px-6 mt-3">
               <Slider {...settings}>
                 {testimonials.data.map((testimonial) => (
                   <>
                     <div
                       key={testimonial.id}
-                      className="bg-white shadow-xl rounded-xl hover:-translate-y-1  duration-300 p-6 h-max mx-3"
+                      className="bg-white shadow-lg rounded-xl hover:-translate-y-1  duration-300 p-6 h-max m-3 mb-10"
                     >
                       <div className="mt-4">
                         <div className="flex justify-between items-center mb-6">

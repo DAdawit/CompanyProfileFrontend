@@ -39,17 +39,13 @@ export default async function Home() {
 
         <div>
           {/* <pre>{JSON.stringify(testimonials, null, 2)}</pre> */}
-
           <Testimonials testimonials={testimonials} />
         </div>
         <div>
-          <ContactUs2 />
-        </div>
-
-        <div>
-          {/* <pre>{JSON.stringify(call_to_action, null, 2)}</pre> */}
-
           <CallToAction />
+        </div>
+        <div>
+          <ContactUs2 />
         </div>
 
         {/* <MoveToTop /> */}
