@@ -1,28 +1,31 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import TelegramIcon from "@mui/icons-material/Telegram";
+// import TelegramIcon from "@mui/icons-material/Telegram";
 import FadeOut from "./Animations/FadeOut";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-// import CallToAction from "@/components/Home/CallToAction";
-const Footer = () => {
+// import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { fetchOrgDetail } from "../services/main.services";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
+import SocialMeadiaLinks from "./SocialMeadiaLinks";
+export default async function Footer() {
   const currentYear = new Date().getFullYear();
+  const org_detail = await fetchOrgDetail();
   return (
     <>
       <FadeOut>
         <div className="bg-black py-3 ">
-          <div className="py-10">{/* <CallToAction /> */}</div>
           <hr />
           <section className="container mx-auto px-5">
             <div>
               <div className="flex justify-start">
                 <Image
-                  src="/wanderweb4.png"
+                  src={`http://localhost:8000${org_detail.data.primary_logo.url}`}
                   height={1000}
                   width={1000}
                   alt="logo image"
-                  className="h-28 w-28 object-contain pointer-events-none select-none"
+                  className="h-12 w-12 object-contain pointer-events-none select-none"
                 />
               </div>
             </div>
@@ -82,36 +85,42 @@ const Footer = () => {
                 </Link>
               </div>
               <div className="text-gray-200 flex flex-col gap-y-1">
-                <h1 className="text-white font-bold text-2xl">Addis Ababa</h1>
-                <h1 className="text-sm  font-sans text-white mt-2">
-                  Eth, Auto, Addis Ababa. 665087
+                <h1 className="text-white font-bold text-2xl">
+                  Organization Details
                 </h1>
-                <h1 className="text-sm font-sans text-white">
-                  Phone.: 0936207512/0942110937
-                </h1>
-                <h1 className="text-sm  font-sans text-white">
-                  E-mail.: dawitccnt@gmail.com
-                </h1>
-                <h1 className="">© {currentYear} WanderWeb</h1>
+                <div className="text-sm  font-sans text-white mt-2 flex space-x-2">
+                  <LocationOnIcon fontSize="small" />
+                  <span>{org_detail.data.full_address}</span>
+                </div>
+                <div className="text-sm  font-sans text-white mt-2 flex space-x-2">
+                  <PhoneIcon fontSize="small" />
+                  <span>
+                    {org_detail?.data?.primary_phone} /{" "}
+                    {org_detail?.data?.secondary_phone}
+                  </span>
+                </div>
+                <div className="text-sm  font-sans text-white mt-2 flex space-x-2">
+                  <EmailIcon fontSize="small" />
+                  <span>{org_detail?.data?.email}</span>
+                </div>
+
                 <div className=" text-sm font-sans text-white mt-1">
-                  <div className="flex gap-x-2">
-                    {/* <Link href="#">
-                      <FacebookIcon className=" text-white" />
-                    </Link> */}
-                    {/* <Link href="#">
-                      <InstagramIcon className=" text-white" />
-                    </Link> */}
-                    <Link href="https://t.me/dawit_di03" target="_blank">
-                      <TelegramIcon className=" text-white" />
+                  <div className="flex justify-start alig">
+                    <SocialMeadiaLinks links={org_detail.data.links} />
+                    {/* <Link href="https://t.me/dawit_di03" target="_blank">
+                      <TelegramIcon fontSize="small" className=" text-white" />
                     </Link>
                     <Link
                       href="https://www.linkedin.com/in/dawit-d/"
                       target="_blank"
                     >
                       <LinkedInIcon />
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
+                <h1 className="">
+                  © {currentYear} {org_detail.data.org_name}
+                </h1>
               </div>
             </div>
           </section>
@@ -119,6 +128,4 @@ const Footer = () => {
       </FadeOut>
     </>
   );
-};
-
-export default Footer;
+}

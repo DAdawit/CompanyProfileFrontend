@@ -12,7 +12,7 @@ interface PropType {
 }
 const SocialMeadiaLinks = ({ links }: PropType) => {
   return (
-    <div className="flex justify-center gap-1 opacity-100 z-50">
+    <div className="flex justify-between opacity-100 z-50 hover:blur-none h-min">
       <div className="p-3 bg-black hover:bg-[#5d4314] text-white opacity-100">
         <Link href={links?.linkedin} className="" target="_blank">
           <LinkedInIcon />
