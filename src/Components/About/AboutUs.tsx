@@ -38,6 +38,7 @@ const AboutUs = () => {
                 alt="hello"
                 height={500}
                 width={500}
+                unoptimized
                 src="https://cdn.easyfrontend.com/pictures/about/about13_1.jpg"
                 className="rotate-45 w-60 h-60 lg:w-96 lg:h-96 object-cover mt-16"
               />
@@ -46,6 +47,7 @@ const AboutUs = () => {
                 alt="hello"
                 height={500}
                 width={500}
+                unoptimized
                 className="hidden md:block rotate-45 w-60 h-60 lg:w-96 lg:h-96 object-cover mt-16 lg:-mt-16"
               />
             </div>

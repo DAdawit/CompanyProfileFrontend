@@ -105,6 +105,7 @@ const Stats = () => {
                 alt="hello"
                 height={500}
                 width={500}
+                unoptimized
                 src="https://cdn.easyfrontend.com/pictures/featured/three.png"
                 className="max-w-full h-auto rounded-lg mt-12 md:mt-0 shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:scale-105"
               />

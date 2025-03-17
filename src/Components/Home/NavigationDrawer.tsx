@@ -63,6 +63,7 @@ export default function NavigationDrawer({ org_detail }: LogoType) {
                     width={150}
                     height={100}
                     className="h-16 w-12 self-center object-contain pointer-events-none select-none"
+                    unoptimized={true}
                   />
                   <IconButton
                     sx={{

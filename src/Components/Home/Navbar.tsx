@@ -56,6 +56,7 @@ export default function NavBar({ org_detail }: NavBarProps) {
             height={1000}
             alt="logo"
             className="h-8 w-full object-contain"
+            unoptimized={true}
           />
         </div>
         <div className="hidden md:flex gap-x-5 items-center text-lg capitalize text-primary">

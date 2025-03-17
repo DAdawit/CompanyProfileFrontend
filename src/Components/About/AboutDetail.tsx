@@ -12,6 +12,7 @@ const AboutDetail = () => {
             height={500}
             width={500}
             className="w-full"
+            unoptimized
           />
           <div className="flex flex-col gap-14 lg:gap-20">
             <div className="flex flex-col md:flex-row gap-5">

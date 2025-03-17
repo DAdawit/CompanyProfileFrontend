@@ -3,11 +3,11 @@ import AboutTimeline from "@/components/About/AboutTimeline";
 import AboutUs from "@/components/About/AboutUs";
 import Team from "@/components/About/Team";
 import Vision from "@/components/About/Vision";
-import React from "react";
 
 const about = () => {
   return (
     <div className="overflow-hidden bg-bgPrimary">
+      <h1>About us</h1>
       <AboutUs />
       <AboutDetail />
       <Vision />

@@ -35,6 +35,7 @@ export default async function AboutUs() {
                 width={1000}
                 alt="hero image"
                 className="h-72 object-cover max-w-full rounded-2xl"
+                unoptimized={true}
               />
             </div>
             <div>
@@ -65,6 +66,7 @@ export default async function AboutUs() {
                 width={1000}
                 alt="hero image"
                 className="h-72 object-cover max-w-full rounded-2xl"
+                unoptimized={true}
               />
             </div>
           </section>

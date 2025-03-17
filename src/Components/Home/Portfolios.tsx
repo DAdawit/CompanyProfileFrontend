@@ -47,6 +47,7 @@ export default async function Portfolios() {
                         height={1000}
                         width={1000}
                         className="h-64 object-fill rounded-sm"
+                        unoptimized={true}
                       />
                     </Link>
                   </div>

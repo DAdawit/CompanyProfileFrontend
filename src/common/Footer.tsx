@@ -101,6 +101,7 @@ export default async function Footer() {
                 width={1000}
                 alt="logo image"
                 className="h-10 w-10 object-contain pointer-events-none select-none"
+                unoptimized={true}
               />
             </div>
             <h1 className="text-lg font-sans font-bold ml-2">

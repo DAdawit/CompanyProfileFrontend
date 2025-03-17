@@ -22,6 +22,7 @@ const Vision = () => {
             width={500}
             src="https://img.freepik.com/free-photo/business-strategy-success-target-goals_1421-33.jpg?uid=R190071028&ga=GA1.1.986869192.1741105703&semt=ais_hybrid"
             className="inline-block h-full w-full rounded-2xl object-cover"
+            unoptimized
           />
           <div className="flex flex-col gap-5 rounded-2xl border border-solid border-black p-10 sm:p-12">
             <h2 className="text-3xl font-bold md:text-5xl">Our Vision</h2>
