@@ -116,7 +116,7 @@ ContactInfo.propTypes = {
 
 export const ContactUs2 = () => {
   return (
-    <section className="ezy__contact12 light py-14 md:py-24 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white relative overflow-hidden">
+    <section className="ezy__contact12 light py-14 md:py-24 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white relative overflow-hidden ">
       <div
         className="absolute right-0 left-0 bottom-0 top-64 py-14 bg-cover bg-center bg-no-repeat block md:block"
         style={{
@@ -125,7 +125,7 @@ export const ContactUs2 = () => {
         }}
       ></div>
       <div className="container px-4 relative">
-        <div className="grid grid-cols-12">
+        <div className="grid grid-cols-12 mx-auto max-w-7xl">
           <div className="col-span-12 lg:col-span-7 xl:col-span-5 mb-12 lg:mb-0">
             <h2 className="text-2xl md:text-[40px] leading-none font-bold mb-6">
               How can we help you?

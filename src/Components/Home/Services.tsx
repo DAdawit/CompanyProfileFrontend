@@ -10,17 +10,19 @@ export default async function Services() {
   return (
     <div id="services">
       <section className="ezy__service22 light py-14 md:py-16 bg-white relative z-[1]">
-        <div className="absolute bottom-0 left-0 right-0 h-1/2 w-full bg-blue-50 bg-opacity-30 -z-[1]" />
+        <div className="absolute bottom-0 left-0 right-0 h-1/2 max-w-7xl bg-blue-50 bg-opacity-30 -z-[1]" />
         <div className="container px-4 mx-auto">
           <div className="flex flex-col md:flex-row gap-6 justify-between">
-            <div className="max-w-xl">
+            <div className="max-w-6xl">
               <h2 className="text-3xl md:text-[45px] font-bold mb-6">
                 {services.data.title}
               </h2>
-              <p className="text-lg opacity-80">{services.data.description}</p>
+              <p className="text-lg opacity-80 max-w-4xl">
+                {services.data.description}
+              </p>
             </div>
             <div className="flex items-center md:justify-end">
-              <button className="py-3 px-7 rounded bg-blue-600 hover:bg-opacity-90 text-white duration-300">
+              <button className="py-3 px-7 rounded border border-gray-950 text-gray-950 hover:bg-opacity-90 duration-300 w-max">
                 See All
               </button>
             </div>

@@ -25,7 +25,7 @@ export default async function AboutUs() {
         </div>
       </div>
 
-      <div className="container mx-auto max-w-7xl px-5 py-3">
+      <div className="container mx-auto  px-5 py-3">
         <FadeInUp>
           <section className="grid grid-cols-1 md:grid-cols-2 gap-x-10 items-start">
             <div className="">
