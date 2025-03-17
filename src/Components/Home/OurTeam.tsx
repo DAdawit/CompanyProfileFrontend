@@ -1,10 +1,13 @@
 import SocialMeadiaLinksIconsOnly from "@/common/SocialMeadiaLinksIconsOnly";
-import { fetchOutTeam } from "@/services/main.services";
+// import { fetchOutTeam } from "@/services/main.services";
+import { OurTeamOutI } from "@/types/OurTeamOut";
 import Image from "next/image";
 import React from "react";
 
-export default async function OurTeam() {
-  const our_team = await fetchOutTeam();
+interface PropTypes {
+  our_team: OurTeamOutI;
+}
+export default async function OurTeam({ our_team }: PropTypes) {
   return (
     <div className="container px-4 mx-auto">
       <div className="flex justify-center mb-6 md:mb-12">
@@ -30,6 +33,7 @@ export default async function OurTeam() {
               className="w-46 h-46 rounded-full mx-auto"
               height={300}
               width={300}
+              unoptimized={true}
             />
             <div className="px-4 py-4 xl:px-6 flex-grow">
               <h4 className="text-2xl font-medium mb-2">{member.full_name}</h4>

@@ -47,6 +47,7 @@ export default async function Portfolios() {
                         height={1000}
                         width={1000}
                         className="h-64 object-fill rounded-sm"
+                        unoptimized={true}
                       />
                     </Link>
                   </div>
@@ -60,7 +61,7 @@ export default async function Portfolios() {
                       {portfolio.description}
                     </p>
                     <div>
-                      <button className="font-bold bg-blue-600 text-white px-8 py-3 hover:bg-opacity-90 duration-300 rounded inline-flex">
+                      <button className="font-bold border border-gray-950 text-gray-950 px-8 py-3 hover:bg-opacity-90 duration-300 rounded inline-flex">
                         View Project
                       </button>
                     </div>

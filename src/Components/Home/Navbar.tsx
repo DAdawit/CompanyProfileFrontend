@@ -1,29 +1,64 @@
-import { fetchLogos } from "@/services/main.services";
+"use client"; // Ensure this is a Client Component
+// import { fetchLogos } from "@/services/main.services";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NavigationDrawer from "./NavigationDrawer";
-// import { usePathname } from "next/navigation";
-export default async function NavBar() {
-  const logos = await fetchLogos();
+import { OrgDetailOutI } from "@/types/OrgDetailOut";
+interface NavBarProps {
+  org_detail: OrgDetailOutI;
+}
+
+export default function NavBar({ org_detail }: NavBarProps) {
+  const [isVisible, setIsVisible] = useState(true); // State to control navbar visibility
+  const [lastScrollY, setLastScrollY] = useState(0); // State to track the last scroll position
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY <= 0) {
+        // Always show navbar at the top of the page
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY) {
+        // Hide navbar when scrolling down
+        setIsVisible(false);
+      } else {
+        // Show navbar when scrolling up
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
+  // const logos = await fetchLogos();
 
   return (
-    <nav className="flex items-center px-5 md:px-8 lg:px-16 py-2 w-full z-20">
-      <div className="px-3 sm:px-5 xll:px-28 flex justify-between items-centers py-3 w-full">
+    <nav
+      className={`flex items-center px-3 md:px-8 w-full z-20 fixed top-0 left-0 bg-white transition-transform duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
+      <div className="px-3 sm:px-5 xll:px-10 flex justify-between items-center py-3 w-full">
         <div className="flex items-center gap-x-3">
-          {/* <pre>{JSON.stringify(logos.data, null, 2)}</pre> */}
-
-          <NavigationDrawer logos={logos} />
+          <NavigationDrawer org_detail={org_detail} />
 
           <Image
-            src={`http://localhost:8000${logos.data.primary.url}`}
+            src={`http://localhost:8000${org_detail.data.primary_logo.url}`}
             width={1000}
             height={1000}
             alt="logo"
             className="h-8 w-full object-contain"
+            unoptimized={true}
           />
         </div>
-        <div className="hidden md:flex gap-x-5 text-lg items-center"></div>
         <div className="hidden md:flex gap-x-5 items-center text-lg capitalize text-primary">
           <Link
             href="/"
@@ -33,27 +68,27 @@ export default async function NavBar() {
           </Link>
           <Link
             href="/about"
-            className="capitalize text-lg whitespace-nowrap  font-medium"
+            className="capitalize text-lg whitespace-nowrap font-medium"
           >
             About
           </Link>
           <Link
             href="/service"
-            className="capitalize text-lg whitespace-nowrap  font-medium"
+            className="capitalize text-lg whitespace-nowrap font-medium"
           >
-            services
+            Services
           </Link>
           <Link
             href="#portfolios"
-            className="capitalize text-lg whitespace-nowrap  font-medium"
+            className="capitalize text-lg whitespace-nowrap font-medium"
           >
             Portfolios
           </Link>
           <Link
             href="#contact-us"
-            className="capitalize text-lg whitespace-nowrap  font-medium"
+            className="capitalize text-lg whitespace-nowrap font-medium"
           >
-            Contact us
+            Contact Us
           </Link>
         </div>
       </div>

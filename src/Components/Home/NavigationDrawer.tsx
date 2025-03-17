@@ -13,11 +13,12 @@ import ContactPageIcon from "@mui/icons-material/ContactPage";
 import PaymentIcon from "@mui/icons-material/Payment";
 import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
 import DescriptionIcon from "@mui/icons-material/Description";
-import { LogoOutI } from "../../types/LogoOut";
+import { OrgDetailOutI } from "@/types/OrgDetailOut";
+// import { LogoOutI } from "../../types/LogoOut";
 type LogoType = {
-  logos: LogoOutI;
+  org_detail: OrgDetailOutI;
 };
-export default function NavigationDrawer({ logos }: LogoType) {
+export default function NavigationDrawer({ org_detail }: LogoType) {
   const [state, setState] = React.useState({
     left: false,
   });
@@ -57,11 +58,12 @@ export default function NavigationDrawer({ logos }: LogoType) {
               <div className="overflow-x-hidden px-3">
                 <div className="flex justify-between px-5 text-white mt-8 h-min">
                   <Image
-                    src={`http://localhost:8000${logos.data.primary.url}`}
+                    src={`http://localhost:8000${org_detail.data.primary_logo.url}`}
                     alt="spector"
                     width={150}
                     height={100}
                     className="h-16 w-12 self-center object-contain pointer-events-none select-none"
+                    unoptimized={true}
                   />
                   <IconButton
                     sx={{
@@ -117,10 +119,10 @@ export default function NavigationDrawer({ logos }: LogoType) {
                     Visit Us
                   </h1>
                   <h3 className="text-white text-center text-sm font-medium tracking-wide">
-                    Addis Ababa , Ethiopia
+                    {org_detail.data.full_address}
                   </h3>
                   <h3 className="text-white text-center text-sm font-medium tracking-wide">
-                    wanderweb@gmail.com
+                    {org_detail.data.email}
                   </h3>
                 </section>
 
@@ -129,7 +131,8 @@ export default function NavigationDrawer({ logos }: LogoType) {
                     CALL Now
                   </h2>
                   <h2 className="text-center text-white font-bold text-lg">
-                    +251 936207512
+                    {org_detail.data.primary_phone} <br />
+                    {org_detail.data.secondary_phone}
                   </h2>
                 </section>
               </div>

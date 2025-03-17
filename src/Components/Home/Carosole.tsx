@@ -17,7 +17,7 @@ export default class Carosole extends Component<CarosoleProps> {
     const safeCarosoles = Array.isArray(carosoles) ? carosoles : [];
 
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -62,22 +62,22 @@ export default class Carosole extends Component<CarosoleProps> {
                   alt="hero image"
                   height={2000}
                   width={2000}
-                  className="h-[90vh] xl:max-h-[90vh] xll:max-h-[60vh] w-screen object-cover  object-bottom brightness-50"
+                  className="h-[90vh] xl:max-h-[90vh] xll:max-h-[60vh] w-screen object-cover object-bottom brightness-50"
+                  unoptimized={true}
                 />
                 <div className="absolute h-full top-0 w-full flex text-white ">
                   <div className="flex items-center justify-start w-full px-5 container mx-auto">
                     <div className="max-w-3xl xxl:max-w-4xl grid ">
-                      <h1 className="text-3xl  xl:text-4xl  xxl:text-6xl font-bold mt-5">
+                      <h1 className="text-3xl  xl:text-4xl  xxl:text-6xl font-bold mt-5 ">
                         {carosole?.title}
                       </h1>
-                      {/* <h1 className="text-primary font-serif text-lg font-bold tracking-widest mt-2">
-                        {carosole.title}
-                      </h1> */}
-                      <p className=" mt-5 xxl:text-lg">{carosole?.subtitle}</p>
+                      <p className="mt-5 xxl:text-lg tracking-wider max-w-2xl">
+                        {carosole?.subtitle}
+                      </p>
                       <div className="mt-5 align-bottom h-full flex items-end">
                         <Link
                           href="/menus"
-                          className="py-3 px-6 rounded-lg w-max bg-bgButton text-white mt-4 hover:bg-bgButton transition-all tracking-wider font-medium font-mono"
+                          className="bg-white px-6 py-3 rounded-lg w-max bg-bgButton text-gray-950 mt-4 tracking-wider font-medium transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
                         >
                           View our menu
                         </Link>

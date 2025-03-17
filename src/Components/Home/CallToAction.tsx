@@ -1,10 +1,11 @@
-import { fetchCallToAction } from "@/services/main.services";
-
-export default async function CallToAction() {
-  const call_to_action = await fetchCallToAction();
-
+// import { fetchCallToAction } from "@/services/main.services";
+import { CallToActionOutI } from "@/types/CallToActionOut";
+interface PropTypes {
+  call_to_action: CallToActionOutI;
+}
+export default async function CallToAction({ call_to_action }: PropTypes) {
   return (
-    <div className="container max-w-7xl mx-auto mt-10 px-5">
+    <div className="container max-w-7xl mx-auto mt-10 mb-32 px-5">
       {/* <pre>{JSON.stringify(call_to_action, null, 2)}</pre> */}
 
       <div className="flex flex-col items-center justify-center w-full h-full my-auto text-center">
