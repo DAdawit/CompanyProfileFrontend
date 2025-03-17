@@ -8,6 +8,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import SocialMeadiaLinksIconsOnly from "./SocialMeadiaLinksIconsOnly";
+import Image from "next/image";
 export default async function Footer() {
   const currentYear = new Date().getFullYear();
   const org_detail = await fetchOrgDetail();
@@ -88,21 +89,32 @@ export default async function Footer() {
                   <EmailIcon fontSize="small" />
                   <span>{org_detail?.data?.email}</span>
                 </div>
-
-                <div className=" text-sm font-sans  mt-1">
-                  <div className="flex justify-start alig">
-                    <SocialMeadiaLinksIconsOnly
-                      links={org_detail.data.links}
-                      color="white"
-                    />
-                  </div>
-                </div>
-                <h1 className="">
-                  © {currentYear} {org_detail.data.org_name}
-                </h1>
               </div>
             </div>
           </section>
+          <hr className="my-3 border-gray-300" />
+          <div className="w-full flex justify-between py-5 itemx-center px-16">
+            <div className="flex justify-start items-center">
+              <Image
+                src={`http://localhost:8000${org_detail.data.primary_logo.url}`}
+                height={1000}
+                width={1000}
+                alt="logo image"
+                className="h-10 w-10 object-contain pointer-events-none select-none"
+              />
+              <h1 className="text-lg font-sans font-bold ml-2">
+                © {currentYear} {org_detail.data.org_name}
+              </h1>
+            </div>
+            <div className=" text-sm font-sans  mt-1">
+              <div className="flex justify-start alig">
+                <SocialMeadiaLinksIconsOnly
+                  links={org_detail.data.links}
+                  color="gray-900"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </FadeOut>
     </>

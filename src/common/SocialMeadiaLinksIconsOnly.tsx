@@ -15,7 +15,7 @@ const SocialMeadiaLinksIconsOnly = ({ links, color }: PropType) => {
   return (
     <div
       className={`flex justify-start opacity-100 z-50 hover:blur-none h-min space-x-3 ${
-        color != "white" ? "text-gray-500" : "text-white"
+        color ? `text-${color}` : "text-gray-500"
       }`}
     >
       <div className=" opacity-100 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
