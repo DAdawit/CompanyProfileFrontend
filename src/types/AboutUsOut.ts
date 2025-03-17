@@ -254,6 +254,7 @@ export interface Data {
   description: string;
   mission: string;
   vision: string;
+  company_history: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
