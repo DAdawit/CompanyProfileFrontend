@@ -38,7 +38,7 @@ export default async function NavBar() {
             About
           </Link>
           <Link
-            href="#services"
+            href="/service"
             className="capitalize text-lg whitespace-nowrap  font-medium"
           >
             services
