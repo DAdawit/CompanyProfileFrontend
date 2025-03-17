@@ -9,7 +9,7 @@ export default async function CallToAction() {
 
       <div className="flex flex-col items-center justify-center w-full h-full my-auto text-center">
         <h2 className="text-2xl md:text-[45px] leading-none font-bold mb-6">
-          {call_to_action.data.Title}
+          {call_to_action.data.title}
         </h2>
         <p className="mb-10 text-lg font-normal lg:w-6/12 text-grey-700">
           {call_to_action.data.message}
