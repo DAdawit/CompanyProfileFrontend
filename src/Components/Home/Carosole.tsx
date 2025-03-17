@@ -17,7 +17,7 @@ export default class Carosole extends Component<CarosoleProps> {
     const safeCarosoles = Array.isArray(carosoles) ? carosoles : [];
 
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,

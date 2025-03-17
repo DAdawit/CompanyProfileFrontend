@@ -18,7 +18,7 @@ export default async function Home() {
   return (
     <>
       <main id="" className="overflow-hidden bg-bgPrimary">
-        <div>
+        <div className="mt-12">
           {/* <pre>{JSON.stringify(heroSections.data[0].heroSlider, null, 2)}</pre> */}
           <Carosole carosoles={heroSections.data[0].heroSlider} />
         </div>

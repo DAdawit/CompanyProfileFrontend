@@ -35,9 +35,9 @@ export default class Testimonials extends Component<TestimonialProps> {
           },
         },
         {
-          breakpoint: 600,
+          breakpoint: 820,
           settings: {
-            slidesToShow: 2,
+            slidesToShow: 1,
             slidesToScroll: 1,
             initialSlide: 1,
           },

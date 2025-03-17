@@ -92,8 +92,8 @@ export default async function Footer() {
               </div>
             </div>
           </section>
-          <hr className="my-3 border-gray-300" />
-          <div className="w-full flex justify-between py-5 itemx-center px-16">
+          <hr className="my-3 border-gray-300 px-5" />
+          <div className="w-full md:flex md:justify-between py-5 itemx-center px-5 md:px-16">
             <div className="flex justify-start items-center">
               <Image
                 src={`http://localhost:8000${org_detail.data.primary_logo.url}`}
