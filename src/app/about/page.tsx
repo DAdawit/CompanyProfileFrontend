@@ -1,10 +1,8 @@
 import DynamicHero from "@/common/DynamicHero";
+import ScheduleHero from "@/common/HeroDynamic";
 // import AboutDetail from "@/components/About/AboutDetail";
 import AboutTimeline from "@/components/About/AboutTimeline";
 import DynamicTitleAndDescription from "@/components/About/OurStory";
-// import AboutUs from "@/components/About/AboutUs";
-// import Team from "@/components/About/Team";
-// import Vision from "@/components/About/Vision";
 import AboutUs from "@/components/Home/About";
 import CallToAction from "@/components/Home/CallToAction";
 import { ContactUs } from "@/components/Home/ContactUs";

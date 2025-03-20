@@ -11,6 +11,7 @@ import {
   fetchAboutUs,
   fetchCallToAction,
   fetchHero,
+  fetchOurPortfolios,
   fetchOutTeam,
   fetchTestimonials,
 } from "@/services/main.services";
@@ -21,6 +22,7 @@ export default async function Home() {
   const abouts_us = await fetchAboutUs();
   const our_team = await fetchOutTeam();
   const call_to_action = await fetchCallToAction();
+  const portfolios = await fetchOurPortfolios();
 
   return (
     <>
@@ -42,7 +44,7 @@ export default async function Home() {
         </div>
         <div>{/* <TeamMember2 /> */}</div>
         <div>
-          <Portfolios />
+          <Portfolios portfolios={portfolios} />
         </div>
         <div>
           <OurTeam our_team={our_team} />

@@ -1,13 +1,12 @@
-// import FadeInDown from "@/common/Animations/FadeInDown";
-// import FadeOut from "@/common/Animations/FadeOut";
-// import HeaderTitle from "@/common/HeaderTitle";
-import { fetchOurPortfolios } from "@/services/main.services";
+import { PortfoliosOutI } from "@/types/PortfoliosOut";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-export default async function Portfolios() {
+interface PropTypes {
+  portfolios: PortfoliosOutI;
+}
+export default async function Portfolios({ portfolios }: PropTypes) {
   const colors = ["blue", "green", "yellow", "purple"];
-  const portfolios = await fetchOurPortfolios();
   return (
     <div id="portfolios">
       <section className="ezy__portfolio16 light py-14 md:py-24 bg-white">
