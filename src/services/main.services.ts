@@ -48,7 +48,7 @@ export async function fetchAboutUs(): Promise<AboutUsI> {
 
 export async function fetchOurServices(): Promise<ServicesOutI> {
   const res = await fetch(
-    `${devBaseurl}/service?populate[ServicesComponent][populate]=icon`,
+    `${devBaseurl}/service?populate[ServicesComponent][populate]=icon&populate=image`,
     {
       next: { revalidate: 10 },
     }

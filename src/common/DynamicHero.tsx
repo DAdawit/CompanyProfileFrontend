@@ -1,13 +1,19 @@
-import React from 'react'
-import Image from 'next/image'
+import React from "react";
+import Image from "next/image";
+import PropTypes from "prop-types";
+interface PropTypes {
+  image: string;
+  title: string;
+  description: string;
+}
 
-const Hero = () => {
+const DynamicHero: React.FC<PropTypes> = ({ image, title, description }) => {
   return (
     <section className="ezy__sheader5 light bg-center bg-no-repeat bg-cover relative z-[1] text-white overflow-hidden py-24 md:py-48">
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/about9.jpg"
+          src={`http://localhost:8000${image}`}
           alt="Services Background"
           fill
           sizes="100vw"
@@ -15,23 +21,24 @@ const Hero = () => {
           priority
         />
       </div>
-      
+
       {/* Gradient Overlay */}
       <div
         className="absolute top-0 left-0 right-0 bottom-0 opacity-85 -z-[1]"
-        style={{ background: "linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6))" }}
+        style={{
+          background:
+            "linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6))",
+        }}
       ></div>
 
       <div className="container px-4">
         <div className="grid grid-cols-12">
           <div className="col-span-12 md:col-span-8 md:col-start-3 text-center">
             <h1 className="text-[35px] md:text-6xl font-bold leading-snug">
-              Our Services
+              {title}
             </h1>
             <p className="text-xl leading-normal opacity-90 mt-6">
-              Tenetur et neque delectus deleniti suscipit eos. Delectus quis
-              quaerat illum sit esse, qui, quasi obcaecati magni ea cum Beatae
-              non distinctio.
+              {description}
             </p>
           </div>
         </div>
@@ -53,7 +60,7 @@ const Hero = () => {
         </svg>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default DynamicHero;
