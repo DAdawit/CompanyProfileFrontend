@@ -1,3 +1,4 @@
+import DynamicHero from "@/common/DynamicHero";
 import ScheduleHero from "@/common/HeroDynamic";
 // import AboutDetail from "@/components/About/AboutDetail";
 import AboutTimeline from "@/components/About/AboutTimeline";
@@ -24,8 +25,9 @@ export default async function about() {
     <div className="overflow-hidden bg-bgPrimary">
       {/* <pre>{JSON.stringify(abouts_us, null, 2)}</pre> */}
 
-      <ScheduleHero
-        title={abouts_us.data.title}
+      <DynamicHero
+        title="About Us"
+        description={abouts_us.data.description}
         image={abouts_us.data.image.url}
       />
       <div className="mt-24">
