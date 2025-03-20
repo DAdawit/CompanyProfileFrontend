@@ -118,7 +118,7 @@ export interface Data {
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
-  servicesComponent: ServicesComponent[];
+  ServicesComponent: ServicesComponent[];
   image: Image;
 }
 
