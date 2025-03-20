@@ -113,3 +113,11 @@ export async function fetchOrgPortfolioDetail(): Promise<PortfolioDetailI> {
   const data = await res.json();
   return data;
 }
+
+export async function fetchContactUsDetail(): Promise<PortfolioDetailI> {
+  const res = await fetch(`${devBaseurl}/contact-us?populate=*`, {
+    next: { revalidate: 10 },
+  });
+  const data = await res.json();
+  return data;
+}
