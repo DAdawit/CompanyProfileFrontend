@@ -1,10 +1,11 @@
 "use client"; // Ensure this is a Client Component
-// import { fetchLogos } from "@/services/main.services";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation"; // Import usePathname
 import React, { useEffect, useState } from "react";
 import NavigationDrawer from "./NavigationDrawer";
 import { OrgDetailOutI } from "@/types/OrgDetailOut";
+
 interface NavBarProps {
   org_detail: OrgDetailOutI;
 }
@@ -12,6 +13,7 @@ interface NavBarProps {
 export default function NavBar({ org_detail }: NavBarProps) {
   const [isVisible, setIsVisible] = useState(true); // State to control navbar visibility
   const [lastScrollY, setLastScrollY] = useState(0); // State to track the last scroll position
+  const pathname = usePathname(); // Get the current route
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,8 +40,6 @@ export default function NavBar({ org_detail }: NavBarProps) {
     };
   }, [lastScrollY]);
 
-  // const logos = await fetchLogos();
-
   return (
     <nav
       className={`flex items-center px-3 md:px-8 w-full z-20 fixed top-0 left-0 bg-white transition-transform duration-300 ${
@@ -62,31 +62,41 @@ export default function NavBar({ org_detail }: NavBarProps) {
         <div className="hidden md:flex gap-x-5 items-center text-lg capitalize text-primary">
           <Link
             href="/"
-            className="capitalize text-lg whitespace-nowrap font-medium"
+            className={`capitalize text-lg whitespace-nowrap font-medium hover:underline ${
+              pathname === "/" ? "underline" : ""
+            }`}
           >
             Home
           </Link>
           <Link
             href="/about"
-            className="capitalize text-lg whitespace-nowrap font-medium"
+            className={`capitalize text-lg whitespace-nowrap font-medium hover:underline ${
+              pathname === "/about" ? "underline" : ""
+            }`}
           >
             About
           </Link>
           <Link
             href="/service"
-            className="capitalize text-lg whitespace-nowrap font-medium"
+            className={`capitalize text-lg whitespace-nowrap font-medium hover:underline ${
+              pathname === "/service" ? "underline" : ""
+            }`}
           >
             Services
           </Link>
           <Link
-            href="#portfolios"
-            className="capitalize text-lg whitespace-nowrap font-medium"
+            href="/portfolios"
+            className={`capitalize text-lg whitespace-nowrap font-medium hover:underline ${
+              pathname === "/portfolios" ? "underline" : ""
+            }`}
           >
             Portfolios
           </Link>
           <Link
-            href="#contact-us"
-            className="capitalize text-lg whitespace-nowrap font-medium"
+            href="/contact-us"
+            className={`capitalize text-lg whitespace-nowrap font-medium hover:underline ${
+              pathname === "/contact-us" ? "underline" : ""
+            }`}
           >
             Contact Us
           </Link>
