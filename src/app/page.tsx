@@ -1,3 +1,6 @@
+// import { Portfolio16, TeamMember2 } from "@/components/Test/TestimonialTest";
+// import { TeamMember7 } from "@/components/Test/TestimonialTest";
+
 import DynamicTitleAndDescription from "@/components/About/OurStory";
 import AboutUs from "@/components/Home/About";
 import CallToAction from "@/components/Home/CallToAction";
@@ -7,9 +10,6 @@ import OurTeam from "@/components/Home/OurTeam";
 import Portfolios from "@/components/Home/Portfolios";
 import Services from "@/components/Home/Services";
 import Testimonials from "@/components/Home/Testimonials";
-// import { Portfolio16, TeamMember2 } from "@/components/Test/TestimonialTest";
-// import { TeamMember7 } from "@/components/Test/TestimonialTest";
-
 import {
   fetchAboutUs,
   fetchCallToAction,

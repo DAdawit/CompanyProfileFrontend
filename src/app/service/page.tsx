@@ -1,16 +1,20 @@
-import Hero from "@/components/Service/Hero";
-import OurService from "@/components/Service/OurService";
-import Stats from "@/components/Service/Stats";
-import React from "react";
+import { ContactUs } from '@/Components/Home/ContactUs';
+import Hero from '@/Components/Service/Hero'
+import OurService from '@/Components/Service/OurService'
+import Stats from '@/Components/Service/Stats'
+import { fetchOurServices } from '@/services/main.services';
+import React from 'react'
 
-const service = () => {
+export default async function Service() {
+  const services = await fetchOurServices();
   return (
-    <div className="overflow-hidden bg-primary-50">
-      <Hero />
-      <OurService />
-      <Stats />
+    <div className='overflow-hidden bg-primary-500'>
+        <Hero />
+        <OurService services={services} />
+        <Stats />
+        <ContactUs />
     </div>
-  );
-};
+  )
+}
 
-export default service;
+
