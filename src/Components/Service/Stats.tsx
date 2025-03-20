@@ -50,9 +50,7 @@ const CardItem = ({ item, isVisible }: CardItemProps) => (
       </span>
       <span className="absolute -bottom-2 left-0 w-1/4 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full transition-all duration-300 group-hover:w-1/2"></span>
     </h3>
-    <h5 className="text-xl font-medium mb-2 text-white">
-      {item.title}
-    </h5>
+    <h5 className="text-xl font-medium mb-2 text-white">{item.title}</h5>
     <p className="mb-0 text-white/95">{item.detail}</p>
   </div>
 );
@@ -76,7 +74,7 @@ const Stats = () => {
       { threshold: 0.1 }
     );
 
-    const element = document.getElementById('stats-section');
+    const element = document.getElementById("stats-section");
     if (element) {
       observer.observe(element);
     }
@@ -117,12 +115,12 @@ const Stats = () => {
             </span>
           </h1>
           <p className="text-lg text-white/90">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-            quod perferendis nihil cupiditate aliquid qui exercitationem
-            labore veritatis eaque nobis libero earum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quod
+            perferendis nihil cupiditate aliquid qui exercitationem labore
+            veritatis eaque nobis libero earum.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((item, i) => (
             <CardItem item={item} key={i} isVisible={isVisible} />

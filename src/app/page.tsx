@@ -1,13 +1,15 @@
-import Carosole from "@/Components/Home/Carosole";
-import DynamicTitleAndDescription from "@/Components/About/OurStory";
-import AboutUs from "@/Components/Home/About";
-import CallToAction from "@/Components/Home/CallToAction";
-import Services from "@/Components/Home/Services";
-import Portfolios from "@/Components/Home/Portfolios";
-import OurTeam from "@/Components/Home/OurTeam";
 // import { Portfolio16, TeamMember2 } from "@/components/Test/TestimonialTest";
 // import { TeamMember7 } from "@/components/Test/TestimonialTest";
 
+import DynamicTitleAndDescription from "@/components/About/OurStory";
+import AboutUs from "@/components/Home/About";
+import CallToAction from "@/components/Home/CallToAction";
+import Carosole from "@/components/Home/Carosole";
+import { ContactUs } from "@/components/Home/ContactUs";
+import OurTeam from "@/components/Home/OurTeam";
+import Portfolios from "@/components/Home/Portfolios";
+import Services from "@/components/Home/Services";
+import Testimonials from "@/components/Home/Testimonials";
 import {
   fetchAboutUs,
   fetchCallToAction,
@@ -15,8 +17,6 @@ import {
   fetchOutTeam,
   fetchTestimonials,
 } from "@/services/main.services";
-import Testimonials from "@/Components/Home/Testimonials";
-import { ContactUs } from "@/Components/Home/ContactUs";
 
 export default async function Home() {
   const heroSections = await fetchHero();

@@ -22,6 +22,8 @@ export default async function about() {
 
   return (
     <div className="overflow-hidden bg-bgPrimary">
+      {/* <pre>{JSON.stringify(abouts_us, null, 2)}</pre> */}
+
       <ScheduleHero
         title={abouts_us.data.title}
         image={abouts_us.data.image.url}
@@ -33,14 +35,11 @@ export default async function about() {
         />
         <AboutUs abouts_us={abouts_us} />
       </div>
-      {/* <AboutUs /> */}
-      {/* <AboutDetail /> */}
-      {/* <Vision /> */}
+
       <div className="mt-24">
         <OurTeam our_team={our_team} />
       </div>
 
-      {/* <Team /> */}
       <AboutTimeline />
       <CallToAction call_to_action={call_to_action} />
       <ContactUs />
