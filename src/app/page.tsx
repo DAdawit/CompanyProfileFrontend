@@ -1,6 +1,3 @@
-// import { Portfolio16, TeamMember2 } from "@/components/Test/TestimonialTest";
-// import { TeamMember7 } from "@/components/Test/TestimonialTest";
-
 import DynamicTitleAndDescription from "@/components/About/OurStory";
 import AboutUs from "@/components/Home/About";
 import CallToAction from "@/components/Home/CallToAction";
@@ -52,7 +49,6 @@ export default async function Home() {
         </div>
 
         <div>
-          {/* <pre>{JSON.stringify(testimonials, null, 2)}</pre> */}
           <Testimonials testimonials={testimonials} />
         </div>
         <div>
@@ -61,8 +57,6 @@ export default async function Home() {
         <div>
           <ContactUs />
         </div>
-
-        {/* <MoveToTop /> */}
       </main>
     </>
   );
