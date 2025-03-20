@@ -79,7 +79,7 @@ export default function NavBar({ org_detail }: NavBarProps) {
             Services
           </Link>
           <Link
-            href="#portfolios"
+            href="/portfolios"
             className="capitalize text-lg whitespace-nowrap font-medium"
           >
             Portfolios

@@ -19,6 +19,7 @@ import { OurTeamOutI } from "@/types/OurTeamOut";
 import { TestimonialsOutI } from "@/types/TestimonialOut";
 import { CallToActionOutI } from "@/types/CallToActionOut";
 import { OrgDetailOutI } from "@/types/OrgDetailOut";
+import { PortfolioDetailI } from "@/types/PortfolioDetailOut";
 
 export async function fetchLogos(): Promise<LogoOutI> {
   const res = await fetch(`${devBaseurl}/logo?populate=*`, {
@@ -66,6 +67,14 @@ export async function fetchOurPortfolios(): Promise<PortfoliosOutI> {
   const data = await res.json();
   return data;
 }
+
+export async function fetchAllOurPortfolios(): Promise<PortfoliosOutI> {
+  const res = await fetch(`${devBaseurl}/portfolios?populate=*`, {
+    next: { revalidate: 10 },
+  });
+  const data = await res.json();
+  return data;
+}
 export async function fetchOutTeam(): Promise<OurTeamOutI> {
   const res = await fetch(`${devBaseurl}/our-teams?populate=*`, {
     next: { revalidate: 10 },
@@ -92,6 +101,13 @@ export async function fetchCallToAction(): Promise<CallToActionOutI> {
 
 export async function fetchOrgDetail(): Promise<OrgDetailOutI> {
   const res = await fetch(`${devBaseurl}/company-detail?populate=*`, {
+    next: { revalidate: 10 },
+  });
+  const data = await res.json();
+  return data;
+}
+export async function fetchOrgPortfolioDetail(): Promise<PortfolioDetailI> {
+  const res = await fetch(`${devBaseurl}/portfolio-detail?populate=*`, {
     next: { revalidate: 10 },
   });
   const data = await res.json();
