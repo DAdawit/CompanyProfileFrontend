@@ -9,6 +9,7 @@ import StarRateIcon from "@mui/icons-material/StarRate";
 // import HeaderTitle from "@/common/HeaderTitle";
 import FadeOut from "@/common/Animations/FadeOut";
 import { TestimonialsOutI } from "@/types/TestimonialOut";
+import FadeInUp from "@/common/Animations/FadeInUp";
 interface TestimonialProps {
   testimonials: TestimonialsOutI;
 }
@@ -59,20 +60,24 @@ export default class Testimonials extends Component<TestimonialProps> {
     return (
       <div>
         <div className="bg-fixed bg-cover bg-center pb-7 container mx-auto max-w-7xl mt-16">
-          <div className="flex flex-col justify-center items-center gap-5 pt-16 ">
-            <div className="flex justify-center text-center mb-6 lg:mb-12">
-              <div className="max-w-lg">
-                <h2 className="text-3xl leading-none md:text-[45px] font-bold mb-6">
-                  What Our Clients Say
-                </h2>
-                <p className="text-lg opacity-80">
-                  Assumenda non repellendus distinctio nihil dicta sapiente,
-                  quibusdam maiores, illum at, aliquid blanditiis eligendi qui.
-                </p>
+          <FadeOut>
+            <div className="flex flex-col justify-center items-center gap-5 pt-16 ">
+              <div className="flex justify-center text-center mb-6 lg:mb-12">
+                <div className="max-w-lg">
+                  <h2 className="text-3xl leading-none md:text-[45px] font-bold mb-6">
+                    What Our Clients Say
+                  </h2>
+                  <p className="text-lg opacity-80">
+                    Assumenda non repellendus distinctio nihil dicta sapiente,
+                    quibusdam maiores, illum at, aliquid blanditiis eligendi
+                    qui.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <FadeOut>
+          </FadeOut>
+
+          <FadeInUp>
             <div className="container mx-auto px-6 mt-3">
               <Slider {...settings}>
                 {testimonials.data.map((testimonial) => (
@@ -115,7 +120,7 @@ export default class Testimonials extends Component<TestimonialProps> {
                 ))}
               </Slider>
             </div>
-          </FadeOut>
+          </FadeInUp>
         </div>
       </div>
     );

@@ -53,6 +53,7 @@ export default async function Home() {
         <div>
           <Portfolios portfolios={portfolios} />
         </div>
+
         <div>
           <OurTeam our_team={our_team} />
         </div>
