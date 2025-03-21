@@ -60,6 +60,8 @@ export interface Data {
   secondary_phone: string;
   email: string;
   po_box: number;
+  street_address: string;
+  working_hour: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;

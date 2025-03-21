@@ -30,6 +30,8 @@ export default async function Home() {
   const faqs = await fetchFaqs();
   return (
     <>
+      {/* <pre>{JSON.stringify(services.data, null, 2)}</pre> */}
+
       <main id="" className="overflow-hidden bg-bgPrimary">
         <div className="mt-12">
           <Carosole carosoles={heroSections.data[0].heroSlider} />
