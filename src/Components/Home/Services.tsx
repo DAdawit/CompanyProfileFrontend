@@ -2,13 +2,14 @@ import Image from "next/image";
 import React from "react";
 
 import { ServicesOutI } from "@/types/ServicesOut";
+import Link from "next/link";
 interface PropType {
   services: ServicesOutI;
 }
 export default async function Services({ services }: PropType) {
   return (
     <>
-      <pre>{JSON.stringify(services, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(services, null, 2)}</pre> */}
 
       <div id="services">
         <section className="ezy__service22 light py-14 md:py-16 bg-white relative z-[1]">
@@ -24,9 +25,12 @@ export default async function Services({ services }: PropType) {
                 </p>
               </div>
               <div className="flex items-center md:justify-end">
-                <button className="py-3 px-7 rounded border border-gray-950 text-gray-950 hover:bg-opacity-90 duration-300 w-max">
+                <Link
+                  href="/services"
+                  className="py-3 px-7 rounded border border-gray-950 text-gray-950 hover:bg-opacity-90 duration-300 w-max"
+                >
                   See All
-                </button>
+                </Link>
               </div>
             </div>
             <div className="grid grid-cols-6 gap-6 max-w-7xl mx-auto mt-12">

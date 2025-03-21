@@ -1,3 +1,4 @@
+import FAQs from "@/common/FAQs";
 import DynamicTitleAndDescription from "@/components/About/OurStory";
 import AboutUs from "@/components/Home/About";
 import CallToAction from "@/components/Home/CallToAction";
@@ -10,6 +11,7 @@ import Testimonials from "@/components/Home/Testimonials";
 import {
   fetchAboutUs,
   fetchCallToAction,
+  fetchFaqs,
   fetchHero,
   fetchOurPortfolios,
   fetchOurServices,
@@ -25,12 +27,11 @@ export default async function Home() {
   const call_to_action = await fetchCallToAction();
   const portfolios = await fetchOurPortfolios();
   const services = await fetchOurServices();
-
+  const faqs = await fetchFaqs();
   return (
     <>
       <main id="" className="overflow-hidden bg-bgPrimary">
         <div className="mt-12">
-          {/* <pre>{JSON.stringify(heroSections.data[0].heroSlider, null, 2)}</pre> */}
           <Carosole carosoles={heroSections.data[0].heroSlider} />
         </div>
 
@@ -44,7 +45,6 @@ export default async function Home() {
         <div>
           <Services services={services} />
         </div>
-        <div>{/* <TeamMember2 /> */}</div>
         <div>
           <Portfolios portfolios={portfolios} />
         </div>
@@ -55,11 +55,16 @@ export default async function Home() {
         <div>
           <Testimonials testimonials={testimonials} />
         </div>
+
         <div>
-          <CallToAction call_to_action={call_to_action} />
+          <FAQs faqs={faqs} />
         </div>
+
         <div>
           <ContactUs />
+        </div>
+        <div>
+          <CallToAction call_to_action={call_to_action} />
         </div>
       </main>
     </>

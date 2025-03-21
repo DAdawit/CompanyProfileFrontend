@@ -5,25 +5,27 @@ import Drawer from "@mui/material/Drawer";
 import { IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
-type Anchor = "left";
-import CloseIcon from "@mui/icons-material/Close";
 import Link from "next/link";
-import HomeIcon from "@mui/icons-material/Home";
-import ContactPageIcon from "@mui/icons-material/ContactPage";
-import PaymentIcon from "@mui/icons-material/Payment";
-import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
-import DescriptionIcon from "@mui/icons-material/Description";
+import { usePathname } from "next/navigation";
 import { OrgDetailOutI } from "@/types/OrgDetailOut";
-// import { LogoOutI } from "../../types/LogoOut";
+import CloseIcon from "@mui/icons-material/Close";
+import RoomServiceOutlinedIcon from "@mui/icons-material/RoomServiceOutlined";
+import AutoAwesomeMosaicOutlinedIcon from "@mui/icons-material/AutoAwesomeMosaicOutlined";
+import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
 type LogoType = {
   org_detail: OrgDetailOutI;
 };
+
 export default function NavigationDrawer({ org_detail }: LogoType) {
   const [state, setState] = React.useState({
     left: false,
   });
 
-  const toggleDrawer = (anchor: Anchor, open: boolean) => () => {
+  const pathname = usePathname(); // Get the current route
+
+  const toggleDrawer = (anchor: "left", open: boolean) => () => {
     setState({ ...state, [anchor]: open });
   };
 
@@ -31,7 +33,6 @@ export default function NavigationDrawer({ org_detail }: LogoType) {
     <div>
       {(["left"] as const).map((anchor) => (
         <React.Fragment key={anchor}>
-          <button></button>
           <IconButton
             onClick={toggleDrawer(anchor, true)}
             sx={{
@@ -48,7 +49,7 @@ export default function NavigationDrawer({ org_detail }: LogoType) {
             <Box
               sx={{
                 width: 250,
-                backgroundColor: "#DC2626",
+                backgroundColor: "#ffffff",
                 height: "100%",
               }}
               role="presentation"
@@ -56,7 +57,7 @@ export default function NavigationDrawer({ org_detail }: LogoType) {
               onKeyDown={toggleDrawer("left", false)}
             >
               <div className="overflow-x-hidden px-3">
-                <div className="flex justify-between px-5 text-white mt-8 h-min">
+                <div className="flex justify-between px-5 text-gray-800 mt-8 h-max">
                   <Image
                     src={`http://localhost:8000${org_detail.data.primary_logo.url}`}
                     alt="spector"
@@ -71,66 +72,92 @@ export default function NavigationDrawer({ org_detail }: LogoType) {
                       height: "min",
                     }}
                   >
-                    <CloseIcon fontSize="inherit" />
+                    <div className="h-max">
+                      <CloseIcon
+                        fontSize="inherit"
+                        sx={{
+                          color: "black",
+                          height: "min",
+                        }}
+                      />
+                    </div>
                   </IconButton>
                 </div>
 
                 <section className="mt-10 flex flex-col gap-2 pl-3">
                   <Link
                     href="/"
-                    className="text-white uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2  border-2 border-white rounded-lg px-2"
+                    className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-2 ${
+                      pathname === "/" ? "border-gray-300" : "border-gray-50"
+                    }`}
                   >
-                    <HomeIcon className="text-2xl text-white" />
+                    <HomeOutlinedIcon className="text-2xl " />
                     Home
                   </Link>
                   <Link
-                    href="#about"
-                    className="text-white uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 border-white rounded-lg px-2"
+                    href="/about-us"
+                    className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-2 ${
+                      pathname === "/about-us"
+                        ? "border-gray-800"
+                        : "border-gray-50"
+                    }`}
                   >
-                    <DescriptionIcon className="text-2xl text-white" />
+                    <GroupsOutlinedIcon className="text-2xl " />
                     About
                   </Link>
                   <Link
-                    href="#services"
-                    className="text-white uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2  border-2 border-white rounded-lg px-2"
+                    href="/services"
+                    className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-2 ${
+                      pathname === "/services"
+                        ? "border-gray-800"
+                        : "border-gray-50"
+                    }`}
                   >
-                    <MiscellaneousServicesIcon className="text-2xl " />
-                    services
+                    <RoomServiceOutlinedIcon className="text-2xl " />
+                    Services
                   </Link>
 
                   <Link
-                    href="/#portfolios"
-                    className="text-white uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2  border-2 border-white rounded-lg px-2"
+                    href="/portfolios"
+                    className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-2 ${
+                      pathname === "/portfolios"
+                        ? "border-gray-800"
+                        : "border-gray-50"
+                    }`}
                   >
-                    <PaymentIcon className="text-2xl text-white" />
+                    <AutoAwesomeMosaicOutlinedIcon className="text-2xl " />
                     Portfolios
                   </Link>
                   <Link
-                    href="#contact-us"
-                    className="text-white uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2  border-2 border-white rounded-lg px-2"
+                    href="/contact-us"
+                    className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-2 ${
+                      pathname === "/contact-us"
+                        ? "border-gray-300"
+                        : "border-gray-50"
+                    }`}
                   >
-                    <ContactPageIcon className="text-2xl" />
-                    CONTACT US
+                    <ContactPageOutlinedIcon className="text-2xl" />
+                    Contact Us
                   </Link>
                 </section>
 
                 <section className="mt-14">
-                  <h1 className="text-white text-center font-serif tracking-wider text-2xl ">
+                  <h1 className="text-center font-serif tracking-wider text-2xl">
                     Visit Us
                   </h1>
-                  <h3 className="text-white text-center text-sm font-medium tracking-wide">
+                  <h3 className="text-center text-sm font-medium tracking-wide">
                     {org_detail.data.full_address}
                   </h3>
-                  <h3 className="text-white text-center text-sm font-medium tracking-wide">
+                  <h3 className="text-center text-sm font-medium tracking-wide">
                     {org_detail.data.email}
                   </h3>
                 </section>
 
-                <section className="mt-5 text-white">
-                  <h2 className="text-center text-gray-200 font-bold tracking-wider">
-                    CALL Now
+                <section className="mt-5">
+                  <h2 className="text-center font-bold tracking-wider">
+                    Call Now
                   </h2>
-                  <h2 className="text-center text-white font-bold text-lg">
+                  <h2 className="text-center font-bold text-lg">
                     {org_detail.data.primary_phone} <br />
                     {org_detail.data.secondary_phone}
                   </h2>

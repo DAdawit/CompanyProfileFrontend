@@ -1,14 +1,12 @@
 import Link from "next/link";
 import React from "react";
-// import TelegramIcon from "@mui/icons-material/Telegram";
 import FadeOut from "./Animations/FadeOut";
-// import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { fetchOrgDetail } from "../services/main.services";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
-import SocialMeadiaLinksIconsOnly from "./SocialMeadiaLinksIconsOnly";
 import Image from "next/image";
+import SocialMeadiaLinks from "./SocialMeadiaLinks";
 export default async function Footer() {
   const currentYear = new Date().getFullYear();
   const org_detail = await fetchOrgDetail();
@@ -109,7 +107,7 @@ export default async function Footer() {
             </h1>
             <div className=" text-sm font-sans  mt-1">
               <div className="flex justify-start alig">
-                <SocialMeadiaLinksIconsOnly
+                <SocialMeadiaLinks
                   links={org_detail.data.links}
                   color="gray-900"
                 />

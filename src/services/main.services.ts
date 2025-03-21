@@ -20,6 +20,7 @@ import { TestimonialsOutI } from "@/types/TestimonialOut";
 import { CallToActionOutI } from "@/types/CallToActionOut";
 import { OrgDetailOutI } from "@/types/OrgDetailOut";
 import { PortfolioDetailI } from "@/types/PortfolioDetailOut";
+import { FaqsOutI } from "@/types/FaqsOut";
 
 export async function fetchLogos(): Promise<LogoOutI> {
   const res = await fetch(`${devBaseurl}/logo?populate=*`, {
@@ -116,6 +117,13 @@ export async function fetchOrgPortfolioDetail(): Promise<PortfolioDetailI> {
 
 export async function fetchContactUsDetail(): Promise<PortfolioDetailI> {
   const res = await fetch(`${devBaseurl}/contact-us?populate=*`, {
+    next: { revalidate: 10 },
+  });
+  const data = await res.json();
+  return data;
+}
+export async function fetchFaqs(): Promise<FaqsOutI> {
+  const res = await fetch(`${devBaseurl}/faq?populate=*`, {
     next: { revalidate: 10 },
   });
   const data = await res.json();

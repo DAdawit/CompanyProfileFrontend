@@ -39,16 +39,14 @@ export default async function Portfolios({ portfolios }: PropTypes) {
                   <div
                     className={`bg-${colors[i]}-100 bg-opacity-75 flex justify-center items-center p-6 rounded-xl`}
                   >
-                    <Link href={portfolio.link} className="" target="_blank">
-                      <Image
-                        src={`http://localhost:8000${portfolio.image.url}`}
-                        alt={portfolio.title}
-                        height={1000}
-                        width={1000}
-                        className="h-64 object-fill rounded-sm"
-                        unoptimized={true}
-                      />
-                    </Link>
+                    <Image
+                      src={`http://localhost:8000${portfolio.image.url}`}
+                      alt={portfolio.title}
+                      height={1000}
+                      width={1000}
+                      className="h-64 object-cover rounded-sm"
+                      unoptimized={true}
+                    />
                   </div>
                 </div>
                 <div className="col-span-12 lg:col-span-7">
@@ -60,9 +58,15 @@ export default async function Portfolios({ portfolios }: PropTypes) {
                       {portfolio.description}
                     </p>
                     <div>
-                      <button className="font-bold border border-gray-950 text-gray-950 px-8 py-3 hover:bg-opacity-90 duration-300 rounded inline-flex">
-                        View Project
-                      </button>
+                      {portfolio.link != null ? (
+                        <Link
+                          href={portfolio.link}
+                          target="_blank"
+                          className="font-bold border border-gray-950 text-gray-950 px-8 py-3 hover:bg-opacity-90 duration-300 rounded inline-flex"
+                        >
+                          View Project
+                        </Link>
+                      ) : null}
                     </div>
                   </div>
                 </div>
