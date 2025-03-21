@@ -33,7 +33,7 @@ export default async function RootLayout({
   const org_detail = await fetchOrgDetail();
 
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

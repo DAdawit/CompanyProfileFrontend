@@ -88,7 +88,7 @@ export default function NavigationDrawer({ org_detail }: LogoType) {
                   <Link
                     href="/"
                     className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-2 ${
-                      pathname === "/" ? "border-gray-300" : "border-gray-50"
+                      pathname === "/" ? "border-gray-800" : "border-gray-50"
                     }`}
                   >
                     <HomeOutlinedIcon className="text-2xl " />
@@ -132,7 +132,7 @@ export default function NavigationDrawer({ org_detail }: LogoType) {
                     href="/contact-us"
                     className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-2 ${
                       pathname === "/contact-us"
-                        ? "border-gray-300"
+                        ? "border-gray-800"
                         : "border-gray-50"
                     }`}
                   >

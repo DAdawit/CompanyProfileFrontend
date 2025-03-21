@@ -1,3 +1,4 @@
+import FadeOut from "@/common/Animations/FadeOut";
 import FAQs from "@/common/FAQs";
 import DynamicTitleAndDescription from "@/components/About/OurStory";
 import AboutUs from "@/components/Home/About";
@@ -38,10 +39,12 @@ export default async function Home() {
         </div>
 
         <div className="py-14 md:py-24">
-          <DynamicTitleAndDescription
-            title="About Us"
-            description={abouts_us.data.description}
-          />
+          <FadeOut>
+            <DynamicTitleAndDescription
+              title="About Us"
+              description={abouts_us.data.description}
+            />
+          </FadeOut>
           <AboutUs abouts_us={abouts_us} />
         </div>
         <div>
