@@ -11,14 +11,11 @@ export default async function OurService({ services }: propTypes) {
       <div className="container px-6 py-10 mx-auto">
         <h1 className="text-2xl font-semibold text-center capitalize lg:text-3xl mb-12">
           <span className="relative inline-block">
-            <span className="relative z-10 inline-block bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 bg-clip-text text-transparent">
+            <span className="relative z-10 inline-block text-gray-900">
               explore our awesome
             </span>
             <br />
-            <span className="bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 bg-clip-text text-transparent">
-              Services
-            </span>
-            <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></span>
+            <span className="text-gray-900">Services</span>
           </span>
         </h1>
 
