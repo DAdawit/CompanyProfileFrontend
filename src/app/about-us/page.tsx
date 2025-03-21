@@ -1,4 +1,5 @@
 import DynamicHero from "@/common/DynamicHero";
+import FAQs from "@/common/FAQs";
 import AboutTimeline from "@/components/About/AboutTimeline";
 import DynamicTitleAndDescription from "@/components/About/OurStory";
 import AboutUs from "@/components/Home/About";
@@ -8,6 +9,7 @@ import OurTeam from "@/components/Home/OurTeam";
 import {
   fetchAboutUs,
   fetchCallToAction,
+  fetchFaqs,
   fetchOutTeam,
 } from "@/services/main.services";
 
@@ -15,6 +17,7 @@ export default async function about() {
   const abouts_us = await fetchAboutUs();
   const our_team = await fetchOutTeam();
   const call_to_action = await fetchCallToAction();
+  const faqs = await fetchFaqs();
 
   return (
     <div className="overflow-hidden bg-bgPrimary">
@@ -38,8 +41,11 @@ export default async function about() {
       </div>
 
       <AboutTimeline />
-      <CallToAction call_to_action={call_to_action} />
+      <div>
+        <FAQs faqs={faqs} />
+      </div>
       <ContactUs />
+      <CallToAction call_to_action={call_to_action} />
     </div>
   );
 }
