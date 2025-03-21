@@ -5,9 +5,11 @@ const MoveToTop = () => {
   return (
     <Link
       href=""
-      className="fixed bottom-10 right-10 flex items-center bg-primary justify-center flex-col w-14 h-14 rounded-full text-white border-2 border-white"
+      className="fixed bottom-10 right-10 flex items-center bg-gray-800 justify-center flex-col w-14 h-14 rounded-full text-white border-2 border-white"
     >
-      <ArrowUpwardIcon />
+      <span className="animate-pulse">
+        <ArrowUpwardIcon />
+      </span>
     </Link>
   );
 };

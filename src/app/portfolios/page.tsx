@@ -27,10 +27,10 @@ export default async function Portfolio() {
         <Portfolios portfolios={portfolios} />
       </div>
       <div>
-        <CallToAction call_to_action={call_to_action} />
+        <ContactUs />
       </div>
       <div>
-        <ContactUs />
+        <CallToAction call_to_action={call_to_action} />
       </div>
     </div>
   );

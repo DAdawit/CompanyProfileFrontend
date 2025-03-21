@@ -7,6 +7,7 @@ import { ReactQueryProvider } from "./ReactQueryProvider";
 import Footer from "@/common/Footer";
 import NavBar from "@/components/Home/Navbar";
 import { fetchOrgDetail } from "@/services/main.services";
+import MoveToTop from "@/common/MoveToTop";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,7 +33,7 @@ export default async function RootLayout({
   const org_detail = await fetchOrgDetail();
 
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -41,6 +42,7 @@ export default async function RootLayout({
           <Toaster />
           {children}
           <Footer />
+          <MoveToTop />
         </ReactQueryProvider>{" "}
       </body>
     </html>

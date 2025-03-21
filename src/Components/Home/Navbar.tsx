@@ -69,17 +69,17 @@ export default function NavBar({ org_detail }: NavBarProps) {
             Home
           </Link>
           <Link
-            href="/about"
+            href="/about-us"
             className={`capitalize text-lg whitespace-nowrap font-medium hover:underline ${
-              pathname === "/about" ? "underline" : ""
+              pathname === "/about-us" ? "underline" : ""
             }`}
           >
-            About
+            About-Us
           </Link>
           <Link
-            href="/service"
+            href="/services"
             className={`capitalize text-lg whitespace-nowrap font-medium hover:underline ${
-              pathname === "/service" ? "underline" : ""
+              pathname === "/services" ? "underline" : ""
             }`}
           >
             Services

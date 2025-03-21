@@ -9,27 +9,32 @@ import EmailIcon from "@mui/icons-material/Email";
 import Link from "next/link";
 interface PropType {
   links: SocialLink;
+  color?: string;
 }
-const SocialMeadiaLinks = ({ links }: PropType) => {
+const SocialMeadiaLinks = ({ links, color }: PropType) => {
   return (
-    <div className="flex justify-between opacity-100 z-50 hover:blur-none h-min">
-      <div className="p-3 bg-black hover:bg-[#5d4314] text-white opacity-100">
-        <Link href={links?.linkedin} className="" target="_blank">
+    <div
+      className={`flex justify-start opacity-100 z-50 hover:blur-none h-min space-x-3 ${
+        color ? `text-${color}` : "text-gray-500"
+      }`}
+    >
+      <div className=" opacity-100 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+        <Link href={links?.linkedin} target="_blank">
           <LinkedInIcon />
         </Link>
       </div>
-      <div className="p-3 bg-black hover:bg-[#5d4314] text-white opacity-100">
-        <Link href={links?.email} className="" target="_blank">
+      <div className="opacity-100 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+        <Link href={links?.email} target="_blank">
           <EmailIcon />
         </Link>
       </div>
-      <div className="p-3 bg-black hover:bg-[#5d4314] text-white opacity-100">
-        <Link href={links?.telegram} className="" target="_blank">
+      <div className="opacity-100 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+        <Link href={links?.telegram} target="_blank">
           <TelegramIcon />
         </Link>
       </div>
-      <div className="p-3 bg-black hover:bg-[#5d4314] text-white opacity-100">
-        <Link href={links.instagram} className="" target="_blank">
+      <div className="opacity-100 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+        <Link href={links.instagram} target="_blank">
           <InstagramIcon />
         </Link>
       </div>
