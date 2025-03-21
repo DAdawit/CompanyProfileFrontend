@@ -1,147 +1,91 @@
-"use client";
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import classNames from "classnames";
-import EmailIcon from "@mui/icons-material/Email";
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
-import LinkIcon from "@mui/icons-material/Link";
-const contactInfoList = [
-  {
-    icon: <EmailIcon />,
-    label: "email@easyfrontend.com",
-    href: "mailto:email@easyfrontend.com",
-  },
-  {
-    icon: <LocalPhoneIcon />,
-    label: "+880 1742-0****0",
-    href: "callto:+880 1742-0****0",
-  },
-  { icon: <LinkIcon />, label: "easyfrontend.com", href: "easyfrontend.com" },
-];
+import React from "react";
 
-const ContactForm = () => {
-  const [validated, setValidated] = useState(false);
-  console.log(validated);
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
-    setValidated(true);
-  };
-
-  return (
-    <form className="" noValidate onSubmit={handleSubmit}>
-      <div className="mb-4">
-        <input
-          type="text"
-          className="min-h-[48px] leading-[48px] border  rounded-xl focus:outline-none focus:border focus:border-[#86b7fe] w-full px-5"
-          placeholder="Enter Name"
-        />
-      </div>
-      <div className="mb-4">
-        <input
-          type="email"
-          className="min-h-[48px] leading-[48px] border rounded-xl focus:outline-none focus:border focus:border-[#86b7fe] w-full px-5"
-          placeholder="Enter Email"
-        />
-      </div>
-      <div className="mb-4">
-        <textarea
-          name="message"
-          className="min-h-[48px] leading-[48px] border rounded-xl focus:outline-none focus:border focus:border-[#86b7fe] w-full px-5"
-          placeholder="Enter Message"
-          rows={4}
-        ></textarea>
-      </div>
-      <div className="text-start">
-        <button
-          type="submit"
-          className="bg-blue-600 hover:bg-opacity-90 text-white px-8 py-3 rounded mb-4"
-        >
-          Submit
-        </button>
-      </div>
-    </form>
-  );
-};
-
-const ContactFormCard = () => (
-  <div className=" bg-white shadow-xl rounded-2xl p-6 md:p-12 text-gray-900">
-    <h2 className="text-2xl md:text-[45px] leading-none font-bold mb-4">
-      Contact Us
-    </h2>
-    <p className="text-lg mb-12">
-      We list your menu online, help you process orders.
-    </p>
-
-    <ContactForm />
-  </div>
-);
-
-interface ContactInfoProps {
-  contactInfoList: Array<{
-    icon: React.ReactElement;
-    label: string;
-    href: string;
-  }>;
+interface TimelineItem {
+  time: string;
+  title: string;
+  description: string;
 }
 
-const ContactInfo = ({ contactInfoList }: ContactInfoProps) => (
-  <div className="flex flex-col h-full mt-12 md:pt-6">
-    {contactInfoList.map((info, i) => (
-      <div
-        className={classNames(
-          "bg-white shadow max-w-[350px] flex items-center rounded-xl p-5 text-gray-900",
-          { " mt-6": i }
-        )}
-        key={i}
-      >
-        {info.icon}
-        <a className="text-lg font-medium ml-4" href={info.href || "#!"}>
-          {info.label}
-        </a>
-      </div>
-    ))}
-  </div>
-);
+interface AboutTimelineProps {
+  timelineData: TimelineItem[];
+}
 
-ContactInfo.propTypes = {
-  contactInfoList: PropTypes.array.isRequired,
-};
-
-export const ContactUs2 = () => {
+const AboutTimeline: React.FC<AboutTimelineProps> = ({ timelineData }) => {
   return (
-    <section className="ezy__contact12 light py-14 md:py-24 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white relative overflow-hidden ">
-      <div
-        className="absolute right-0 left-0 bottom-0 top-64 py-14 bg-cover bg-center bg-no-repeat block md:block"
-        style={{
-          backgroundImage:
-            "url(https://cdn.easyfrontend.com/pictures/contact/contact_12.svg)",
-        }}
-      ></div>
-      <div className="container px-4 relative">
-        <div className="grid grid-cols-12 mx-auto max-w-7xl">
-          <div className="col-span-12 lg:col-span-7 xl:col-span-5 mb-12 lg:mb-0">
-            <h2 className="text-2xl md:text-[40px] leading-none font-bold mb-6">
-              How can we help you?
-            </h2>
-            <p className="text-lg">
-              It’s easier to reach your savings goals when you have the right
-              savings account. Take a look and find the right one for you!
-            </p>
-
-            <ContactInfo contactInfoList={contactInfoList} />
-          </div>
-          <div className="col-span-12 lg:col-span-5 lg:col-start-8">
-            <ContactFormCard />
+    <section>
+      {/* Container */}
+      <div className="mx-auto w-full max-w-7xl px-5 py-12 md:px-10 md:py-16 lg:py-20">
+        <h2 className="text-center text-3xl font-bold md:text-5xl">
+          Our Timeline
+        </h2>
+        <p className="mx-auto mb-8 mt-4 text-center text-sm text-gray-500 sm:text-base md:mb-12 lg:mb-16">
+          Lorem ipsum dolor sit amet elit ut aliquam
+        </p>
+        {/* Timeline */}
+        <div className="flex flex-col items-center">
+          <div className="relative">
+            {/* Vertical Line */}
+            <div className="absolute w-1 md:w-2 bg-black h-full left-1/2 transform -translate-x-1/2"></div>
+            {/* Timeline Items */}
+            {timelineData.map((item, index) => (
+              <div key={index} className="mb-20 mt-20 flex items-center w-full">
+                {/* Left Side */}
+                <div className="w-1/2 text-right pr-5 md:pr-12">
+                  <h5 className="text-lg md:text-2xl font-semibold">
+                    {item.time}
+                  </h5>
+                </div>
+                {/* Circle */}
+                <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-black"></div>
+                {/* Right Side */}
+                <div className="w-1/2 pl-5 md:pl-12">
+                  <h6 className="text-md md:text-xl font-semibold mb-3">
+                    {item.title}
+                  </h6>
+                  <p className="text-gray-500">{item.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
   );
 };
+
+const timelineData = [
+  {
+    time: "August 2014",
+    title: "Started the company",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus.",
+  },
+  {
+    time: "September 2016",
+    title: "First Client",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus.",
+  },
+  {
+    time: "January 2017",
+    title: "Hired our first Dev",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus.",
+  },
+  {
+    time: "May 2017",
+    title: "Raised $5M",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus.",
+  },
+];
+
+const AboutPage = () => {
+  return (
+    <div>
+      <AboutTimeline timelineData={timelineData} />
+    </div>
+  );
+};
+
+export default AboutPage;

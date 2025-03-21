@@ -66,7 +66,7 @@ const Stats: React.FC<PropType> = ({ stats }) => {
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         <div className="absolute inset-0">
           <Image
-            src="/about9.jpg"
+            src={`http://localhost:8000${stats.data.image.url}`}
             alt="Background"
             fill
             sizes="100vw"

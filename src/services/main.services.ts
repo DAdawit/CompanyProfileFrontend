@@ -22,6 +22,7 @@ import { OrgDetailOutI } from "@/types/OrgDetailOut";
 import { PortfolioDetailI } from "@/types/PortfolioDetailOut";
 import { FaqsOutI } from "@/types/FaqsOut";
 import { ImportantStatsOutI } from "@/types/SiteStatsOut";
+import { TimeLineEventsOutI } from "@/types/TimeLineEventsOut";
 
 export async function fetchLogos(): Promise<LogoOutI> {
   const res = await fetch(`${devBaseurl}/logo?populate=*`, {
@@ -132,6 +133,13 @@ export async function fetchFaqs(): Promise<FaqsOutI> {
 }
 export async function fetchStats(): Promise<ImportantStatsOutI> {
   const res = await fetch(`${devBaseurl}/site-stat?populate=*`, {
+    next: { revalidate: 10 },
+  });
+  const data = await res.json();
+  return data;
+}
+export async function fetchTimeLineEvents(): Promise<TimeLineEventsOutI> {
+  const res = await fetch(`${devBaseurl}/time-line-event?populate=*`, {
     next: { revalidate: 10 },
   });
   const data = await res.json();
