@@ -24,6 +24,7 @@ import { FaqsOutI } from "@/types/FaqsOut";
 import { ImportantStatsOutI } from "@/types/SiteStatsOut";
 import { TimeLineEventsOutI } from "@/types/TimeLineEventsOut";
 import { BlogHeadLineOutI } from "@/types/BlogHeadLineOut";
+import { BlogOutI } from "@/types/SingleBlogOut";
 import { BlogsOutI } from "@/types/BlogsOut";
 
 export async function fetchLogos(): Promise<LogoOutI> {
@@ -165,6 +166,14 @@ export async function fetchBlogs(): Promise<BlogsOutI> {
       next: { revalidate: 10 },
     }
   );
+  const data = await res.json();
+  return data;
+}
+
+export async function fetchBlog(slug: string): Promise<BlogOutI> {
+  const res = await fetch(`${devBaseurl}/blogs/${slug}?populate=*`, {
+    next: { revalidate: 10 },
+  });
   const data = await res.json();
   return data;
 }
