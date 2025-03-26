@@ -100,6 +100,14 @@ export default function NavBar({ org_detail }: NavBarProps) {
           >
             Contact Us
           </Link>
+          <Link
+            href="/blogs"
+            className={`capitalize text-lg whitespace-nowrap font-medium hover:underline ${
+              pathname === "/blogs" ? "underline" : ""
+            }`}
+          >
+            Blogs
+          </Link>
         </div>
       </div>
     </nav>

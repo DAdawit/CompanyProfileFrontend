@@ -48,6 +48,12 @@ export default async function Footer() {
                 >
                   PORTFOLIOS
                 </Link>
+                <Link
+                  href="/blogs"
+                  className="text-sm  font-sans  hover:underline underline-offset-2 mt-2 w-max"
+                >
+                  BLOGS
+                </Link>
               </div>
               <div className="flex flex-col gap-y-1">
                 <h1 className=" font-bold text-2xl">OUR TERMS</h1>

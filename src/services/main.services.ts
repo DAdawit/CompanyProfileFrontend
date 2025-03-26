@@ -23,6 +23,7 @@ import { PortfolioDetailI } from "@/types/PortfolioDetailOut";
 import { FaqsOutI } from "@/types/FaqsOut";
 import { ImportantStatsOutI } from "@/types/SiteStatsOut";
 import { TimeLineEventsOutI } from "@/types/TimeLineEventsOut";
+import { BlogHeadLineOutI } from "@/types/BlogHeadLineOut";
 
 export async function fetchLogos(): Promise<LogoOutI> {
   const res = await fetch(`${devBaseurl}/logo?populate=*`, {
@@ -142,6 +143,17 @@ export async function fetchTimeLineEvents(): Promise<TimeLineEventsOutI> {
   const res = await fetch(`${devBaseurl}/time-line-event?populate=*`, {
     next: { revalidate: 10 },
   });
+  const data = await res.json();
+  return data;
+}
+
+export async function fetchBlogHeadline(): Promise<BlogHeadLineOutI> {
+  const res = await fetch(
+    `${devBaseurl}/blogs?populate=*&filters[headline][$eq]=true&pagination[pageSize]=1&sort=createdAt:desc`,
+    {
+      next: { revalidate: 10 },
+    }
+  );
   const data = await res.json();
   return data;
 }

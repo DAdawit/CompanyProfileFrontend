@@ -139,6 +139,17 @@ export default function NavigationDrawer({ org_detail }: LogoType) {
                     <ContactPageOutlinedIcon className="text-2xl" />
                     Contact Us
                   </Link>
+                  <Link
+                    href="/blogs"
+                    className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-2 ${
+                      pathname === "/blogs"
+                        ? "border-gray-800"
+                        : "border-gray-50"
+                    }`}
+                  >
+                    <ContactPageOutlinedIcon className="text-2xl" />
+                    Blogs
+                  </Link>
                 </section>
 
                 <section className="mt-14">
