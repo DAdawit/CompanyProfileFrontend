@@ -22,7 +22,7 @@ const BlogBanner: React.FC<PropType> = ({ title, slug, image }) => {
           <div className="flex flex-col justify-center w-full col-span-2 px-5">
             <div className="grid sm:pl-8">
               <h1 className="text-3xl  xl:text-4xl xxl:text-6xl font-bold mt-3">
-                {title}
+                {title} / <span className="text-lg font-medium">Headline</span>
               </h1>
               <Link
                 href={`/blogs/${slug}`}
