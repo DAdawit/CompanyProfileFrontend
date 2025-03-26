@@ -62,7 +62,7 @@ export default async function Home() {
           <Testimonials testimonials={testimonials} />
         </div>
 
-        <div>
+        <div id="FAQ">
           <FAQs faqs={faqs} />
         </div>
 
