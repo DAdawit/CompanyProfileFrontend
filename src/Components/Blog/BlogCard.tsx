@@ -22,11 +22,11 @@ const BlogCard: React.FC<PropType> = ({ blog }) => {
       {/* Image Section */}
       <div>
         <Image
-          height={1000}
-          width={1000}
+          height={2000}
+          width={2000}
           src={`http://localhost:8000${blog.banner_image.url}`}
           alt={blog.title}
-          className="h-auto w-full shadow-lg dark:shadow-none"
+          className="h-64 w-full shadow-lg dark:shadow-none"
         />
       </div>
 

@@ -8,17 +8,20 @@ interface PropType {
 }
 
 export const BlogHeadLine: React.FC<PropType> = ({ headline }) => {
-  console.log(headline);
+  // console.log(headline);
   return (
     <section className="ezy__blog7 light text-stone-800">
       <BlogBanner
         title={headline.title}
         image={headline.banner_image.url}
         slug={headline.slug}
+        headline={headline.headline}
+        show_back_button={false}
+        show_read_more={true}
       />
 
       <div className="py-8 ">
-        <div className="container px-8 md:px-24">
+        <div className="container px-8 mx-auto">
           <p className="text-2xl font-bold text-gray-800">
             {headline.subtitle}
           </p>

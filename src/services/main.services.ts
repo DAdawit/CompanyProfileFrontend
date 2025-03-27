@@ -161,7 +161,7 @@ export async function fetchBlogHeadline(): Promise<BlogHeadLineOutI> {
 }
 export async function fetchBlogs(): Promise<BlogsOutI> {
   const res = await fetch(
-    `${devBaseurl}/blogs?populate=*&filters[headline][$eq]=true&filters[featured][$eq]=false`,
+    `${devBaseurl}/blogs?populate=*&filters[featured][$eq]=false`,
     {
       next: { revalidate: 10 },
     }
