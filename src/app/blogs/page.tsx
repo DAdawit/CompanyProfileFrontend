@@ -1,11 +1,17 @@
 import BlogCard from "@/components/Blog/BlogCard";
 import { BlogHeadLine } from "@/components/Blog/BlogHeadline";
-import { fetchBlogHeadline, fetchBlogs } from "@/services/main.services";
+import FeaturedPostCard from "@/components/Blog/FeaturedPostCard";
+import {
+  fetchBlogHeadline,
+  fetchBlogs,
+  fetchFeaturedBlog,
+} from "@/services/main.services";
 import React from "react";
 
 export default async function page() {
   const headline = await fetchBlogHeadline();
   const blogs = await fetchBlogs();
+  const featured_blogs = await fetchFeaturedBlog();
   return (
     <section className="my-16">
       <BlogHeadLine headline={headline.data[0]} />
@@ -16,24 +22,35 @@ export default async function page() {
           Recent Posts
         </h2>
       </div>
-      <section className="container mx-auto px-5">
-        <div className="grid grid-cols-7 gap-2">
-          <div className="grid grid-cols-3 col-span-6 gap-2">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
-              <div key={item} className="bg-green-400 w-full h-24">
-                hello
-              </div>
-            ))}
+      <section className="container mx-auto px-5 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-x-4">
+          <div className="grid col-span-4 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 content-evenly gap-5 mx-auto justify-evenly">
+              {blogs.data
+                .filter((blog) => blog.id !== headline.data[0].id) // Filter out the headline blog
+                .map((blog) => (
+                  <BlogCard key={blog.id} blog={blog} />
+                ))}
+            </div>
           </div>
-          <div className="bg-blue-500 h-24 w-full"></div>
+          <div className="w-full col-span-full xl:col-span-1 mt-16 xl:mt-0 h-max">
+            <h1 className="text-2xl font-bold text-white mb-3 text-center bg-gray-500 py-2">
+              Featured Posts
+            </h1>
+            <div className="flex flex-wrap gap-2">
+              {featured_blogs.data.map((post) => (
+                <FeaturedPostCard key={post.id} post={post} />
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 mt-12 content-evenly gap-5 mx-auto justify-evenly">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 mt-12 content-evenly gap-5 mx-auto justify-evenly">
           {blogs.data
             .filter((blog) => blog.id !== headline.data[0].id) // Filter out the headline blog
             .map((blog) => (
               <BlogCard key={blog.id} blog={blog} />
             ))}
-        </div>
+        </div> */}
       </section>
     </section>
   );

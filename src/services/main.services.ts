@@ -177,3 +177,14 @@ export async function fetchBlog(slug: string): Promise<BlogOutI> {
   const data = await res.json();
   return data;
 }
+
+export async function fetchFeaturedBlog(): Promise<BlogsOutI> {
+  const res = await fetch(
+    `${devBaseurl}/blogs?populate=*&filters[featured][$eq]=true`,
+    {
+      next: { revalidate: 10 },
+    }
+  );
+  const data = await res.json();
+  return data;
+}
