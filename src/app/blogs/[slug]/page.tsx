@@ -28,7 +28,7 @@ export default async function PhotoPage(props: { params: paramsType }) {
         headline={blog.data.headline}
         show_back_button={true}
       />
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto px-5 max-w-6xl">
         <h3 className="mt-8 font-bold text-3xl text-gray-800 my-3">
           {blog.data.subtitle}
         </h3>

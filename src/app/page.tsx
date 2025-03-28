@@ -9,6 +9,8 @@ import OurTeam from "@/components/Home/OurTeam";
 import Portfolios from "@/components/Home/Portfolios";
 import Services from "@/components/Home/Services";
 import Testimonials from "@/components/Home/Testimonials";
+import Head from "next/head";
+
 import {
   fetchAboutUs,
   fetchCallToAction,
@@ -34,6 +36,9 @@ export default async function Home() {
       {/* <pre>{JSON.stringify(services.data, null, 2)}</pre> */}
 
       <main id="" className="overflow-hidden bg-bgPrimary">
+        <Head>
+          <title>Home</title>
+        </Head>
         <div className="mt-12">
           <Carosole carosoles={heroSections.data[0].heroSlider} />
         </div>
