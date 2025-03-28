@@ -3,8 +3,10 @@ import { fetchBlog } from "@/services/main.services";
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
 import BlockRendererClient from "@/common/BlockRendererClient";
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export type paramsType = Promise<{ slug: string }>;
+
+export default async function PhotoPage(props: { params: paramsType }) {
+  const { slug } = await props.params;
 
   // Fetch the blog post by slug
   const blog = await fetchBlog(slug);
