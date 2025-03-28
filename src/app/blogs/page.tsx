@@ -6,8 +6,28 @@ import {
   fetchBlogs,
   fetchFeaturedBlog,
 } from "@/services/main.services";
-import React from "react";
+export async function generateMetadata() {
+  // Fetch the headline blog for dynamic metadata
+  const headline = await fetchBlogHeadline();
 
+  // Extract title and description from the headline blog
+  const { title, subtitle } = headline.data[0];
+
+  return {
+    title: `Blogs | ${title}`, // Dynamic title with a fallback
+    description: subtitle || "Explore our latest blog posts and updates.", // Dynamic description with a fallback
+    openGraph: {
+      title: `${title} | Blogs`,
+      description: subtitle || "Explore our latest blog posts and updates.",
+      images: [
+        {
+          url: headline.data[0].banner_image.url, // Use the headline blog's banner image
+          alt: title,
+        },
+      ],
+    },
+  };
+}
 export default async function page() {
   const headline = await fetchBlogHeadline();
   const blogs = await fetchBlogs();

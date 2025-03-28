@@ -9,6 +9,12 @@ import {
 } from "@/services/main.services";
 import React from "react";
 
+export async function generateMetadata() {
+  return {
+    title: "Portfolios",
+    description: "Wander web our prev works",
+  };
+}
 export default async function Portfolio() {
   const portfolioPageDetail = await fetchOrgPortfolioDetail();
   const portfolios = await fetchAllOurPortfolios();

@@ -15,6 +15,15 @@ import {
   fetchTimeLineEvents,
 } from "@/services/main.services";
 
+export async function generateMetadata() {
+  const org = await fetchAboutUs();
+  const { description } = org.data;
+
+  return {
+    title: "About Us",
+    description: { description },
+  };
+}
 export default async function about() {
   const abouts_us = await fetchAboutUs();
   const our_team = await fetchOutTeam();

@@ -5,6 +5,41 @@ import BlockRendererClient from "@/common/BlockRendererClient";
 
 export type paramsType = Promise<{ slug: string }>;
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  // Fetch the blog post by slug
+  const blog = await fetchBlog(params.slug);
+
+  // Check if the blog exists
+  if (!blog.data) {
+    return {
+      title: "Blog Not Found",
+      description: "The requested blog post could not be found.",
+    };
+  }
+
+  // Extract title, subtitle, and banner image from the blog
+  const { title, subtitle, banner_image } = blog.data;
+
+  return {
+    title: `${title} | Blog`, // Dynamic title
+    description: subtitle || "Read this amazing blog post.", // Dynamic description with fallback
+    openGraph: {
+      title: `${title} | Blog`,
+      description: subtitle || "Read this amazing blog post.",
+      images: [
+        {
+          url: banner_image.url, // Use the blog's banner image
+          alt: title,
+        },
+      ],
+    },
+  };
+}
+
 export default async function PhotoPage(props: { params: paramsType }) {
   const { slug } = await props.params;
 

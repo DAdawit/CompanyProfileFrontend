@@ -9,18 +9,28 @@ import OurTeam from "@/components/Home/OurTeam";
 import Portfolios from "@/components/Home/Portfolios";
 import Services from "@/components/Home/Services";
 import Testimonials from "@/components/Home/Testimonials";
-import Head from "next/head";
 
 import {
   fetchAboutUs,
   fetchCallToAction,
   fetchFaqs,
   fetchHero,
+  fetchOrgDetail,
   fetchOurPortfolios,
   fetchOurServices,
   fetchOutTeam,
   fetchTestimonials,
 } from "@/services/main.services";
+
+export async function generateMetadata() {
+  const org = await fetchOrgDetail();
+  const { org_detail } = org.data;
+
+  return {
+    title: "Home",
+    description: { org_detail },
+  };
+}
 
 export default async function Home() {
   const heroSections = await fetchHero();
@@ -31,14 +41,12 @@ export default async function Home() {
   const portfolios = await fetchOurPortfolios();
   const services = await fetchOurServices();
   const faqs = await fetchFaqs();
+
   return (
     <>
       {/* <pre>{JSON.stringify(services.data, null, 2)}</pre> */}
-
+      <p>Hello world!</p>
       <main id="" className="overflow-hidden bg-bgPrimary">
-        <Head>
-          <title>Home</title>
-        </Head>
         <div className="mt-12">
           <Carosole carosoles={heroSections.data[0].heroSlider} />
         </div>

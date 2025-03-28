@@ -10,6 +10,15 @@ import React from "react";
 import DynamicHero from "@/common/DynamicHero";
 import CallToAction from "@/components/Home/CallToAction";
 
+export async function generateMetadata() {
+  const org = await fetchOurServices();
+  const { description } = org.data;
+
+  return {
+    title: "Services",
+    description: { description },
+  };
+}
 export default async function Service() {
   const services = await fetchOurServices();
   const call_to_action = await fetchCallToAction();
