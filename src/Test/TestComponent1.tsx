@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import "animate.css";
-const TestComponent = () => {
+const Targets = () => {
   return (
     <>
       <section className="container mx-auto px-5 mt-24">
@@ -28,7 +28,7 @@ const TestComponent = () => {
               </div>
               <div className="flex justify-center rounded-lg ">
                 <Image
-                  src="/about9.jpg"
+                  src="/graduate1.jpg"
                   alt="heroImage"
                   height={2000}
                   width={2000}
@@ -45,6 +45,15 @@ const TestComponent = () => {
         >
           <div className="max-w-6xl mx-auto bg-white p-5 mt-8 rounded-md">
             <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center gap-8">
+              <div className="order-2 md:order-1 flex justify-center rounded-lg ">
+                <Image
+                  src="/company1.jpg"
+                  alt="heroImage"
+                  height={2000}
+                  width={2000}
+                  className="h-72 w-full object-cover object-bottom self-center rounded-xl"
+                />
+              </div>
               <div className="order-1 md:order-2 grid gap-3 h-min self-center">
                 <h1 className="gridiantText text-5xl text-center font-bold h-min">
                   Employer Companies
@@ -54,15 +63,6 @@ const TestComponent = () => {
                   fresh talent to join their ranks. This is your chance to
                   impress industry leaders and secure your dream job.
                 </p>
-              </div>
-              <div className="order-2 md:order-1 flex justify-center rounded-lg ">
-                <Image
-                  src="/carlos-muza-hpjSkU2UYSU-unsplash.jpg"
-                  alt="heroImage"
-                  height={2000}
-                  width={2000}
-                  className="h-72 w-full object-cover object-bottom self-center rounded-xl"
-                />
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@ const TestComponent = () => {
               </div>
               <div className="flex justify-center rounded-lg ">
                 <Image
-                  src="/john-schnobrich-FlPc9_VocJ4-unsplash.jpg"
+                  src="/stackholders1.jpg"
                   alt="heroImage"
                   height={2000}
                   width={2000}
@@ -100,4 +100,4 @@ const TestComponent = () => {
   );
 };
 
-export default TestComponent;
+export default Targets;

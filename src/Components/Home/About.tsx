@@ -13,10 +13,18 @@ interface PropTypes {
 export default async function AboutUs({ abouts_us }: PropTypes) {
   return (
     <div className="" id="about">
-      <div className="container mx-auto  px-5 py-3">
+      <div className="container mx-auto px-5 py-3">
         <FadeInUp>
           <section className="grid grid-cols-1 md:grid-cols-2 gap-x-10 items-start">
-            <div className="">
+            <div className="grid">
+              <h1 className="text-4xl font-bold mb-5 text-gray-800">
+                Our <span className="text-primary">Mission</span>
+              </h1>
+              <p className="text-gray-800 mb-5 max-w-lg text-lg">
+                {abouts_us.data.mission}
+              </p>
+            </div>
+            <div className="grid">
               <Image
                 src={`http://localhost:8000${abouts_us.data.mission_banner_image.url}`}
                 height={1000}
@@ -26,20 +34,12 @@ export default async function AboutUs({ abouts_us }: PropTypes) {
                 unoptimized={true}
               />
             </div>
-            <div>
-              <h1 className="text-4xl font-bold mb-5 text-gray-800">
-                Our <span className="text-primary">Mission</span>
-              </h1>
-              <p className="text-gray-800 mb-5 max-w-lg text-lg">
-                {abouts_us.data.mission}
-              </p>
-            </div>
           </section>
         </FadeInUp>
 
         <FadeInUp>
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-x-10 mt-36 items-start">
-            <div className="order-2 md:order-1">
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-x-10 mt-16 items-start">
+            <div className="order-1 md:order-2">
               <h1 className="text-4xl font-bold mb-5 text-gray-800">
                 Our <span className="text-primary">Vison </span>
               </h1>
@@ -47,7 +47,7 @@ export default async function AboutUs({ abouts_us }: PropTypes) {
                 {abouts_us.data.vision}
               </p>
             </div>
-            <div className="order-1 md:order-2">
+            <div className="order-2 md:order-1">
               <Image
                 src={`http://localhost:8000${abouts_us.data.vision_banner_image.url}`}
                 height={1000}
