@@ -34,7 +34,7 @@ export default async function page() {
             </div>
           </div>
           <div className="w-full col-span-full xl:col-span-1 mt-16 xl:mt-0 h-max">
-            <h1 className="text-2xl font-bold text-white mb-3 text-center bg-gray-500 py-2">
+            <h1 className="text-2xl font-bold text-white mb-3 text-center bg-gray-700 py-2">
               Featured Posts
             </h1>
             <div className="flex flex-wrap gap-2">

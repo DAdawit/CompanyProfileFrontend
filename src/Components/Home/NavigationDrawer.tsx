@@ -14,6 +14,7 @@ import AutoAwesomeMosaicOutlinedIcon from "@mui/icons-material/AutoAwesomeMosaic
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
+import FeedOutlinedIcon from "@mui/icons-material/FeedOutlined";
 type LogoType = {
   org_detail: OrgDetailOutI;
 };
@@ -142,12 +143,12 @@ export default function NavigationDrawer({ org_detail }: LogoType) {
                   <Link
                     href="/blogs"
                     className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-2 ${
-                      pathname === "/blogs"
+                      pathname.startsWith("/blogs")
                         ? "border-gray-800"
                         : "border-gray-50"
                     }`}
                   >
-                    <ContactPageOutlinedIcon className="text-2xl" />
+                    <FeedOutlinedIcon className="text-2xl" />
                     Blogs
                   </Link>
                 </section>

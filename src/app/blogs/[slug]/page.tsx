@@ -4,7 +4,7 @@ import { type BlocksContent } from "@strapi/blocks-react-renderer";
 import BlockRendererClient from "@/common/BlockRendererClient";
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  const { slug } = await params;
+  const { slug } = params;
 
   // Fetch the blog post by slug
   const blog = await fetchBlog(slug);

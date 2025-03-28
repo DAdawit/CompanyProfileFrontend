@@ -48,7 +48,9 @@ export default function NavBar({ org_detail }: NavBarProps) {
     >
       <div className="px-3 sm:px-5 xll:px-10 flex justify-between items-center py-3 w-full">
         <div className="flex items-center gap-x-3">
-          <NavigationDrawer org_detail={org_detail} />
+          <div className="md:hidden">
+            <NavigationDrawer org_detail={org_detail} />
+          </div>
 
           <Image
             src={`http://localhost:8000${org_detail.data.primary_logo.url}`}
@@ -62,48 +64,48 @@ export default function NavBar({ org_detail }: NavBarProps) {
         <div className="hidden md:flex gap-x-5 items-center text-lg capitalize text-primary">
           <Link
             href="/"
-            className={`capitalize text-lg whitespace-nowrap font-medium hover:underline ${
-              pathname === "/" ? "underline" : ""
+            className={`capitalize text-lg whitespace-nowrap font-medium hover:border-b-3 hover:border-gray-800 transition-all ease-in-out duration-300 ${
+              pathname === "/" ? "border-b-3 border-gray-800" : ""
             }`}
           >
             Home
           </Link>
           <Link
             href="/about-us"
-            className={`capitalize text-lg whitespace-nowrap font-medium hover:underline ${
-              pathname === "/about-us" ? "underline" : ""
+            className={`capitalize text-lg whitespace-nowrap font-medium hover:border-b-3 hover:border-gray-800 transition-all ease-in-out duration-300 ${
+              pathname === "/about-us" ? "border-b-3 border-gray-800" : ""
             }`}
           >
             About-Us
           </Link>
           <Link
             href="/services"
-            className={`capitalize text-lg whitespace-nowrap font-medium hover:underline ${
-              pathname === "/services" ? "underline" : ""
+            className={`capitalize text-lg whitespace-nowrap font-medium hover:border-b-3 hover:border-gray-800 transition-all ease-in-out duration-300 ${
+              pathname === "/services" ? "border-b-3 border-gray-800" : ""
             }`}
           >
             Services
           </Link>
           <Link
             href="/portfolios"
-            className={`capitalize text-lg whitespace-nowrap font-medium hover:underline ${
-              pathname === "/portfolios" ? "underline" : ""
+            className={`capitalize text-lg whitespace-nowrap font-medium hover:border-b-3 hover:border-gray-800 transition-all ease-in-out duration-300 ${
+              pathname === "/portfolios" ? "border-b-3 border-gray-800" : ""
             }`}
           >
             Portfolios
           </Link>
           <Link
             href="/contact-us"
-            className={`capitalize text-lg whitespace-nowrap font-medium hover:underline ${
-              pathname === "/contact-us" ? "underline" : ""
+            className={`capitalize text-lg whitespace-nowrap font-medium hover:border-b-3 hover:border-gray-800 transition-all ease-in-out duration-300 ${
+              pathname === "/contact-us" ? "border-b-3 border-gray-800" : ""
             }`}
           >
             Contact Us
           </Link>
           <Link
             href="/blogs"
-            className={`capitalize text-lg whitespace-nowrap font-medium hover:underline ${
-              pathname === "/blogs" ? "underline" : ""
+            className={`capitalize text-lg whitespace-nowrap font-medium hover:border-b-3 hover:border-gray-800 transition-all ease-in-out duration-300 ${
+              pathname.startsWith("/blogs") ? "border-b-3 border-gray-800" : ""
             }`}
           >
             Blogs

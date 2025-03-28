@@ -27,7 +27,7 @@ const FeaturedPostCard: React.FC<PropType> = ({ post }) => {
         </div>
         <div className="grid">
           <h1 className="text-sm truncate">{truncatedExcerpt}</h1>
-          <h5 className="text-blue-600 text-sm">{post.author}</h5>
+          <h5 className="text-blue-600 text-sm font-light">{post.author}</h5>
           <h5 className="text-gray-600 text-xs">{formattedDate}</h5>
         </div>
       </div>

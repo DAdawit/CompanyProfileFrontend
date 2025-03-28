@@ -1,7 +1,6 @@
 import React from "react";
 import { HeadLine } from "@/types/BlogHeadLineOut";
 import Image from "next/image";
-import { RichText } from "@graphcms/rich-text-react-renderer";
 
 // const blogs = [
 //   {
@@ -105,7 +104,7 @@ export const Blog7: React.FC<PropType> = ({ headline }) => {
               <p className="text-lg font-medium opacity-80 mb-9">
                 {headline.subtitle}
               </p>
-              <RichText content={headline?.body as unknown} />
+              {/* <RichText content={headline?.body as unknown} /> */}
               <a
                 href="#!"
                 className="bg-blue-600 hover:bg-opacity-90 text-white font-bold border border-blue-600 py-3 px-7 rounded transition"
