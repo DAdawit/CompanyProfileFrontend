@@ -13,7 +13,7 @@ interface PropTypes {
 export default async function AboutUs({ abouts_us }: PropTypes) {
   return (
     <div className="" id="about">
-      <div className="container mx-auto px-5 py-3">
+      <div className="py-3">
         <FadeInUp>
           <section className="grid grid-cols-1 md:grid-cols-2 gap-x-10 items-start">
             <div className="grid">

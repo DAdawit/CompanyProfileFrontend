@@ -9,7 +9,7 @@ interface PropTypes {
 }
 export default async function OurTeam({ our_team }: PropTypes) {
   return (
-    <div className="container px-4 mx-auto">
+    <div className="">
       <FadeInUp>
         <div className="flex justify-center mb-6 md:mb-12">
           <div className="sm:max-w-md text-center">

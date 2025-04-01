@@ -29,7 +29,7 @@ export default async function Portfolio() {
           image={portfolioPageDetail.data.image.url}
         />
       </div>
-      <div>
+      <div className="py-14 md:py-24 container mx-auto px-5 lg:px-8">
         <Portfolios portfolios={portfolios} />
       </div>
       <div>

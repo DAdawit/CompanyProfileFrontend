@@ -42,7 +42,7 @@ export default async function page() {
           Recent Posts
         </h2>
       </div>
-      <section className="container mx-auto px-5 mt-10">
+      <section className="py-14 md:py-24 container mx-auto px-5 lg:px-8 mt-15 ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-x-4">
           <div className="grid col-span-4 gap-2">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 content-evenly gap-5 mx-auto justify-evenly">

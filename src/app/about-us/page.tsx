@@ -40,22 +40,23 @@ export default async function about() {
         description={abouts_us.data.description}
         image={abouts_us.data.image.url}
       />
-      <div className="mt-24">
-        <DynamicTitleAndDescription
-          title="Our History"
-          history={abouts_us.data.company_history}
-        />
-        <AboutUs abouts_us={abouts_us} />
-      </div>
+      <div className="py-14 md:py-24 container mx-auto px-5 lg:px-8">
+        <div className="mt-24">
+          <DynamicTitleAndDescription
+            title="Our History"
+            history={abouts_us.data.company_history}
+          />
+          <AboutUs abouts_us={abouts_us} />
+        </div>
 
-      <div className="mt-24">
-        <OurTeam our_team={our_team} />
-      </div>
-      {/* <AboutPage /> */}
+        <div className="mt-24">
+          <OurTeam our_team={our_team} />
+        </div>
 
-      <AboutTimeline time_line_events={time_line_events} />
-      <div>
-        <FAQs faqs={faqs} />
+        <AboutTimeline time_line_events={time_line_events} />
+        <div>
+          <FAQs faqs={faqs} />
+        </div>
       </div>
       <ContactUs />
       <CallToAction call_to_action={call_to_action} />
