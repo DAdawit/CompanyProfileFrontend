@@ -11,7 +11,7 @@ const DynamicTitleAndDescription = ({
   history,
 }: PropType) => {
   return (
-    <div className="container mx-auto grid grid-cols-12 justify-center mb-12 px-5">
+    <div className="grid grid-cols-12 justify-center mb-12">
       <div className="col-span-12 md:col-span-8 md:col-start-3">
         <h2 className="text-4xl leading-snug md:text-5xl md:leading-snug font-bold mb-6 text-center">
           {title}

@@ -45,13 +45,12 @@ export default async function Home() {
   return (
     <>
       {/* <pre>{JSON.stringify(services.data, null, 2)}</pre> */}
-      <p>Hello world!</p>
       <main id="" className="overflow-hidden bg-bgPrimary">
         <div className="mt-12">
           <Carosole carosoles={heroSections.data[0].heroSlider} />
         </div>
 
-        <div className="py-14 md:py-24">
+        <div className="py-14 md:py-24 container mx-auto px-5 lg:px-8">
           <FadeOut>
             <DynamicTitleAndDescription
               title="About Us"

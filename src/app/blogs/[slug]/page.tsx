@@ -5,13 +5,10 @@ import BlockRendererClient from "@/common/BlockRendererClient";
 
 export type paramsType = Promise<{ slug: string }>;
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export async function generateMetadata(props: { params: paramsType }) {
   // Fetch the blog post by slug
-  const blog = await fetchBlog(params.slug);
+  const { slug } = await props.params;
+  const blog = await fetchBlog(slug);
 
   // Check if the blog exists
   if (!blog.data) {
