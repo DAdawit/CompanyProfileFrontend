@@ -63,7 +63,6 @@ export default class Carosole extends Component<CarosoleProps> {
                   height={2000}
                   width={2000}
                   className="h-[90vh] xl:max-h-[90vh] xll:max-h-[60vh] w-screen object-cover object-bottom brightness-50"
-                  unoptimized={true}
                 />
                 <div className="absolute h-full top-0 w-full flex text-white ">
                   <div className="flex items-center justify-start w-full px-5 container mx-auto">

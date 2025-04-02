@@ -31,7 +31,6 @@ export default async function OurService({ services }: propTypes) {
                 width={100}
                 height={200}
                 className="h-14 object-contain"
-                unoptimized={true}
               />{" "}
               <h2 className="text-xl font-semibold capitalize text-primary-900 dark:text-primary-100 group-hover:text-primary-700">
                 {service?.title}

@@ -71,7 +71,6 @@ export default async function Portfolios({ portfolios }: PropTypes) {
                       height={1000}
                       width={1000}
                       className="h-64 object-cover rounded-sm"
-                      unoptimized={true}
                     />
                     <div className="flex md:hidden mt-4 md:mt-0">
                       {portfolio.link != null ? (

@@ -16,7 +16,7 @@ export default function FAQs({ faqs }: PropType) {
 
   return (
     <section className="ezy__faq12 light py-14 md:py-24">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-3">
         <div className="grid grid-cols-12 justify-center mb-12">
           <div className="col-span-12 lg:col-span-8 lg:col-start-3 text-center">
             <h2 className="font-bold text-[25px] md:text-[45px] leading-none mb-4">
