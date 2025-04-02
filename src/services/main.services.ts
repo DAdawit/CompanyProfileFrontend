@@ -10,7 +10,7 @@
 // import { HeroOut, HeroSection } from "@/types/Hero";
 import { HeroOutT } from "@/types/HeroOut";
 // import {prodBaseUrl} from "./axios";
-import { devBaseurl } from "./axios";
+import { baseUrl } from "./axios";
 import { LogoOutI } from "@/types/LogoOut";
 import { AboutUsI } from "@/types/AboutUsOut";
 import { ServicesOutI } from "@/types/ServicesOut";
@@ -28,7 +28,7 @@ import { BlogOutI } from "@/types/SingleBlogOut";
 import { BlogsOutI } from "@/types/BlogsOut";
 
 export async function fetchLogos(): Promise<LogoOutI> {
-  const res = await fetch(`${devBaseurl}/logo?populate=*`, {
+  const res = await fetch(`${baseUrl}/logo?populate=*`, {
     next: { revalidate: 10 },
   });
   const data = await res.json();
@@ -36,7 +36,7 @@ export async function fetchLogos(): Promise<LogoOutI> {
 }
 export async function fetchHero(): Promise<HeroOutT> {
   const res = await fetch(
-    `${devBaseurl}/heroes?populate[heroSlider][populate]=image`,
+    `${baseUrl}/heroes?populate[heroSlider][populate]=image`,
     {
       next: { revalidate: 10 },
     }
@@ -46,7 +46,7 @@ export async function fetchHero(): Promise<HeroOutT> {
 }
 
 export async function fetchAboutUs(): Promise<AboutUsI> {
-  const res = await fetch(`${devBaseurl}/about-us?populate=*`, {
+  const res = await fetch(`${baseUrl}/about-us?populate=*`, {
     next: { revalidate: 10 },
   });
   const data = await res.json();
@@ -55,7 +55,7 @@ export async function fetchAboutUs(): Promise<AboutUsI> {
 
 export async function fetchOurServices(): Promise<ServicesOutI> {
   const res = await fetch(
-    `${devBaseurl}/service?populate[ServicesComponent][populate]=icon&populate=image`,
+    `${baseUrl}/service?populate[ServicesComponent][populate]=icon&populate=image`,
     {
       next: { revalidate: 10 },
     }
@@ -65,7 +65,7 @@ export async function fetchOurServices(): Promise<ServicesOutI> {
 }
 export async function fetchOurPortfolios(): Promise<PortfoliosOutI> {
   const res = await fetch(
-    `${devBaseurl}/portfolios?populate=*&pagination[pageSize]=4`,
+    `${baseUrl}/portfolios?populate=*&pagination[pageSize]=4`,
     {
       next: { revalidate: 10 },
     }
@@ -75,14 +75,14 @@ export async function fetchOurPortfolios(): Promise<PortfoliosOutI> {
 }
 
 export async function fetchAllOurPortfolios(): Promise<PortfoliosOutI> {
-  const res = await fetch(`${devBaseurl}/portfolios?populate=*`, {
+  const res = await fetch(`${baseUrl}/portfolios?populate=*`, {
     next: { revalidate: 10 },
   });
   const data = await res.json();
   return data;
 }
 export async function fetchOutTeam(): Promise<OurTeamOutI> {
-  const res = await fetch(`${devBaseurl}/our-teams?populate=*`, {
+  const res = await fetch(`${baseUrl}/our-teams?populate=*`, {
     next: { revalidate: 10 },
   });
   const data = await res.json();
@@ -90,14 +90,14 @@ export async function fetchOutTeam(): Promise<OurTeamOutI> {
 }
 
 export async function fetchTestimonials(): Promise<TestimonialsOutI> {
-  const res = await fetch(`${devBaseurl}/testimonials?populate=*`, {
+  const res = await fetch(`${baseUrl}/testimonials?populate=*`, {
     next: { revalidate: 10 },
   });
   const data = await res.json();
   return data;
 }
 export async function fetchCallToAction(): Promise<CallToActionOutI> {
-  const res = await fetch(`${devBaseurl}/call-to-action`, {
+  const res = await fetch(`${baseUrl}/call-to-action`, {
     next: { revalidate: 10 },
   });
   const data = await res.json();
@@ -106,14 +106,14 @@ export async function fetchCallToAction(): Promise<CallToActionOutI> {
 }
 
 export async function fetchOrgDetail(): Promise<OrgDetailOutI> {
-  const res = await fetch(`${devBaseurl}/company-detail?populate=*`, {
+  const res = await fetch(`${baseUrl}/company-detail?populate=*`, {
     next: { revalidate: 10 },
   });
   const data = await res.json();
   return data;
 }
 export async function fetchOrgPortfolioDetail(): Promise<PortfolioDetailI> {
-  const res = await fetch(`${devBaseurl}/portfolio-detail?populate=*`, {
+  const res = await fetch(`${baseUrl}/portfolio-detail?populate=*`, {
     next: { revalidate: 10 },
   });
   const data = await res.json();
@@ -121,28 +121,28 @@ export async function fetchOrgPortfolioDetail(): Promise<PortfolioDetailI> {
 }
 
 export async function fetchContactUsDetail(): Promise<PortfolioDetailI> {
-  const res = await fetch(`${devBaseurl}/contact-us?populate=*`, {
+  const res = await fetch(`${baseUrl}/contact-us?populate=*`, {
     next: { revalidate: 10 },
   });
   const data = await res.json();
   return data;
 }
 export async function fetchFaqs(): Promise<FaqsOutI> {
-  const res = await fetch(`${devBaseurl}/faq?populate=*`, {
+  const res = await fetch(`${baseUrl}/faq?populate=*`, {
     next: { revalidate: 10 },
   });
   const data = await res.json();
   return data;
 }
 export async function fetchStats(): Promise<ImportantStatsOutI> {
-  const res = await fetch(`${devBaseurl}/site-stat?populate=*`, {
+  const res = await fetch(`${baseUrl}/site-stat?populate=*`, {
     next: { revalidate: 10 },
   });
   const data = await res.json();
   return data;
 }
 export async function fetchTimeLineEvents(): Promise<TimeLineEventsOutI> {
-  const res = await fetch(`${devBaseurl}/time-line-event?populate=*`, {
+  const res = await fetch(`${baseUrl}/time-line-event?populate=*`, {
     next: { revalidate: 10 },
   });
   const data = await res.json();
@@ -151,7 +151,7 @@ export async function fetchTimeLineEvents(): Promise<TimeLineEventsOutI> {
 
 export async function fetchBlogHeadline(): Promise<BlogHeadLineOutI> {
   const res = await fetch(
-    `${devBaseurl}/blogs?populate=*&filters[headline][$eq]=true&pagination[pageSize]=1&sort=createdAt:desc`,
+    `${baseUrl}/blogs?populate=*&filters[headline][$eq]=true&pagination[pageSize]=1&sort=createdAt:desc`,
     {
       next: { revalidate: 10 },
     }
@@ -161,7 +161,7 @@ export async function fetchBlogHeadline(): Promise<BlogHeadLineOutI> {
 }
 export async function fetchBlogs(): Promise<BlogsOutI> {
   const res = await fetch(
-    `${devBaseurl}/blogs?populate=*&filters[featured][$eq]=false`,
+    `${baseUrl}/blogs?populate=*&filters[featured][$eq]=false`,
     {
       next: { revalidate: 10 },
     }
@@ -171,7 +171,7 @@ export async function fetchBlogs(): Promise<BlogsOutI> {
 }
 
 export async function fetchBlog(slug: string): Promise<BlogOutI> {
-  const res = await fetch(`${devBaseurl}/blogs/${slug}?populate=*`, {
+  const res = await fetch(`${baseUrl}/blogs/${slug}?populate=*`, {
     next: { revalidate: 10 },
   });
   const data = await res.json();
@@ -180,7 +180,7 @@ export async function fetchBlog(slug: string): Promise<BlogOutI> {
 
 export async function fetchFeaturedBlog(): Promise<BlogsOutI> {
   const res = await fetch(
-    `${devBaseurl}/blogs?populate=*&filters[featured][$eq]=true`,
+    `${baseUrl}/blogs?populate=*&filters[featured][$eq]=true`,
     {
       next: { revalidate: 10 },
     }

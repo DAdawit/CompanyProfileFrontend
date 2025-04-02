@@ -26,7 +26,7 @@ export default async function AboutUs({ abouts_us }: PropTypes) {
             </div>
             <div className="grid">
               <Image
-                src={`http://localhost:8000${abouts_us.data.mission_banner_image.url}`}
+                src={`${abouts_us?.data?.mission_banner_image?.url}`}
                 height={1000}
                 width={1000}
                 alt="hero image"
@@ -44,12 +44,12 @@ export default async function AboutUs({ abouts_us }: PropTypes) {
                 Our <span className="text-primary">Vison </span>
               </h1>
               <p className="text-gray-800 mb-5 text-lg max-w-lg">
-                {abouts_us.data.vision}
+                {abouts_us?.data?.vision}
               </p>
             </div>
             <div className="order-2 md:order-1">
               <Image
-                src={`http://localhost:8000${abouts_us.data.vision_banner_image.url}`}
+                src={`${abouts_us.data.vision_banner_image.url}`}
                 height={1000}
                 width={1000}
                 alt="hero image"

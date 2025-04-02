@@ -60,7 +60,7 @@ export default function NavigationDrawer({ org_detail }: LogoType) {
               <div className="overflow-x-hidden px-3">
                 <div className="flex justify-between px-5 text-gray-800 mt-8 h-max">
                   <Image
-                    src={`http://localhost:8000${org_detail.data.primary_logo.url}`}
+                    src={`${org_detail?.data?.primary_logo?.url}`}
                     alt="spector"
                     width={150}
                     height={100}

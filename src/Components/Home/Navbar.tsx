@@ -53,7 +53,7 @@ export default function NavBar({ org_detail }: NavBarProps) {
           </div>
 
           <Image
-            src={`http://localhost:8000${org_detail.data.primary_logo.url}`}
+            src={`${org_detail?.data?.primary_logo?.url}`}
             width={1000}
             height={1000}
             alt="logo"

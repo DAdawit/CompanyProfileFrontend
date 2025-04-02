@@ -66,7 +66,7 @@ const Stats: React.FC<PropType> = ({ stats }) => {
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         <div className="absolute inset-0">
           <Image
-            src={`http://localhost:8000${stats.data.image.url}`}
+            src={`${stats?.data?.image?.url}`}
             alt="Background"
             fill
             sizes="100vw"
@@ -88,13 +88,13 @@ const Stats: React.FC<PropType> = ({ stats }) => {
             </span>
           </h1>
           <p className="text-lg text-white/90 max-w-4xl mx-auto">
-            {stats.data.description}
+            {stats?.data?.description}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {stats.data.stats.map((item, i) => (
-            <CardItem item={item} key={i} isVisible={isVisible} />
+          {stats?.data?.stats.map((item) => (
+            <CardItem item={item} key={item.id} isVisible={isVisible} />
           ))}
         </div>
       </div>

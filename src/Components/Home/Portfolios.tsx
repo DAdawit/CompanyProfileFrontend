@@ -29,7 +29,7 @@ export default async function Portfolios({ portfolios }: PropTypes) {
           {portfolios?.data?.map((portfolio, index) => (
             <>
               <div
-                key={index}
+                key={portfolio.id}
                 className="max-w-6xl mx-auto bg-white p-5 mt-8 rounded-md "
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center gap-8">
@@ -66,7 +66,7 @@ export default async function Portfolios({ portfolios }: PropTypes) {
                     }
                   >
                     <Image
-                      src={`http://localhost:8000${portfolio.image.url}`}
+                      src={`${portfolio.image.url}`}
                       alt={portfolio.title}
                       height={1000}
                       width={1000}

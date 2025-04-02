@@ -23,7 +23,7 @@ const BlogBanner: React.FC<PropType> = ({
     <>
       <div className="h-[70vh]  xl:max-h-[60vh] xll:max-h-[60vh] relative">
         <Image
-          src={`http://localhost:8000${image}`}
+          src={`${image}`}
           alt="hero image"
           height={2000}
           width={2000}

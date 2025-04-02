@@ -27,6 +27,8 @@ export default async function Service() {
   return (
     <div className="overflow-hidden bg-primary-500 mt-16">
       {/* <pre>{JSON.stringify(stats.data, null, 2)}</pre> */}
+      {/* <pre>{JSON.stringify(stats.data.image.url, null, 2)}</pre> */}
+      {/* <pre>{JSON.stringify(services, null, 2)}</pre> */}
 
       <DynamicHero
         title="Our Services"

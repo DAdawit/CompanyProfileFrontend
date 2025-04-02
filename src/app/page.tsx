@@ -47,14 +47,14 @@ export default async function Home() {
       {/* <pre>{JSON.stringify(services.data, null, 2)}</pre> */}
       <main id="" className="overflow-hidden bg-bgPrimary">
         <div className="mt-12">
-          <Carosole carosoles={heroSections.data[0].heroSlider} />
+          <Carosole carosoles={heroSections?.data[0]?.heroSlider} />
         </div>
 
         <div className="py-14 md:py-24 container mx-auto px-5 lg:px-8">
           <FadeOut>
             <DynamicTitleAndDescription
               title="About Us"
-              description={abouts_us.data.description}
+              description={abouts_us?.data?.description}
             />
           </FadeOut>
           <AboutUs abouts_us={abouts_us} />

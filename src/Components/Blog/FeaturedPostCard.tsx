@@ -20,7 +20,7 @@ const FeaturedPostCard: React.FC<PropType> = ({ post }) => {
           <Image
             height={2000}
             width={2000}
-            src={`http://localhost:8000${post.banner_image.url}`}
+            src={`${post.banner_image.url}`}
             alt={post.title}
             className="h-12 w-12 min-w-12 rounded-lg"
           />

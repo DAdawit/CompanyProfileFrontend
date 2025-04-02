@@ -31,7 +31,7 @@ export default async function OurTeam({ our_team }: PropTypes) {
             key={member.id}
           >
             <Image
-              src={`http://localhost:8000${member.image.url}`}
+              src={`${member.image.url}`}
               alt={member.full_name}
               className="w-46 h-46 rounded-full mx-auto"
               height={300}

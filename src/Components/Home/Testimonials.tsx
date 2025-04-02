@@ -91,7 +91,7 @@ export default class Testimonials extends Component<TestimonialProps> {
                           <div className="flex items-center">
                             <div className="mr-2">
                               <Image
-                                src={`http://localhost:8000${testimonial?.image.url}`}
+                                src={`${testimonial?.image.url}`}
                                 alt={testimonial.full_name}
                                 className="h-14 w-14 pointer-events-none rounded-full border p-1 border-gray-500"
                                 width={100}

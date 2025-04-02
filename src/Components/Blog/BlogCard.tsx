@@ -24,7 +24,7 @@ const BlogCard: React.FC<PropType> = ({ blog }) => {
         <Image
           height={2000}
           width={2000}
-          src={`http://localhost:8000${blog.banner_image.url}`}
+          src={`${blog.banner_image.url}`}
           alt={blog.title}
           className="h-64 w-full shadow-lg dark:shadow-none"
         />
