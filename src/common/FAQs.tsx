@@ -15,10 +15,10 @@ export default function FAQs({ faqs }: PropType) {
   };
 
   return (
-    <section className="ezy__faq12 light py-14 md:py-24 bg-white">
-      <div className="container px-16 md:px-8 lg:px-28">
+    <section className="ezy__faq12 light py-14 md:py-24">
+      <div className="container mx-auto">
         <div className="grid grid-cols-12 justify-center mb-12">
-          <div className="col-span-12 lg:col-span-8 lg:col-start-3 xl:px-11 text-center">
+          <div className="col-span-12 lg:col-span-8 lg:col-start-3 text-center">
             <h2 className="font-bold text-[25px] md:text-[45px] leading-none mb-4">
               {faqs.data.title}
             </h2>
@@ -28,7 +28,7 @@ export default function FAQs({ faqs }: PropType) {
 
         <div className="grid grid-cols-12">
           <div className="col-span-12 md:col-span-8 md:col-start-3">
-            <div className="bg-white shadow dark:shadow-none p-6">
+            <div className="bg-white shadow p-6">
               {faqs.data.faqs.map((faq, index) => (
                 <div
                   key={index}

@@ -14,6 +14,7 @@ import AutoAwesomeMosaicOutlinedIcon from "@mui/icons-material/AutoAwesomeMosaic
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
+import FeedOutlinedIcon from "@mui/icons-material/FeedOutlined";
 type LogoType = {
   org_detail: OrgDetailOutI;
 };
@@ -59,7 +60,7 @@ export default function NavigationDrawer({ org_detail }: LogoType) {
               <div className="overflow-x-hidden px-3">
                 <div className="flex justify-between px-5 text-gray-800 mt-8 h-max">
                   <Image
-                    src={`http://localhost:8000${org_detail.data.primary_logo.url}`}
+                    src={`${org_detail?.data?.primary_logo?.url}`}
                     alt="spector"
                     width={150}
                     height={100}
@@ -138,6 +139,17 @@ export default function NavigationDrawer({ org_detail }: LogoType) {
                   >
                     <ContactPageOutlinedIcon className="text-2xl" />
                     Contact Us
+                  </Link>
+                  <Link
+                    href="/blogs"
+                    className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-2 ${
+                      pathname.startsWith("/blogs")
+                        ? "border-gray-800"
+                        : "border-gray-50"
+                    }`}
+                  >
+                    <FeedOutlinedIcon className="text-2xl" />
+                    Blogs
                   </Link>
                 </section>
 

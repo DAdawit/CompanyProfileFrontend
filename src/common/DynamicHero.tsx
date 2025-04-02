@@ -13,7 +13,7 @@ const DynamicHero: React.FC<PropTypes> = ({ image, title, description }) => {
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src={`http://localhost:8000${image}`}
+          src={`${image}`}
           alt="Services Background"
           fill
           sizes="100vw"

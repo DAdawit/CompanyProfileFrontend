@@ -10,6 +10,16 @@ import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
+
+export async function generateMetadata() {
+  const org = await fetchContactUsDetail();
+  const { description } = org.data;
+
+  return {
+    title: "Contact Us",
+    description: { description },
+  };
+}
 export default async function contactUs() {
   const contact_us = await fetchContactUsDetail();
   const faqs = await fetchFaqs();

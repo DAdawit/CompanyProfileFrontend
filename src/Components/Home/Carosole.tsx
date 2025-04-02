@@ -17,7 +17,7 @@ export default class Carosole extends Component<CarosoleProps> {
     const safeCarosoles = Array.isArray(carosoles) ? carosoles : [];
 
     const settings = {
-      dots: false,
+      dots: true,
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -58,7 +58,7 @@ export default class Carosole extends Component<CarosoleProps> {
                 key={carosole.id}
               >
                 <Image
-                  src={`http://localhost:8000${carosole?.image.formats.large.url}`}
+                  src={`${carosole?.image?.url}`}
                   alt="hero image"
                   height={2000}
                   width={2000}

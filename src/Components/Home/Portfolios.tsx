@@ -1,5 +1,4 @@
 import FadeInLeft from "@/common/Animations/FadeInLeft";
-import SlideInUp from "@/common/Animations/SlideInUp";
 import { PortfoliosOutI } from "@/types/PortfoliosOut";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,7 +7,6 @@ interface PropTypes {
   portfolios: PortfoliosOutI;
 }
 export default async function Portfolios({ portfolios }: PropTypes) {
-  const colors = ["blue", "green", "yellow", "purple"];
   return (
     <div id="portfolios">
       <section className="ezy__portfolio16 light py-14 md:py-24 bg-white">
@@ -28,57 +26,68 @@ export default async function Portfolios({ portfolios }: PropTypes) {
             </div>
           </FadeInLeft>
 
-          {portfolios?.data?.map((portfolio, i) => (
-            <div
-              key={portfolio.id}
-              className="flex flex-col gap-6 max-w-7xl mt-12 mx-auto"
-            >
-              <SlideInUp>
-                <div
-                  className={`grid grid-cols-12 bg-${colors[i]}-100 bg-opacity-30 rounded-xl p-6 md:p-12`}
-                >
+          {portfolios?.data?.map((portfolio, index) => (
+            <>
+              <div
+                key={portfolio.id}
+                className="max-w-6xl mx-auto bg-white p-5 mt-8 rounded-md "
+              >
+                <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center gap-8">
                   <div
-                    className={`col-span-12 lg:col-span-5 ${
-                      i % 2 === 0 && "order-2"
-                    }`}
+                    className={
+                      (index + 1) % 2 == 0
+                        ? `grid md:order-2 justify-center rounded-lg self-center`
+                        : `grid gap-3 h-min self-center`
+                    }
                   >
-                    <div
-                      className={`bg-${colors[i]}-100 bg-opacity-75 flex justify-center items-center p-6 rounded-xl`}
-                    >
-                      <Image
-                        src={`http://localhost:8000${portfolio.image.url}`}
-                        alt={portfolio.title}
-                        height={1000}
-                        width={1000}
-                        className="h-64 object-cover rounded-sm"
-                        unoptimized={true}
-                      />
+                    <h1 className="text-3xl md:text-[44px] leading-tight font-bold mb-4">
+                      {portfolio.title}
+                    </h1>
+                    <p className="leading-loose opacity-80 md:mb-6 lg:pr-12">
+                      {portfolio.description}
+                    </p>
+                    <div className="hidden md:flex">
+                      {portfolio.link != null ? (
+                        <Link
+                          href={portfolio.link}
+                          target="_blank"
+                          className="font-bold border border-gray-950 text-gray-950 px-8 py-3 hover:bg-opacity-90 duration-300 rounded inline-flex"
+                        >
+                          View Project
+                        </Link>
+                      ) : null}
                     </div>
                   </div>
-                  <div className="col-span-12 lg:col-span-7">
-                    <div className="mt-6 lg:mt-0 lg:px-12 text-center lg:text-start h-full flex flex-col justify-center">
-                      <h5 className="text-3xl md:text-[44px] leading-tight font-bold mb-4">
-                        {portfolio.title}
-                      </h5>
-                      <p className="leading-loose opacity-80 mb-6 lg:pr-12">
-                        {portfolio.description}
-                      </p>
-                      <div>
-                        {portfolio.link != null ? (
-                          <Link
-                            href={portfolio.link}
-                            target="_blank"
-                            className="font-bold border border-gray-950 text-gray-950 px-8 py-3 hover:bg-opacity-90 duration-300 rounded inline-flex"
-                          >
-                            View Project
-                          </Link>
-                        ) : null}
-                      </div>
+                  <div
+                    className={
+                      (index + 1) % 2 == 0
+                        ? `grid justify-center rounded-lg`
+                        : `grid md:order-1 justify-center rounded-lg`
+                    }
+                  >
+                    <Image
+                      src={`${portfolio.image.url}`}
+                      alt={portfolio.title}
+                      height={1000}
+                      width={1000}
+                      className="h-64 object-cover rounded-sm"
+                      unoptimized={true}
+                    />
+                    <div className="flex md:hidden mt-4 md:mt-0">
+                      {portfolio.link != null ? (
+                        <Link
+                          href={portfolio.link}
+                          target="_blank"
+                          className="font-bold border border-gray-950 text-gray-950 px-8 py-3 hover:bg-opacity-90 duration-300 rounded inline-flex"
+                        >
+                          View Project
+                        </Link>
+                      ) : null}
                     </div>
                   </div>
                 </div>
-              </SlideInUp>
-            </div>
+              </div>
+            </>
           ))}
         </div>
       </section>

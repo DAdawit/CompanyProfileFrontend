@@ -9,16 +9,28 @@ import OurTeam from "@/components/Home/OurTeam";
 import Portfolios from "@/components/Home/Portfolios";
 import Services from "@/components/Home/Services";
 import Testimonials from "@/components/Home/Testimonials";
+
 import {
   fetchAboutUs,
   fetchCallToAction,
   fetchFaqs,
   fetchHero,
+  fetchOrgDetail,
   fetchOurPortfolios,
   fetchOurServices,
   fetchOutTeam,
   fetchTestimonials,
 } from "@/services/main.services";
+
+export async function generateMetadata() {
+  const org = await fetchOrgDetail();
+  const { org_detail } = org.data;
+
+  return {
+    title: "Home",
+    description: { org_detail },
+  };
+}
 
 export default async function Home() {
   const heroSections = await fetchHero();
@@ -29,20 +41,20 @@ export default async function Home() {
   const portfolios = await fetchOurPortfolios();
   const services = await fetchOurServices();
   const faqs = await fetchFaqs();
+
   return (
     <>
       {/* <pre>{JSON.stringify(services.data, null, 2)}</pre> */}
-
       <main id="" className="overflow-hidden bg-bgPrimary">
         <div className="mt-12">
-          <Carosole carosoles={heroSections.data[0].heroSlider} />
+          <Carosole carosoles={heroSections?.data[0]?.heroSlider} />
         </div>
 
-        <div className="py-14 md:py-24">
+        <div className="py-14 md:py-24 container mx-auto px-5 lg:px-8">
           <FadeOut>
             <DynamicTitleAndDescription
               title="About Us"
-              description={abouts_us.data.description}
+              description={abouts_us?.data?.description}
             />
           </FadeOut>
           <AboutUs abouts_us={abouts_us} />
@@ -62,7 +74,7 @@ export default async function Home() {
           <Testimonials testimonials={testimonials} />
         </div>
 
-        <div>
+        <div id="FAQ">
           <FAQs faqs={faqs} />
         </div>
 

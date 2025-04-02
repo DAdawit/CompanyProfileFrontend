@@ -16,31 +16,43 @@ export default async function Footer() {
         <div className="bg-gray-50 py-3 shadow-lg text-gray-900">
           <section className="container mx-auto px-5">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 items-stretch mt-5 text-gray-900">
-              <div className="flex flex-col gap-y-1">
+              <div className="flex flex-col gap-y-1 uppercase">
                 <h1 className=" font-bold text-2xl">USEFUL LINKS</h1>
                 <Link
                   href=""
                   className="text-sm  font-sans  hover:underline underline-offset-2 mt-2 w-max"
                 >
-                  ABOUT US
+                  Home
                 </Link>
                 <Link
-                  href=""
+                  href="/services"
                   className="text-sm  font-sans  hover:underline underline-offset-2 mt-2 w-max"
                 >
                   OUR SERVICES
                 </Link>
                 <Link
-                  href=""
+                  href="/about-us"
                   className="text-sm  font-sans  hover:underline underline-offset-2 mt-2 w-max"
                 >
-                  INFORMATION
+                  About Us
                 </Link>
                 <Link
-                  href=""
+                  href="/contact-us"
                   className="text-sm  font-sans  hover:underline underline-offset-2 mt-2 w-max"
                 >
-                  PRIVACY POLICY
+                  CONTACTS US
+                </Link>
+                <Link
+                  href="/portfolios"
+                  className="text-sm  font-sans  hover:underline underline-offset-2 mt-2 w-max"
+                >
+                  PORTFOLIOS
+                </Link>
+                <Link
+                  href="/blogs"
+                  className="text-sm  font-sans  hover:underline underline-offset-2 mt-2 w-max"
+                >
+                  BLOGS
                 </Link>
               </div>
               <div className="flex flex-col gap-y-1">
@@ -55,16 +67,11 @@ export default async function Footer() {
                   href=""
                   className="text-sm  font-sans  hover:underline underline-offset-2 mt-2 w-max"
                 >
-                  CONTACTS
+                  PRIVACY POLICY
                 </Link>
+
                 <Link
-                  href=""
-                  className="text-sm  font-sans  hover:underline underline-offset-2 mt-2 w-max"
-                >
-                  TYPOGRAPHY
-                </Link>
-                <Link
-                  href=""
+                  href="/#FAQ"
                   className="text-sm  font-sans  hover:underline underline-offset-2 mt-2 w-max"
                 >
                   FAQ
@@ -74,7 +81,7 @@ export default async function Footer() {
                 <h1 className=" font-bold text-2xl">Organization Details</h1>
                 <div className="text-sm  font-sans  mt-2 flex space-x-2">
                   <LocationOnIcon fontSize="small" />
-                  <span>{org_detail.data.full_address}</span>
+                  <span>{org_detail?.data?.full_address}</span>
                 </div>
                 <div className="text-sm  font-sans  mt-2 flex space-x-2">
                   <PhoneIcon fontSize="small" />
@@ -94,7 +101,7 @@ export default async function Footer() {
           <div className="w-full md:flex md:justify-between py-5 itemx-center px-5 md:px-16">
             <div className="flex justify-start items-center">
               <Image
-                src={`http://localhost:8000${org_detail.data.primary_logo.url}`}
+                src={`${org_detail?.data?.primary_logo?.url}`}
                 height={1000}
                 width={1000}
                 alt="logo image"
@@ -103,12 +110,12 @@ export default async function Footer() {
               />
             </div>
             <h1 className="text-lg font-sans font-bold ml-2">
-              © {currentYear} {org_detail.data.org_name}
+              © {currentYear} {org_detail?.data?.org_name}
             </h1>
             <div className=" text-sm font-sans  mt-1">
               <div className="flex justify-start alig">
                 <SocialMeadiaLinks
-                  links={org_detail.data.links}
+                  links={org_detail?.data?.links}
                   color="gray-900"
                 />
               </div>

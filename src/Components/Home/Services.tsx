@@ -49,7 +49,7 @@ export default async function Services({ services }: PropType) {
                         <div className="p-6 md:p-12">
                           <div className="w-[75px] h-[75px] rounded-full text-[26px] shadow-xl flex justify-center items-center mb-6">
                             <Image
-                              src={`http://localhost:8000${service.icon.url}`}
+                              src={`${service.icon.url}`}
                               alt="spector"
                               width={100}
                               height={200}

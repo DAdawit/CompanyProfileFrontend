@@ -9,6 +9,12 @@ import {
 } from "@/services/main.services";
 import React from "react";
 
+export async function generateMetadata() {
+  return {
+    title: "Portfolios",
+    description: "Wander web our prev works",
+  };
+}
 export default async function Portfolio() {
   const portfolioPageDetail = await fetchOrgPortfolioDetail();
   const portfolios = await fetchAllOurPortfolios();
@@ -23,7 +29,7 @@ export default async function Portfolio() {
           image={portfolioPageDetail.data.image.url}
         />
       </div>
-      <div>
+      <div className="py-14 md:py-24 container mx-auto px-5 lg:px-8">
         <Portfolios portfolios={portfolios} />
       </div>
       <div>

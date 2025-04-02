@@ -65,6 +65,7 @@ export interface Data {
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
+  org_detail: string;
   links: Link;
   primary_logo: Primary_logo;
   secondary_logo: Secondary_logo;

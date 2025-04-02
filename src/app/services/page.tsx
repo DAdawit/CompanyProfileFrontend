@@ -10,6 +10,15 @@ import React from "react";
 import DynamicHero from "@/common/DynamicHero";
 import CallToAction from "@/components/Home/CallToAction";
 
+export async function generateMetadata() {
+  const org = await fetchOurServices();
+  const { description } = org.data;
+
+  return {
+    title: "Services",
+    description: { description },
+  };
+}
 export default async function Service() {
   const services = await fetchOurServices();
   const call_to_action = await fetchCallToAction();
@@ -18,6 +27,8 @@ export default async function Service() {
   return (
     <div className="overflow-hidden bg-primary-500 mt-16">
       {/* <pre>{JSON.stringify(stats.data, null, 2)}</pre> */}
+      {/* <pre>{JSON.stringify(stats.data.image.url, null, 2)}</pre> */}
+      {/* <pre>{JSON.stringify(services, null, 2)}</pre> */}
 
       <DynamicHero
         title="Our Services"
