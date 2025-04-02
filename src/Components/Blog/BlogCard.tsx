@@ -20,7 +20,7 @@ const BlogCard: React.FC<PropType> = ({ blog }) => {
   return (
     <article className="rounded-lg shadow-lg overflow-hidden pb-2 h-full flex flex-col">
       {/* Image Section */}
-      <div>
+      <Link href={`/blogs/${blog.slug}`}>
         <Image
           height={2000}
           width={2000}
@@ -28,7 +28,7 @@ const BlogCard: React.FC<PropType> = ({ blog }) => {
           alt={blog.title}
           className="h-64 w-full shadow-lg dark:shadow-none"
         />
-      </div>
+      </Link>
 
       {/* Content Section */}
       <div className="p-4 pb-8 md:p-6 flex-grow flex flex-col">

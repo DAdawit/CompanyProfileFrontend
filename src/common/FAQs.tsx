@@ -28,7 +28,7 @@ export default function FAQs({ faqs }: PropType) {
 
         <div className="grid grid-cols-12">
           <div className="col-span-12 md:col-span-8 md:col-start-3">
-            <div className="bg-white shadow p-6">
+            <div className="bg-white p-6">
               {faqs.data.faqs.map((faq, index) => (
                 <div
                   key={index}
@@ -50,7 +50,7 @@ export default function FAQs({ faqs }: PropType) {
                   <div
                     className={`${
                       openFaqIndex === index ? "block" : "hidden"
-                    } border-l-2 border-blue-600 mb-4`}
+                    } border-l-2 border-gray-600 mb-4`}
                   >
                     <div className="px-6">
                       <p className="opacity-50">{faq.answer}</p>

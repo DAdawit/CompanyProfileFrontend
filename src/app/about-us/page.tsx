@@ -40,7 +40,7 @@ export default async function about() {
         description={abouts_us.data.description}
         image={abouts_us.data.image.url}
       />
-      <div className="py-14 md:py-24 container mx-auto px-5 lg:px-8">
+      <div className="py-14 container mx-auto px-5 lg:px-8">
         <div className="mt-24">
           <DynamicTitleAndDescription
             title="Our History"

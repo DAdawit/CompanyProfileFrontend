@@ -2,6 +2,16 @@ import BlogBanner from "@/components/Blog/BlogBanner";
 import { fetchBlog } from "@/services/main.services";
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
 import BlockRendererClient from "@/common/BlockRendererClient";
+import { baseUrl } from "@/services/axios";
+import { BlogOut } from "@/types/BlogsOut";
+
+export async function generateStaticParams() {
+  const posts = await fetch(`${baseUrl}/blogs`).then((res) => res.json());
+  // console.log(posts.data);
+  return posts.data.map((post: BlogOut) => ({
+    slug: post.slug,
+  }));
+}
 
 export type paramsType = Promise<{ slug: string }>;
 

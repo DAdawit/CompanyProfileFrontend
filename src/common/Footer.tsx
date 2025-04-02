@@ -105,12 +105,12 @@ export default async function Footer() {
                 height={1000}
                 width={1000}
                 alt="logo image"
-                className="h-10 w-10 object-contain pointer-events-none select-none"
+                className="h-20 w-24 object-contain pointer-events-none select-none"
                 unoptimized={true}
               />
             </div>
-            <h1 className="text-lg font-sans font-bold ml-2">
-              © {currentYear} {org_detail?.data?.org_name}
+            <h1 className="text-lg font-sans font-bold">
+              &copy; {currentYear} {org_detail?.data?.org_name}
             </h1>
             <div className=" text-sm font-sans  mt-1">
               <div className="flex justify-start alig">

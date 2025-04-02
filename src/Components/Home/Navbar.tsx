@@ -48,7 +48,7 @@ export default function NavBar({ org_detail }: NavBarProps) {
     >
       <div className="px-3 sm:px-5 xll:px-10 flex justify-between items-center py-3 w-full">
         <div className="flex items-center gap-x-3">
-          <div className="md:hidden">
+          <div className="md:">
             <NavigationDrawer org_detail={org_detail} />
           </div>
 
@@ -57,7 +57,7 @@ export default function NavBar({ org_detail }: NavBarProps) {
             width={1000}
             height={1000}
             alt="logo"
-            className="h-8 w-full object-contain"
+            className="h-12  w-24 object-contain"
             unoptimized={true}
           />
         </div>
