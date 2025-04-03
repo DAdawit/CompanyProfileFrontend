@@ -1,10 +1,10 @@
-import Image from "next/image";
 import React from "react";
 
 import { ServicesOutI } from "@/types/ServicesOut";
 import Link from "next/link";
 import FadeInLeft from "@/common/Animations/FadeInLeft";
 import FadeInUp from "@/common/Animations/FadeInUp";
+import ServicesPrimaryCard from "../Service/ServicesPrimaryCard";
 interface PropType {
   services: ServicesOutI;
 }
@@ -40,32 +40,7 @@ export default async function Services({ services }: PropType) {
             <FadeInUp>
               <div className="grid grid-cols-6 gap-6 max-w-7xl mx-auto mt-12">
                 {services?.data?.ServicesComponent?.map((service) => (
-                  <div
-                    key={service.id}
-                    className="col-span-6 md:col-span-3 lg:col-span-2"
-                  >
-                    <div className="h-full">
-                      <div className="bg-white shadow-xl rounded-xl h-full">
-                        <div className="p-6 md:p-12">
-                          <div className="w-[75px] h-[75px] rounded-full text-[26px] shadow-xl flex justify-center items-center mb-6">
-                            <Image
-                              src={`${service.icon.url}`}
-                              alt="spector"
-                              width={100}
-                              height={200}
-                              className="h-14 object-contain"
-                            />{" "}
-                          </div>
-                          <h4 className="text-2xl mb-6 font-bold">
-                            {service.title}
-                          </h4>
-                          <p className="opacity-70 leading-[1.8]">
-                            {service.description}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <ServicesPrimaryCard key={service.id} service={service} />
                 ))}
               </div>
             </FadeInUp>
