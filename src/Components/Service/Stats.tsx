@@ -73,6 +73,7 @@ const Stats: React.FC<PropType> = ({ stats }) => {
             className="object-cover"
             priority
             quality={100}
+            blurDataURL={stats.data.image.url}
           />
         </div>
       </div>

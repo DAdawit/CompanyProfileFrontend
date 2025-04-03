@@ -36,6 +36,7 @@ export default async function OurTeam({ our_team }: PropTypes) {
               className="w-46 h-46 rounded-full mx-auto"
               height={300}
               width={300}
+              blurDataURL={member.image.url}
             />
             <div className="px-4 py-4 xl:px-6 flex-grow">
               <h4 className="text-2xl font-medium mb-2">{member.full_name}</h4>

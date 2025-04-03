@@ -13,6 +13,7 @@ const ServicesSecondaryCard: React.FC<PropType> = ({ service }) => {
         width={100}
         height={200}
         className="h-14 object-contain"
+        blurDataURL={service?.icon?.url}
       />{" "}
       <h2 className="text-xl font-semibold capitalize text-primary-900 dark:text-primary-100 group-hover:text-primary-700">
         {service?.title}

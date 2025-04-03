@@ -24,6 +24,7 @@ export default function BlockRendererClient({
               width={image.width}
               height={image.height}
               alt={image.alternativeText || ""}
+              blurDataURL={image.url}
             />
           );
         },

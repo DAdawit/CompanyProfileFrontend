@@ -27,6 +27,7 @@ const BlogCard: React.FC<PropType> = ({ blog }) => {
           src={`${blog.banner_image.url}`}
           alt={blog.title}
           className="h-64 w-full shadow-lg dark:shadow-none"
+          blurDataURL={blog.banner_image.url}
         />
       </Link>
 

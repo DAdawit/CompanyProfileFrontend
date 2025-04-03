@@ -17,6 +17,7 @@ const ServicesPrimaryCard: React.FC<PropType> = ({ service }) => {
                 width={100}
                 height={200}
                 className="h-14 object-contain"
+                blurDataURL={service.icon.url}
               />{" "}
             </div>
             <h4 className="text-2xl mb-6 font-bold">{service.title}</h4>

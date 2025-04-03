@@ -19,6 +19,7 @@ const DynamicHero: React.FC<PropTypes> = ({ image, title, description }) => {
           sizes="100vw"
           className="object-cover"
           priority
+          blurDataURL={image}
         />
       </div>
 

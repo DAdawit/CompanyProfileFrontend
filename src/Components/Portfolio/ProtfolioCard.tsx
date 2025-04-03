@@ -51,6 +51,7 @@ const ProtfolioCard: React.FC<PropType> = ({ portfolio, index }) => {
             height={1000}
             width={1000}
             className="h-64 object-cover rounded-sm"
+            blurDataURL={portfolio.image.url}
           />
           <div className="flex md:hidden mt-4 md:mt-0">
             {portfolio.link != null ? (

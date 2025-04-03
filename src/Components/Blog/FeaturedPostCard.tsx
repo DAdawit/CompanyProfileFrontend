@@ -23,6 +23,7 @@ const FeaturedPostCard: React.FC<PropType> = ({ post }) => {
             src={`${post.banner_image.url}`}
             alt={post.title}
             className="h-12 w-12 min-w-12 rounded-lg"
+            blurDataURL={post.banner_image.url}
           />
         </div>
         <div className="grid">

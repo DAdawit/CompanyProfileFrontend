@@ -96,6 +96,7 @@ export default class Testimonials extends Component<TestimonialProps> {
                                 className="h-14 w-14 pointer-events-none rounded-full border p-1 border-gray-500"
                                 width={100}
                                 height={200}
+                                blurDataURL={testimonial.image.url}
                               />
                             </div>
                             <div>

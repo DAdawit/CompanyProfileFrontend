@@ -91,6 +91,7 @@ const Targets = () => {
                 alt="heroImage"
                 height={2000}
                 width={2000}
+                blurDataURL={`/about9.jpg`}
                 className="h-72 w-full object-cover object-bottom self-center rounded-xl"
               />
             </div>
