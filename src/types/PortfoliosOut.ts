@@ -79,7 +79,7 @@ export interface Image {
   publishedAt: string;
 }
 
-export interface Data {
+export interface PortfolioOutI {
   id: number;
   documentId: string;
   title: string;
@@ -103,6 +103,6 @@ export interface Meta {
 }
 
 export interface PortfoliosOutI {
-  data: Data[];
+  data: PortfolioOutI[];
   meta: Meta;
 }
