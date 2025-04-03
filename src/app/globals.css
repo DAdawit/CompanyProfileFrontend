@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 /* Scoped styles for blog content */
+html {
+  @apply scroll-smooth;
+}
 #blog h1 {
   @apply text-4xl mb-6 font-bold text-gray-800;
 }

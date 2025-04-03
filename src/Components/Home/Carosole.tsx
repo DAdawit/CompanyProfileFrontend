@@ -75,10 +75,10 @@ export default class Carosole extends Component<CarosoleProps> {
                       </p>
                       <div className="mt-5 align-bottom h-full flex items-end">
                         <Link
-                          href="/menus"
+                          href="#contact_us"
                           className="bg-white px-6 py-3 rounded-lg w-max bg-bgButton text-gray-950 mt-4 tracking-wider font-medium transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
                         >
-                          View our menu
+                          Let&apos;s Get In touch
                         </Link>
                       </div>
                     </div>

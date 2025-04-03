@@ -78,7 +78,7 @@ export default async function Home() {
           <FAQs faqs={faqs} />
         </div>
 
-        <div>
+        <div id="contact_us">
           <ContactUs />
         </div>
         <div>

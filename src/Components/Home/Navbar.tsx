@@ -48,17 +48,18 @@ export default function NavBar({ org_detail }: NavBarProps) {
     >
       <div className="px-3 sm:px-5 xll:px-10 flex justify-between items-center py-3 w-full">
         <div className="flex items-center gap-x-3">
-          <div className="md:">
+          <div className="md:hidden">
             <NavigationDrawer org_detail={org_detail} />
           </div>
-
-          <Image
-            src={`${org_detail?.data?.primary_logo?.url}`}
-            width={1000}
-            height={1000}
-            alt="logo"
-            className="h-12  w-24 object-contain"
-          />
+          <Link href="/">
+            <Image
+              src={`${org_detail?.data?.primary_logo?.url}`}
+              width={1000}
+              height={1000}
+              alt="logo"
+              className="h-12  w-24 object-contain"
+            />
+          </Link>
         </div>
         <div className="hidden md:flex gap-x-5 items-center text-lg capitalize text-primary">
           <Link

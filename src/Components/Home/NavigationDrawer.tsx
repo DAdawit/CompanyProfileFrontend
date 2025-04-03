@@ -9,12 +9,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { OrgDetailOutI } from "@/types/OrgDetailOut";
 import CloseIcon from "@mui/icons-material/Close";
-import RoomServiceOutlinedIcon from "@mui/icons-material/RoomServiceOutlined";
-import AutoAwesomeMosaicOutlinedIcon from "@mui/icons-material/AutoAwesomeMosaicOutlined";
-import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
-import FeedOutlinedIcon from "@mui/icons-material/FeedOutlined";
+// import RoomServiceOutlinedIcon from "@mui/icons-material/RoomServiceOutlined";
+// import AutoAwesomeMosaicOutlinedIcon from "@mui/icons-material/AutoAwesomeMosaicOutlined";
+// import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
+// import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+// import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
+// import FeedOutlinedIcon from "@mui/icons-material/FeedOutlined";
 type LogoType = {
   org_detail: OrgDetailOutI;
 };
@@ -59,13 +59,15 @@ export default function NavigationDrawer({ org_detail }: LogoType) {
             >
               <div className="overflow-x-hidden px-3">
                 <div className="flex justify-between px-5 text-gray-800 mt-8 h-max">
-                  <Image
-                    src={`${org_detail?.data?.primary_logo?.url}`}
-                    alt="spector"
-                    width={150}
-                    height={100}
-                    className="h-16 w-24 self-center object-contain pointer-events-none select-none"
-                  />
+                  <Link href="/">
+                    <Image
+                      src={`${org_detail?.data?.primary_logo?.url}`}
+                      alt="spector"
+                      width={150}
+                      height={100}
+                      className="h-16 w-24 self-center object-contain pointer-events-none select-none"
+                    />
+                  </Link>
                   <IconButton
                     sx={{
                       color: "white",
@@ -84,70 +86,70 @@ export default function NavigationDrawer({ org_detail }: LogoType) {
                   </IconButton>
                 </div>
 
-                <section className="mt-10 flex flex-col gap-2 pl-3">
+                <section className="mt-10 flex flex-col gap-2 ">
                   <Link
                     href="/"
-                    className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-2 ${
+                    className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-3 ${
                       pathname === "/" ? "border-gray-800" : "border-gray-50"
                     }`}
                   >
-                    <HomeOutlinedIcon className="text-2xl " />
+                    {/* <HomeOutlinedIcon className="text-2xl " /> */}
                     Home
                   </Link>
                   <Link
                     href="/about-us"
-                    className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-2 ${
+                    className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-3 ${
                       pathname === "/about-us"
                         ? "border-gray-800"
                         : "border-gray-50"
                     }`}
                   >
-                    <GroupsOutlinedIcon className="text-2xl " />
+                    {/* <GroupsOutlinedIcon className="text-2xl " /> */}
                     About
                   </Link>
                   <Link
                     href="/services"
-                    className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-2 ${
+                    className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-3 ${
                       pathname === "/services"
                         ? "border-gray-800"
                         : "border-gray-50"
                     }`}
                   >
-                    <RoomServiceOutlinedIcon className="text-2xl " />
+                    {/* <RoomServiceOutlinedIcon className="text-2xl " /> */}
                     Services
                   </Link>
 
                   <Link
                     href="/portfolios"
-                    className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-2 ${
+                    className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-3 ${
                       pathname === "/portfolios"
                         ? "border-gray-800"
                         : "border-gray-50"
                     }`}
                   >
-                    <AutoAwesomeMosaicOutlinedIcon className="text-2xl " />
+                    {/* <AutoAwesomeMosaicOutlinedIcon className="text-2xl " /> */}
                     Portfolios
                   </Link>
                   <Link
                     href="/contact-us"
-                    className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-2 ${
+                    className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-3 ${
                       pathname === "/contact-us"
                         ? "border-gray-800"
                         : "border-gray-50"
                     }`}
                   >
-                    <ContactPageOutlinedIcon className="text-2xl" />
+                    {/* <ContactPageOutlinedIcon className="text-2xl" /> */}
                     Contact Us
                   </Link>
                   <Link
                     href="/blogs"
-                    className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-2 ${
+                    className={`uppercase font-medium font-sans tracking-wider flex justify-start items-center gap-2 border-2 rounded-lg px-3 ${
                       pathname.startsWith("/blogs")
                         ? "border-gray-800"
                         : "border-gray-50"
                     }`}
                   >
-                    <FeedOutlinedIcon className="text-2xl" />
+                    {/* <FeedOutlinedIcon className="text-2xl" /> */}
                     Blogs
                   </Link>
                 </section>
