@@ -27,7 +27,7 @@ export async function generateMetadata() {
   const { org_detail } = org.data;
 
   return {
-    title: "Home",
+    title: "WonderWeb | Home",
     description: { org_detail },
   };
 }

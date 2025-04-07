@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Toaster } from "react-hot-toast";
+import Head from "next/head";
 
 import "./globals.css";
 import { ReactQueryProvider } from "./ReactQueryProvider";
@@ -63,6 +64,12 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
+      <Head>
+        <link rel="icon" href="/icon.png" sizes="any" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="icon" href="/icon.png" sizes="any" />
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

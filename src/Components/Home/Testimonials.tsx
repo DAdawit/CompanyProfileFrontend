@@ -111,7 +111,7 @@ export default class Testimonials extends Component<TestimonialProps> {
                             ))}
                           </div>
                         </div>
-                        <p className="leading-[1.8] opacity-80 mb-6 truncate max-h-36 overflow-clip">
+                        <p className="leading-[1.8] opacity-80 mb-6 max-h-36 overflow-clip">
                           {testimonial.feedback}
                         </p>
                       </div>

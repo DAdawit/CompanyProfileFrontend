@@ -57,7 +57,7 @@ export default function NavBar({ org_detail }: NavBarProps) {
               width={1000}
               height={1000}
               alt="logo"
-              className="h-12  w-24 object-contain"
+              className="h-12 w-32 object-contain"
             />
           </Link>
         </div>

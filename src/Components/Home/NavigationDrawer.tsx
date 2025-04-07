@@ -65,7 +65,7 @@ export default function NavigationDrawer({ org_detail }: LogoType) {
                       alt="spector"
                       width={150}
                       height={100}
-                      className="h-16 w-24 self-center object-contain pointer-events-none select-none"
+                      className="h-16 w-28 self-center object-contain pointer-events-none select-none"
                     />
                   </Link>
                   <IconButton
